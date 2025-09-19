@@ -10,8 +10,6 @@ const goNext = () => {
 <template>
   <div>
     <div class="flex flex-col items-center min-h-screen w-full">
-      <!-- on click navigate to sign in -->
-       <!-- Smart animate Ease out 300ms -->
       <div class="w-full flex justify-end">
         <NuxtLink to="/sign-in" class="text-[#6D7379] font-[Montserrat-Medium] pr-2">
           Skip

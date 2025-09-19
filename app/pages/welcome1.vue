@@ -19,7 +19,7 @@ const emit = defineEmits(['next'])
             <div class="mt-6 flex justify-center">
                 <Button 
                 @click="emit('next')" 
-                class="next-btn text-[16px] h-[48px] w-[300px] text-[#FFFFFF] rounded-[7px] font-[Montserrat-Medium] max-w-sm">
+                class="text-[16px] h-[48px] w-[300px] text-[#FFFFFF] rounded-[7px] font-[Montserrat-Medium] max-w-sm">
                     Next
                 </Button>
             </div>

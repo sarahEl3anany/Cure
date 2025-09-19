@@ -12,7 +12,7 @@ import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
       <h3 class="font-[Georgia] text-[#05162C] text-[24px]">Let’s You In</h3>
       <div class="mx-10">
         <div class="flex justify-center pt-5">
-          <Button class="next-btn text-[16px] h-[48px] w-[396px] text-[#6D7379] bg-[#FFFFFF] border-[#BBC1C7] rounded-[10px] font-[Montserrat-Medium] max-w-sm pr-[16px] pl-[12px]">
+          <Button class="text-[16px] h-[48px] w-[396px] text-[#6D7379] bg-[#FFFFFF] border-[#BBC1C7] rounded-[10px] font-[Montserrat-Medium] max-w-sm pr-[16px] pl-[12px]">
             <span>
               <img :src="fbLogo" alt="fb-icon" />
             </span>
@@ -20,7 +20,7 @@ import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
           </Button>
         </div>
         <div class="flex justify-center pt-2">
-          <Button class="next-btn text-[16px] h-[48px] w-[396px] text-[#6D7379] bg-[#FFFFFF] border-[#BBC1C7] rounded-[10px] font-[Montserrat-Medium] max-w-sm pr-[16px] pl-[12px]">
+          <Button class="text-[16px] h-[48px] w-[396px] text-[#6D7379] bg-[#FFFFFF] border-[#BBC1C7] rounded-[10px] font-[Montserrat-Medium] max-w-sm pr-[16px] pl-[12px]">
             <span>
               <img :src="googleLogo" alt="google-icon" />
             </span>
@@ -28,7 +28,7 @@ import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
           </Button>
         </div>
         <div class="flex justify-center pt-2">
-          <Button class="next-btn text-[16px] h-[48px] w-[396px] text-[#6D7379] bg-[#FFFFFF] border-[#BBC1C7] rounded-[10px] font-[Montserrat-Medium] max-w-sm pr-[16px] pl-[12px]">
+          <Button class="text-[16px] h-[48px] w-[396px] text-[#6D7379] bg-[#FFFFFF] border-[#BBC1C7] rounded-[10px] font-[Montserrat-Medium] max-w-sm pr-[16px] pl-[12px]">
             <span>
               <img :src="appleLogo" alt="apple-icon" />
             </span>
@@ -39,7 +39,7 @@ import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
           <span class="text-[#99A2AB] text-[16px] font-[Montserrat-Medium]">or</span>
         </Divider>
         <div class="flex justify-center">
-          <Button class="next-btn text-[16px] h-[48px] w-[396px] text-[#FFFFFF] rounded-[7px] font-[Montserrat-Medium] max-w-sm">
+          <Button class="text-[16px] h-[48px] w-[396px] text-[#FFFFFF] rounded-[7px] font-[Montserrat-Medium] max-w-sm">
             Sign in with your Phone Number
           </Button>
         </div>

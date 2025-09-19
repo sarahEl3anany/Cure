@@ -19,7 +19,7 @@ const goToLogin = () => {
             </p>
             <img :src="page2Load" alt="load" class="w-6 h-6" />
             <div class="mt-6 flex justify-center">
-                <Button class="next-btn h-[48px] w-[300px] text-[#FFFFFF] rounded-[7px] text-[16px] font-[Montserrat-Medium] max-w-sm" 
+                <Button class="h-[48px] w-[300px] text-[#FFFFFF] rounded-[7px] text-[16px] font-[Montserrat-Medium] max-w-sm" 
                 @click="goToLogin">Get Started</Button>
             </div>
         </div>
