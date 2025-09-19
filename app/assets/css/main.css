@@ -1,0 +1,12 @@
+@import '../fonts/montserrat.css';
+@import '../fonts/georgia.css';
+:root {
+  --p-primary-color: #145DB8;
+  --p-primary-hover-color: #3b82f6;
+  --p-checkbox-icon-size: 17px;
+  --p-checkbox-width: 17px;
+  --p-checkbox-height: 17px;
+  --p-checkbox-border-radius: 4px;
+  --p-checkbox-focus-ring-width: 2px;
+  --p-form-field-border-color: #145DB8;
+}
