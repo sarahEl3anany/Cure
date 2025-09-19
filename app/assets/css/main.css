@@ -1,12 +1,17 @@
 @import '../fonts/montserrat.css';
 @import '../fonts/georgia.css';
-:root {
-  --p-primary-color: #145DB8 !important;
-  --p-primary-hover-color: #3b82f6 !important;
-  --p-checkbox-icon-size: 17px !important;
-  --p-checkbox-width: 17px !important;
-  --p-checkbox-height: 17px !important;
-  --p-checkbox-border-radius: 4px !important;
-  --p-checkbox-focus-ring-width: 2px !important;
-  --p-form-field-border-color: #145DB8 !important;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --p-primary-color: #145DB8 !important;
+    --p-primary-hover-color: #3b82f6 !important;
+    --p-checkbox-icon-size: 17px !important;
+    --p-checkbox-width: 17px !important;
+    --p-checkbox-height: 17px !important;
+    --p-checkbox-border-radius: 4px !important;
+    --p-checkbox-focus-ring-width: 2px !important;
+    --p-form-field-border-color: #145DB8 !important;
+  }
 }
