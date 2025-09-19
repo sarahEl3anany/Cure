@@ -2,8 +2,9 @@
 import Aura from '@primeuix/themes/aura';
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: '2025-09-19',
   devtools: { enabled: true },
+  spaLoadingTemplate:false,
   css: [
     '@mdi/font/css/materialdesignicons.min.css',
     '~/assets/css/main.css',
