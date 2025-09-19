@@ -11,7 +11,7 @@ const goNext = () => {
   <div>
     <div class="flex flex-col items-center min-h-screen w-full">
       <div class="w-full flex justify-end">
-        <NuxtLink to="/sign-in" class="text-[#6D7379] font-[Montserrat-Medium] pr-2">
+        <NuxtLink to="/welcome" class="text-[#6D7379] font-[Montserrat-Medium] pr-2">
           Skip
         </NuxtLink>
       </div>

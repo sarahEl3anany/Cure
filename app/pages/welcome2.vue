@@ -2,7 +2,7 @@
 import page2 from '@/assets/images/page2_g.svg'
 import page2Load from '@/assets/images/page2_load.svg'
 const goToLogin = () => {
-    navigateTo('/sign-in')
+    navigateTo('/welcome')
 }
 </script>
 
