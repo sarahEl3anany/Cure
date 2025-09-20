@@ -14,14 +14,14 @@
     --p-primary-700: #0E4283 !important;
     --p-primary-800: #0B3365 !important;
     --p-primary-900: #08274D !important;
-    /* --p-primary-color: #145DB8 !important;
-    --p-primary-hover-color: #3b82f6 !important;
+    --p-primary-color: #145DB8 !important;
+    --p-primary-hover-color: #145DB8 !important;
     --p-checkbox-icon-size: 17px !important;
     --p-checkbox-width: 17px !important;
     --p-checkbox-height: 17px !important;
     --p-checkbox-border-radius: 4px !important;
     --p-checkbox-focus-ring-width: 2px !important;
     --p-form-field-border-color: #145DB8 !important;
-    --p-button-primary-active-background: #145DB8 !important; */
+    --p-button-primary-active-background: #145DB8 !important;
   }
 }
