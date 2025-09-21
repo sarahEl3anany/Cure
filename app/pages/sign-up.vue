@@ -47,7 +47,7 @@ async function signUp({ valid, values }: any) {
                 = await $apiFetch('register', {
                     method: 'POST',
                     body: values
-                })
+                }) as any
             if (values.rememberMe) {
                 $successRegister(res)
             } else {
@@ -80,51 +80,51 @@ async function signUp({ valid, values }: any) {
         <div class="flex flex-col items-center text-center w-full">
             <img :src="BsHeartPulse" alt="HeartPulse"
                 class="w-[60px] h-[60px] mt-[75px] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl" />
-            <h3 class="mt-2 font-[Georgia] text-[#05162C] text-[32px]">Create New Account</h3>
+            <h3 class="mt-2 font-[Georgia] text-secondary-500 text-[32px]">Create New Account</h3>
             <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="signUp">
                 <div class="space-y-7 mt-7 sm:w-[350px] md:w-[396px] lg:w-[396px] mx-[16px]">
                     <div class="h-[48px] w-full">
-                        <div class="flex items-center w-full rounded-[10px] bg-[#F5F6F7] px-[16px] gap-[8px]">
-                            <i class="mdi mdi-account text-[#99A2AB] font-[Montserrat-Medium] text-lg"></i>
+                        <div class="flex items-center w-full rounded-[10px] bg-neutral-50 px-[16px] gap-[8px]">
+                            <i class="mdi mdi-account text-neutral-500 font-[Montserrat-Medium] text-lg"></i>
                             <InputText placeholder="Full Name" name="name"
-                                class=" w-full font-[Montserrat-Medium] border-none text-[#99A2AB] bg-[#F5F6F7] focus:ring-0 focus:outline-none" />
+                                class=" w-full font-[Montserrat-Medium] border-none text-neutral-500 bg-neutral-50 focus:ring-0 focus:outline-none" />
                         </div>
                         <Message v-if="$form.name?.invalid" severity="error" size="small" variant="simple">{{
                             $form.name.error?.message }}</Message>
                     </div>
                     <div class="h-[48px] w-full">
-                        <div class="flex items-center w-full rounded-[10px] bg-[#F5F6F7] px-[16px] gap-[8px]">
-                            <i class="mdi mdi-email text-[#99A2AB] font-[Montserrat-Medium] text-lg"></i>
+                        <div class="flex items-center w-full rounded-[10px] bg-neutral-50 px-[16px] gap-[8px]">
+                            <i class="mdi mdi-email text-neutral-500 font-[Montserrat-Medium] text-lg"></i>
                             <InputText placeholder="Email" name="email"
-                                class="w-full font-[Montserrat-Medium] border-none text-[#99A2AB] bg-[#F5F6F7] focus:ring-0 focus:outline-none" />
+                                class="w-full font-[Montserrat-Medium] border-none text-neutral-500 bg-neutral-50 focus:ring-0 focus:outline-none" />
                         </div>
                         <Message v-if="$form.email?.invalid" severity="error" size="small" variant="simple">{{
                             $form.email.error?.message }}</Message>
                     </div>
                     <div class="h-[48px] w-full">
-                        <div class="flex items-center w-full rounded-[10px] bg-[#F5F6F7] px-[16px] gap-[8px]">
-                            <i class="mdi mdi-phone text-[#99A2AB] font-[Montserrat-Medium] text-lg"></i>
+                        <div class="flex items-center w-full rounded-[10px] bg-neutral-50 px-[16px] gap-[8px]">
+                            <i class="mdi mdi-phone text-neutral-500 font-[Montserrat-Medium] text-lg"></i>
                             <InputText placeholder="Phone" name="phone"
-                                class="w-full font-[Montserrat-Medium] border-none text-[#99A2AB] bg-[#F5F6F7] focus:ring-0 focus:outline-none" />
+                                class="w-full font-[Montserrat-Medium] border-none text-neutral-500 bg-neutral-50 focus:ring-0 focus:outline-none" />
                         </div>
                         <Message v-if="$form.phone?.invalid" severity="error" size="small" variant="simple">{{
                             $form.phone.error?.message }}</Message>
                     </div>
                     <div class="h-[48px] w-full">
-                        <div class="flex items-center w-full rounded-[10px] bg-[#F5F6F7] px-[16px] gap-[8px]">
-                            <img :src="KeySquare" alt="Password" class="w-5 h-5 text-[#99A2AB]" />
+                        <div class="flex items-center w-full rounded-[10px] bg-neutral-50 px-[16px] gap-[8px]">
+                            <img :src="KeySquare" alt="Password" class="w-5 h-5 text-neutral-500" />
                             <Password placeholder="Password" name="password"
-                                inputClass="!border-none !shadow-none !bg-[#F5F6F7] focus:!ring-0 focus:!outline-none text-[#99A2AB] font-[Montserrat-Medium] w-full"
+                                inputClass="!border-none !shadow-none !bg-neutral-50 focus:!ring-0 focus:!outline-none text-neutral-500 font-[Montserrat-Medium] w-full"
                                 class="w-full" />
                         </div>
                         <Message v-if="$form.password?.invalid" severity="error" size="small" variant="simple">{{
                             $form.password.error?.message }}</Message>
                     </div>
                     <div class="h-[48px] w-full">
-                        <div class="flex items-center w-full rounded-[10px] bg-[#F5F6F7] px-[16px] gap-[8px]">
-                            <img :src="KeySquare" alt="Password" class="w-5 h-5 text-[#99A2AB]" />
+                        <div class="flex items-center w-full rounded-[10px] bg-neutral-50 px-[16px] gap-[8px]">
+                            <img :src="KeySquare" alt="Password" class="w-5 h-5 text-neutral-500" />
                             <Password placeholder="Confirm Password" name="password_confirmation"
-                                inputClass="!border-none !shadow-none !bg-[#F5F6F7] focus:!ring-0 focus:!outline-none text-[#99A2AB] font-[Montserrat-Medium] w-full"
+                                inputClass="!border-none !shadow-none !bg-neutral-50 focus:!ring-0 focus:!outline-none text-neutral-500 font-[Montserrat-Medium] w-full"
                                 class="w-full" />
                         </div>
                         <Message v-if="$form.password_confirmation?.invalid" severity="error" size="small"
@@ -134,18 +134,18 @@ async function signUp({ valid, values }: any) {
                     <div class="justify-center flex items-center gap-2 h-[20px] font-[Montserrat-Medium]">
                         <Checkbox 
                         inputId="rememberMe" name="rememberMe" value="1" />
-                        <label for="rememberMe" class="text-[#05162C] text-[16px] h-[20px]"> Remember me </label>
+                        <label for="rememberMe" class="text-secondary-500 text-[16px] h-[20px]"> Remember me </label>
                     </div>
                     <div class="flex justify-center w-full mt-10">
                         <Button type="submit"
-                            class="w-full text-[16px] h-[48px] text-[#FFFFFF] rounded-[7px] font-[Montserrat-Medium]">
+                            class="w-full text-[16px] h-[48px] text-white rounded-[7px] font-[Montserrat-Medium]">
                             Sign up
                         </Button>
                     </div>
                 </div>
             </Form>
-            <Divider align="center" class="w-[396px] text-[#99A2AB]">
-                <span class="text-[#99A2AB] text-[16px] font-[Montserrat-Medium]">or</span>
+            <Divider align="center" class="w-[396px] text-neutral-500">
+                <span class="text-neutral-500 text-[16px] font-[Montserrat-Medium]">or</span>
             </Divider>
             <div class="flex justify-between w-[320px] mt-3 gap-[8px]">
                 <Button
@@ -159,7 +159,7 @@ async function signUp({ valid, values }: any) {
                 </Button>
             </div>
             <div class="flex justify-center mt-4">
-                <span class="text-[#99A2AB] font-[Montserrat-Medium] text-[12px]">Already have an account! </span>
+                <span class="text-neutral-500 font-[Montserrat-Medium] text-[12px]">Already have an account! </span>
                 <span class="ml-1 text-[#145DB8] font-[Montserrat-Medium] text-[12px]">
                     <NuxtLink to="/sign-in"> Sign in</NuxtLink>
                 </span>

@@ -23,5 +23,71 @@
     --p-checkbox-focus-ring-width: 2px !important;
     --p-form-field-border-color: #145DB8 !important;
     --p-button-primary-active-background: #145DB8 !important;
+
+    --p-secondary-50: #E6E8EA !important;
+    --p-secondary-100: #B2B7BE !important;
+    --p-secondary-200: #8C949E !important;
+    --p-secondary-300: #586372 !important;
+    --p-secondary-400: #374556 !important;
+    --p-secondary-500: #05162C !important;
+    --p-secondary-600: #051428 !important;
+    --p-secondary-700: #04101F !important;
+    --p-secondary-800: #030C18 !important;
+    --p-secondary-900: #020912 !important;
+
+    --p-neutral-50: #F5F6F7 !important;
+    --p-neutral-100: #DFE2E5 !important;
+    --p-neutral-200: #D0D4D8 !important;
+    --p-neutral-300: #BBC1C7 !important;
+    --p-neutral-400: #ADB5BC !important;
+    --p-neutral-500: #99A2AB !important;
+    --p-neutral-600: #8B939C !important;
+    --p-neutral-700: #6D7379 !important;
+    --p-neutral-800: #54595E !important;
+    --p-neutral-900: #404448 !important;
+
+    --p-red-50: #FFEDED !important;
+    --p-red-100: #FEC7C8 !important;
+    --p-red-200: #FEACAE !important;
+    --p-red-300: #FD8688 !important;
+    --p-red-400: #FD6F71 !important;
+    --p-red-500: #fC4B4E !important;
+    --p-red-600: #E54447 !important;
+    --p-red-700: #B33537 !important;
+    --p-red-800: #8B292B !important;
+    --p-red-900: #6A2021 !important;
+
+    --p-yellow-50: #FFF6E9 !important;
+    --p-yellow-100: #FFE4BC !important;
+    --p-yellow-200: #FFD79B !important;
+    --p-yellow-300: #FFC46E !important;
+    --p-yellow-400: #FFB951 !important;
+    --p-yellow-500: #FFA726 !important;
+    --p-yellow-600: #E89823 !important;
+    --p-yellow-700: #B5771B !important;
+    --p-yellow-800: #8C5C15 !important;
+    --p-yellow-900: #6B4610 !important;
+
+    --p-blue-50: #E8F4FC !important;
+    --p-blue-100: #B6DDF6 !important;
+    --p-blue-200: #93CCF2 !important;
+    --p-blue-300: #62B5EC !important;
+    --p-blue-400: #43A6E9 !important;
+    --p-blue-500: #1490E3 !important;
+    --p-blue-600: #1283CF !important;
+    --p-blue-700: #0E66A1 !important;
+    --p-blue-800: #0B4F7D !important;
+    --p-blue-900: #083C5F !important;
+
+    --p-green-50: #EDF7EE !important;
+    --p-green-100: #C8E6C9 !important;
+    --p-green-200: #ADDAAF !important;
+    --p-green-300: #87C98A !important;
+    --p-green-400: #70BF73 !important;
+    --p-green-500: #4CAF50 !important;
+    --p-green-600: #459F49 !important;
+    --p-green-700: #367C39 !important;
+    --p-green-800: #2A602C !important;
+    --p-green-900: #204A22 !important;
   }
 }

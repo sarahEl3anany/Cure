@@ -9,8 +9,8 @@ const emit = defineEmits(['next'])
     <div>
         <div class="flex flex-col items-center text-center w-full">
             <img :src="page1" alt="welcome" class="w-[306px] h-[310px] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl" />
-            <h3 class="font-[Georgia] text-[#05162C] text-[24px]">Book Your Appointment Easily</h3>
-            <p class="text-[#6D7379] font-[Montserrat-Medium] text-[16px] leading-relaxed max-w-xl">
+            <h3 class="font-[Georgia] text-secondary-500 text-[24px]">Book Your Appointment Easily</h3>
+            <p class="text-neutral-700 font-[Montserrat-Medium] text-[16px] leading-relaxed max-w-xl">
                 Choose your preferred doctor, pick a <br />suitable time, 
                 and confirm your visit<br /> in just a few taps. No calls, 
                 no waiting<br />—just simple and fast booking.
@@ -19,7 +19,7 @@ const emit = defineEmits(['next'])
             <div class="mt-6 flex justify-center">
                 <Button 
                 @click="emit('next')" 
-                class="text-[16px] h-[48px] w-[300px] text-[#FFFFFF] rounded-[7px] font-[Montserrat-Medium] max-w-sm">
+                class="text-[16px] h-[48px] w-[300px] text-white rounded-[7px] font-[Montserrat-Medium] max-w-sm">
                     Next
                 </Button>
             </div>
