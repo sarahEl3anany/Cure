@@ -161,7 +161,7 @@ async function signUp({ valid, values }: any) {
             <div class="flex justify-center mt-4">
                 <span class="text-[#99A2AB] font-[Montserrat-Medium] text-[12px]">Already have an account! </span>
                 <span class="ml-1 text-[#145DB8] font-[Montserrat-Medium] text-[12px]">
-                    <NuxtLink to="/sign-up"> Sign in</NuxtLink>
+                    <NuxtLink to="/sign-in"> Sign in</NuxtLink>
                 </span>
             </div>
         </div>
