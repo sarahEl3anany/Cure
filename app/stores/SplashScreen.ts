@@ -1,15 +1,15 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 
 export const useSplashScreenStore = defineStore('SplashScreen', {
-    state: () => ({
+  state: () => ({
     isLoading: false
   }),
   actions: {
     start() {
       this.isLoading = true
     },
-    finish() {
+    stop() {
       this.isLoading = false
     }
   }
-});
+})

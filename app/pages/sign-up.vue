@@ -37,7 +37,7 @@ const resolver = zodResolver(
         rememberMe: z.boolean().default(false).optional()
     }).refine((data) => data.password === data.password_confirmation, {
         message: "Passwords do not match",
-        path: ["password_confirmation"], // error will show under password_confirmation field
+        path: ["password_confirmation"],
     })
 )
 async function signUp({ valid, values }: any) {
@@ -133,7 +133,7 @@ async function signUp({ valid, values }: any) {
                     </div>
                     <div class="justify-center flex items-center gap-2 h-[20px] font-[Montserrat-Medium]">
                         <Checkbox 
-                        inputId="rememberMe" name="rememberMe" />
+                        inputId="rememberMe" name="rememberMe" value="1" />
                         <label for="rememberMe" class="text-[#05162C] text-[16px] h-[20px]"> Remember me </label>
                     </div>
                     <div class="flex justify-center w-full mt-10">

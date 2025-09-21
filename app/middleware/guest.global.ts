@@ -7,15 +7,11 @@ export default defineNuxtRouteMiddleware((to) => {
     '/welcome',
     '/forget-password'
   ]
-  // User not logged in → redirect to /sign-in
   if (!token && !sessionToken && !outRoutes.includes(to.path)) {
     return navigateTo('/welcome')
   }
 
-  // User logged in → prevent visiting auth pages
   if ((token || sessionToken) && outRoutes.includes(to.path)) {
     return navigateTo('/home')
   }
-
-  // Otherwise → allow navigation
 })

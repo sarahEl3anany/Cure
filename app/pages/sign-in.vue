@@ -26,6 +26,7 @@ const resolver = zodResolver(
     })
 )
 async function signIn({ valid, values }: any) {
+  debugger
     if (valid) {
         try {
             const res: { data: { token: string, token_type?: string, user?: any } }
@@ -94,7 +95,7 @@ async function signIn({ valid, values }: any) {
                   </div>
                     <div class="justify-center flex items-center gap-2 h-[20px] font-[Montserrat-Medium]">
                         <Checkbox 
-                        inputId="rememberMe" name="rememberMe" />
+                        inputId="rememberMe" name="rememberMe" value="1" />
                         <label for="rememberMe" class="text-[#05162C] text-[16px] h-[20px]"> Remember me </label>
                     </div>
                     <div class="flex justify-center w-full mt-10">
