@@ -2,24 +2,20 @@
 import BsHeartPulse from '@/assets/images/sign-up/BsHeartPulse.svg'
 import KeySquare from '@/assets/images/sign-up/KeySquare2.png'
 import fbLogo from '@/assets/images/sign-in/fbLogo.svg'
-import googleLogo from '@/assets/images/sign-in/googleLogo.svg'
 import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
 import { zodResolver } from '@primevue/forms/resolvers/zod';
+import GoogleSignIn from '@/components/sign-in/google-sign-in.vue'
 import { z } from 'zod';
-// import {
-//   useCodeClient,
-//   type ImplicitFlowSuccessResponse,
-//   type ImplicitFlowErrorResponse,
-// } from "vue3-google-signin";
 
 const toast = useToast();
-const { $apiFetch } = useNuxtApp()
+const { $apiFetch, $successRegister, $successRegisterSession } = useNuxtApp()
 const initialValues = reactive({
     name: '',
     email: '',
     phone: '',
     password: '',
     password_confirmation: '',
+    rememberMe: false
 });
 
 const resolver = zodResolver(
@@ -37,8 +33,8 @@ const resolver = zodResolver(
             .max(256, { message: "Enter less than 256 chars." }),
         password_confirmation: z.string().min(1, { message: "Password is required!" })
             .min(8, { message: "Enter more than 8 chars." })
-            .max(256, { message: "Enter less than 256 chars." })
-
+            .max(256, { message: "Enter less than 256 chars." }),
+        rememberMe: z.boolean().default(false).optional()
     }).refine((data) => data.password === data.password_confirmation, {
         message: "Passwords do not match",
         path: ["password_confirmation"], // error will show under password_confirmation field
@@ -52,7 +48,11 @@ async function signUp({ valid, values }: any) {
                     method: 'POST',
                     body: values
                 })
-            successRegister(res)
+            if (values.rememberMe) {
+                $successRegister(res)
+            } else {
+                $successRegisterSession(res)
+            }
         } catch (err: any) {
             const apiError = err?.response?._data || {}
             const message = apiError.message || JSON.stringify(apiError)
@@ -63,44 +63,15 @@ async function signUp({ valid, values }: any) {
                 life: 5000
             })
         }
+    } else {
+        toast.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: "Please fill all the required fields",
+            life: 5000
+        })
     }
 }
-const successRegister = (res: any) => {
-    const token = res.data.token
-    const tokenType = res.data.token_type || 'Bearer'
-    const user = res.data.user
-    useCookie('token').value = token
-    useCookie('token_type').value = tokenType
-    useCookie('avatar').value = user.avatar
-    useCookie('birthdate').value = user.birthdate
-    useCookie('created_at').value = user.created_at
-    useCookie('email').value = user.email
-    useCookie('email_verified_at').value = user.email_verified_at
-    useCookie('id').value = user.id
-    useCookie('name').value = user.name
-    useCookie('phone').value = user.phone
-    useCookie('updated_at').value = user.updated_at
-    return navigateTo('/home')
-}
-
-// const handleOnSuccess = async (response: ImplicitFlowSuccessResponse) => {
-// const res: { data: { token: string, token_type?: string, user?: any } }
-//     = await $apiFetch('register', {
-//         method: 'POST',
-//         code: response.code,
-//     })
-// successRegister(res)
-
-// };
-
-// const handleOnError = (errorResponse: ImplicitFlowErrorResponse) => {
-//   console.log("Error: ", errorResponse);
-// };
-
-// const { isReady, login } = useCodeClient({
-//   onSuccess: handleOnSuccess,
-//   onError: handleOnError,
-// });
 </script>
 
 <template>
@@ -160,6 +131,11 @@ const successRegister = (res: any) => {
                             variant="simple">{{
                                 $form.password_confirmation.error?.message }}</Message>
                     </div>
+                    <div class="justify-center flex items-center gap-2 h-[20px] font-[Montserrat-Medium]">
+                        <Checkbox 
+                        inputId="rememberMe" name="rememberMe" />
+                        <label for="rememberMe" class="text-[#05162C] text-[16px] h-[20px]"> Remember me </label>
+                    </div>
                     <div class="flex justify-center w-full mt-10">
                         <Button type="submit"
                             class="w-full text-[16px] h-[48px] text-[#FFFFFF] rounded-[7px] font-[Montserrat-Medium]">
@@ -176,15 +152,7 @@ const successRegister = (res: any) => {
                     class="justify-center flex items-center h-[60px] w-[60px] rounded-[16px] bg-white p-1 border-[#BBC1C7] border-[1px]">
                     <img :src="fbLogo" class="h-5 w-5" alt="fb-icon" />
                 </Button>
-                <Button
-                    class="justify-center flex items-center h-[60px] w-[60px] rounded-[16px] bg-white p-1 border-[#BBC1C7] border-[1px]">
-                    <img :src="googleLogo" class="h-5 w-5" alt="google-icon" />
-                </Button>
-                <!-- <Button
-                    :disabled="!isReady" @click="() => login()"
-                    class="justify-center flex items-center h-[60px] w-[60px] rounded-[16px] bg-white p-1 border-[#BBC1C7] border-[1px]">
-                    <img :src="googleLogo" class="h-5 w-5" alt="google-icon" />
-                </Button> -->
+                <GoogleSignIn classStyle="justify-center flex items-center h-[60px] w-[60px] rounded-[16px] bg-white p-1 border-[#BBC1C7] border-[1px]" />
                 <Button
                     class="justify-center flex items-center h-[60px] w-[60px] rounded-[16px] bg-white p-1 border-[#BBC1C7] border-[1px]">
                     <img :src="appleLogo" class="h-5 w-5" alt="apple-icon" />

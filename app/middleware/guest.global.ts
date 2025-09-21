@@ -1,10 +1,16 @@
 export default defineNuxtRouteMiddleware((to) => {
   const token = useCookie('token').value
+  const sessionToken = process.client ? sessionStorage.getItem('token') : null
 
-  if (token && (to.path === '/sign-in' || to.path === '/sign-up' || to.path === '/')) {
+  // User not logged in → redirect to /sign-in
+  if (!token && !sessionToken && (to.path !== '/sign-in' && to.path !== '/sign-up' && to.path !== '/welcome')) {
+    return navigateTo('/welcome')
+  }
+
+  // User logged in → prevent visiting auth pages
+  if ((token || sessionToken) && (to.path === '/sign-in' || to.path === '/sign-up' || to.path === '/welcome')) {
     return navigateTo('/home')
   }
-  if (!token && to.path.startsWith('/home')) {
-    return navigateTo('/sign-in')
-  }
+
+  // Otherwise → allow navigation
 })

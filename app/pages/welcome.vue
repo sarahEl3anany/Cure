@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import loginImg from '@/assets/images/sign-in/login.svg'
 import fbLogo from '@/assets/images/sign-in/fbLogo.svg'
-import googleLogo from '@/assets/images/sign-in/googleLogo.svg'
 import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
+import GoogleSignIn from '@/components/sign-in/google-sign-in.vue'
 const goToLogin = () => {
     navigateTo('/sign-in')
 }
@@ -23,12 +23,9 @@ const goToLogin = () => {
           </Button>
         </div>
         <div class="flex justify-center pt-2">
-          <Button class="text-[16px] h-[48px] w-[396px] text-[#6D7379] bg-[#FFFFFF] border-[#BBC1C7] rounded-[10px] font-[Montserrat-Medium] max-w-sm pr-[16px] pl-[12px]">
-            <span>
-              <img :src="googleLogo" alt="google-icon" />
-            </span>
-            Sign in with Google
-          </Button>
+          <GoogleSignIn classStyle="text-[16px] h-[48px] w-[396px] text-[#6D7379] bg-[#FFFFFF] border-[#BBC1C7] rounded-[10px] font-[Montserrat-Medium] max-w-sm pr-[16px] pl-[12px]" 
+          lableName="Sign in with Google"
+          />
         </div>
         <div class="flex justify-center pt-2">
           <Button class="text-[16px] h-[48px] w-[396px] text-[#6D7379] bg-[#FFFFFF] border-[#BBC1C7] rounded-[10px] font-[Montserrat-Medium] max-w-sm pr-[16px] pl-[12px]">
