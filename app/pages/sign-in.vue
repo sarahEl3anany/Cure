@@ -67,9 +67,9 @@ async function signIn({ valid, values }: any) {
                 class="w-[60px] h-[60px] mt-[75px] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl" />
             <h3 class="mt-2 font-[Georgia] text-secondary-500 text-[32px]">Login to your Account</h3>
             <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="signIn">
-                <div class="space-y-7 mt-7 sm:w-[350px] md:w-[396px] lg:w-[396px] mx-[16px]">
-                    <div class="h-[48px] w-full">
-                        <div class="flex items-center w-full rounded-[10px] bg-neutral-50 px-[16px] gap-[8px]">
+                <div class="space-y-7 mt-7 sm:w-[350px] md:w-[396px] lg:w-[396px] mx-4">
+                    <div class="h-12 w-full">
+                        <div class="flex items-center w-full rounded-[10px] bg-neutral-50 px-4 gap-2">
                             <i class="mdi mdi-email text-neutral-500 font-[Montserrat-Medium] text-lg"></i>
                             <InputText placeholder="Email" name="email"
                                 class="w-full font-[Montserrat-Medium] border-none text-neutral-500 bg-neutral-50 focus:ring-0 focus:outline-none" />
@@ -77,8 +77,8 @@ async function signIn({ valid, values }: any) {
                         <Message v-if="$form.email?.invalid" severity="error" size="small" variant="simple">{{
                             $form.email.error?.message }}</Message>
                     </div>
-                    <div class="h-[48px] w-full">
-                        <div class="flex items-center w-full rounded-[10px] bg-neutral-50 px-[16px] gap-[8px]">
+                    <div class="h-12 w-full">
+                        <div class="flex items-center w-full rounded-[10px] bg-neutral-50 px-4 gap-2">
                             <img :src="KeySquare" alt="Password" class="w-5 h-5 text-neutral-500" />
                             <Password placeholder="Password" name="password"
                                 inputClass="!border-none !shadow-none !bg-neutral-50 focus:!ring-0 focus:!outline-none text-neutral-500 font-[Montserrat-Medium] w-full"
@@ -88,40 +88,40 @@ async function signIn({ valid, values }: any) {
                             $form.password.error?.message }}</Message>
                     </div>
                     <div class="flex justify-end">
-                      <span class="text-red-500 font-[Montserrat] text-[12px]">
+                      <span class="text-red-500 font-[Montserrat] text-xs">
                           <NuxtLink to="/forget-password"> Forget password?</NuxtLink>
                       </span>
                   </div>
                     <div class="justify-center flex items-center gap-2 h-[20px] font-[Montserrat-Medium]">
                         <Checkbox 
                         inputId="rememberMe" name="rememberMe" value="1" />
-                        <label for="rememberMe" class="text-secondary-500 text-[16px] h-[20px]"> Remember me </label>
+                        <label for="rememberMe" class="text-secondary-500 text-base h-[20px]"> Remember me </label>
                     </div>
                     <div class="flex justify-center w-full mt-10">
                         <Button type="submit"
-                            class="w-full text-[16px] h-[48px] text-white rounded-[7px] font-[Montserrat-Medium]">
+                            class="w-full text-base h-12 text-white rounded-[7px] font-[Montserrat-Medium]">
                             Sign up
                         </Button>
                     </div>
                 </div>
             </Form>
             <Divider align="center" class="w-[396px] text-neutral-500">
-                <span class="text-neutral-500 text-[16px] font-[Montserrat-Medium]">or</span>
+                <span class="text-neutral-500 text-base font-[Montserrat-Medium]">or</span>
             </Divider>
-            <div class="flex justify-between w-[320px] mt-3 gap-[8px]">
+            <div class="flex justify-between w-[320px] mt-3 gap-2">
                 <Button
-                    class="justify-center flex items-center h-[60px] w-[60px] rounded-[16px] bg-white p-1 border-[#BBC1C7] border-[1px]">
+                    class="justify-center flex items-center h-[60px] w-[60px] rounded-[16px] bg-white p-1 border-neutral-300 border-[1px]">
                     <img :src="fbLogo" class="h-5 w-5" alt="fb-icon" />
                 </Button>
-                <GoogleSignIn classStyle="justify-center flex items-center h-[60px] w-[60px] rounded-[16px] bg-white p-1 border-[#BBC1C7] border-[1px]" />
+                <GoogleSignIn classStyle="justify-center flex items-center h-[60px] w-[60px] rounded-[16px] bg-white p-1 border-neutral-300 border-[1px]" />
                 <Button
-                    class="justify-center flex items-center h-[60px] w-[60px] rounded-[16px] bg-white p-1 border-[#BBC1C7] border-[1px]">
+                    class="justify-center flex items-center h-[60px] w-[60px] rounded-[16px] bg-white p-1 border-neutral-300 border-[1px]">
                     <img :src="appleLogo" class="h-5 w-5" alt="apple-icon" />
                 </Button>
             </div>
             <div class="flex justify-center mt-4">
-                <span class="text-neutral-500 font-[Montserrat-Medium] text-[12px]">Don’t have an account? </span>
-                <span class="ml-1 text-[#145DB8] font-[Montserrat-Medium] text-[12px]">
+                <span class="text-neutral-500 font-[Montserrat-Medium] text-xs">Don’t have an account? </span>
+                <span class="ml-1 text-primary-500 font-[Montserrat-Medium] text-xs">
                     <NuxtLink to="/sign-up"> Sign up</NuxtLink>
                 </span>
             </div>

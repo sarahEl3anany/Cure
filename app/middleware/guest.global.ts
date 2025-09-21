@@ -4,9 +4,12 @@ export default defineNuxtRouteMiddleware((to) => {
   const outRoutes = [
     '/sign-in',
     '/sign-up',
+    '/',
     '/welcome',
+    '/welcome1',
     '/forget-password',
-    '/code-verification'
+    '/code-verification',
+    '/set-new-password'
   ]
   if (!token && !sessionToken && !outRoutes.includes(to.path)) {
     return navigateTo('/welcome')

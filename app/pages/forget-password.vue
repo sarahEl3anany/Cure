@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import arrowBack from '@/assets/images/sign-in/left-arrow.svg'
 import { zodResolver } from '@primevue/forms/resolvers/zod';
 import { z } from 'zod';
 
@@ -56,11 +57,18 @@ async function forgetPassword({ valid, values }: any) {
     <div>
         <Toast />
         <div class="flex flex-col items-center text-center w-full">
-            <h3 class="mt-2 font-[Georgia] text-secondary-500 text-[32px]">Forget your password</h3>
+            <div class="flex items-center w-full mt-2">
+                <NuxtLink to="/sign-in" class="flex-none">
+                    <img :src="arrowBack" class="w-[60px] h-[60px]" alt="arrow" />
+                </NuxtLink>
+                <div class="flex-1 text-center">
+                    <h3 class="mt-2 font-[Georgia] text-secondary-500 text-[32px]">Forget your password</h3>
+                </div>
+            </div>
             <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="forgetPassword">
-                <div class="space-y-7 mt-7 sm:w-[350px] md:w-[396px] lg:w-[396px] mx-[16px]">
-                    <div class="h-[48px] w-full">
-                        <div class="flex items-center w-full rounded-[10px] bg-neutral-50 px-[16px] gap-[8px]">
+                <div class="space-y-7 mt-7 sm:w-[350px] md:w-[396px] lg:w-[396px] mx-4">
+                    <div class="h-12 w-full">
+                        <div class="flex items-center w-full rounded-[10px] bg-neutral-50 px-4 gap-2">
                             <i class="mdi mdi-email text-neutral-500 font-[Montserrat-Medium] text-lg"></i>
                             <InputText placeholder="Email" name="email"
                                 class="w-full font-[Montserrat-Medium] border-none text-neutral-500 bg-neutral-50 focus:ring-0 focus:outline-none" />
@@ -70,7 +78,7 @@ async function forgetPassword({ valid, values }: any) {
                     </div>
                     <div class="flex justify-center w-full mt-10">
                         <Button type="submit"
-                            class="w-full text-[16px] h-[48px] text-white rounded-[7px] font-[Montserrat-Medium]">
+                            class="w-full text-base h-12 text-white rounded-[7px] font-[Montserrat-Medium]">
                             Reset Password
                         </Button>
                     </div>
