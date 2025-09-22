@@ -9,8 +9,8 @@ const goNext = () => {
 
 <template>
   <div>
-    <div class="flex flex-col items-center min-h-screen w-full">
-      <div class="w-full flex justify-end">
+    <div>
+      <div class="absolute top-4 right-4 pr-1 justify-end">
         <NuxtLink to="/welcome" class="text-neutral-700 font-[Montserrat-Medium] pr-2">
           Skip
         </NuxtLink>

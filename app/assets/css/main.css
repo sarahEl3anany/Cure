@@ -5,6 +5,12 @@
 @tailwind utilities;
 @layer base {
   :root {
+      /* font family */
+    --p-font-Montserrat: 'Montserrat' !important;
+    --p-font-Montserrat-medium: 'Montserrat-Medium' !important;
+    --p-font-Montserrat-bold: 'Montserrat-Bold' !important;
+    --p-font-georgia: 'Georgia' !important;
+      /* theme colors */
     --p-primary-50: #E8EFF8 !important;
     --p-primary-100: #B6CDE9 !important;
     --p-primary-200: #93B4DE !important;
@@ -89,5 +95,16 @@
     --p-green-700: #367C39 !important;
     --p-green-800: #2A602C !important;
     --p-green-900: #204A22 !important;
+  }
+  .dark {
+    --p-primary-50: #08274D !important;
+    --p-primary-100: #0B3365 !important;
+    --p-primary-200: #0E4283 !important;
+    --p-primary-300: #1255A7 !important;
+    --p-primary-500: #145DB8 !important;
+    --p-primary-600: #437DC6 !important;
+    --p-primary-700: #93B4DE !important;
+    --p-primary-800: #B6CDE9 !important;
+    --p-primary-900: #E8EFF8 !important;
   }
 }

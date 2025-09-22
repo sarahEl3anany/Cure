@@ -1,9 +1,9 @@
 <template>
-  <div class="w-full min-h-screen relative">
+  <div class="w-screen h-screen relative">
     <div>
-        <SplashScreen v-show="splashScreenStore.isLoading" />
+        <SplashScreen v-show="splashScreenStore.isLoading"/>
     </div>
-    <div class="z-10">
+    <div class="z-10 w-full h-full">
       <NuxtPage />
     </div>
   </div>

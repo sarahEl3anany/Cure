@@ -95,6 +95,12 @@ export default {
           900: "var(--p-green-900)",
         },
       },
+      fontFamily: {
+        georgia: "var(--p-font-georgia)",
+        montserrat: "var(--p-font-Montserrat)",
+        montserratMedium: "var(--p-font-Montserrat-medium)",
+        montserratBold: "var(--p-font-Montserrat-bold)",
+      },
     },
   },
   plugins: [],

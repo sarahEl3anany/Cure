@@ -6,23 +6,23 @@ const emit = defineEmits(['next'])
 </script>
 
 <template>
-    <div>
-        <div class="flex flex-col items-center text-center w-full">
-            <img :src="page1" alt="welcome" class="w-[306px] h-[310px] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl" />
-            <h3 class="font-[Georgia] text-secondary-500 text-[24px]">Book Your Appointment Easily</h3>
-            <p class="text-neutral-700 font-[Montserrat-Medium] text-base leading-relaxed max-w-xl">
-                Choose your preferred doctor, pick a <br />suitable time, 
-                and confirm your visit<br /> in just a few taps. No calls, 
-                no waiting<br />—just simple and fast booking.
-            </p>
-            <img :src="page1Load" alt="load" class="w-6 h-6" />
-            <div class="mt-6 flex justify-center">
-                <Button 
-                @click="emit('next')" 
-                class="text-base h-12 w-[300px] text-white rounded-[7px] font-[Montserrat-Medium] max-w-sm">
-                    Next
-                </Button>
-            </div>
+    <div class="flex flex-col items-center justify-center w-screen h-screen px-4 text-center mt-1/5">
+        <img :src="page1" alt="welcome" class="w-4/5 h-1/3 mx-1/5" />
+        <div class="gap-4 xs:w-3/4 lg:w-1/2">
+            <h3 class="font-georgia text-secondary-500 lg:text-2xl xs:text-sm">Book Your Appointment Easily</h3>
+            <p class="text-neutral-700 font-montserratMedium lg:text-base xs:text-2xs leading-relaxed mt-5">
+                Choose your preferred doctor, pick a suitable time, 
+                and confirm your visit in just a few taps. No calls, 
+                no waiting — just simple and fast booking.
+            </p> 
+        </div>
+        <img :src="page1Load" alt="load" class="w-6 h-6" />
+        <div class="mt-6 flex justify-center">
+            <Button 
+            @click="emit('next')" 
+            class="text-base h-12 w-[300px] text-white rounded-[7px] font-[Montserrat-Medium] max-w-sm">
+                Next
+            </Button>
         </div>
     </div>
 </template>

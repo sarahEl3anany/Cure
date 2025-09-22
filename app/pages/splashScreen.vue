@@ -1,4 +1,3 @@
-<script setup lang="ts"></script>
 <template>
   <div> 
     <div class="splash fixed w-full h-full grid place-items-center bg-primary-500 z-[9999]">
