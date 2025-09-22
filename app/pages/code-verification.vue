@@ -162,12 +162,12 @@ async function verifyOTP({ valid, values }: any) {
                     || $form.num5?.invalid
                     || $form.num6?.invalid
                     " severity="error" size="small" variant="simple">{{
-                        $form.num1.error?.message
-                        || $form.num2.error?.message
-                        || $form.num3.error?.message                        
-                        || $form.num4.error?.message
-                        || $form.num5.error?.message
-                        || $form.num6.error?.message    
+                        $form.num1?.error?.message
+                        || $form.num2?.error?.message
+                        || $form.num3?.error?.message                        
+                        || $form.num4?.error?.message
+                        || $form.num5?.error?.message
+                        || $form.num6?.error?.message    
                          }}</Message>
                 </div>
                 <div class="justify-center">
