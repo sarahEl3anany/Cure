@@ -10,7 +10,7 @@ const goNext = () => {
 <template>
   <div>
     <div>
-      <div class="absolute top-4 right-4 pr-1 justify-end">
+      <div class="absolute top-4 right-4 justify-end">
         <NuxtLink to="/welcome" class="text-neutral-700 font-[Montserrat-Medium] pr-2">
           Skip
         </NuxtLink>
