@@ -9,26 +9,25 @@ const goToLogin = () => {
 </script>
 
 <template>
-  <div>
-    <div class="flex flex-col items-center text-center w-full">
-      <img :src="loginImg" alt="Login" class="w-[306px] h-[310px] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl" />
-      <h3 class="font-[Georgia] text-secondary-500 text-2xl">Let’s You In</h3>
-      <div class="mx-10">
-        <div class="flex justify-center pt-5">
-          <Button class="text-base h-12 w-[396px] text-neutral-700 bg-white border-neutral-300 rounded-[10px] font-[Montserrat-Medium] max-w-sm pr-[16px] pl-3">
-            <span>
-              <img :src="fbLogo" alt="fb-icon" />
-            </span>
-            Sign in with Facebook
-          </Button>
-        </div>
-        <div class="flex justify-center pt-2">
-          <GoogleSignIn classStyle="text-base h-12 w-[396px] text-neutral-700 bg-white border-neutral-300 rounded-[10px] font-[Montserrat-Medium] max-w-sm pr-[16px] pl-3" 
+  <div class="flex flex-col items-center justify-center w-screen h-screen px-4 text-center mt-1/5">
+      <img :src="loginImg" alt="Login" class="w-4/5 h-1/3 mx-1/5" />
+      <div class="gap-4 xs:w-3/4 lg:w-1/2">
+        <h3 class="font-georgia text-secondary-500 lg:text-2xl xs:text-sm">Let’s You In</h3>
+      </div>
+      <div class="mx-10 mt-5 font-montserratMedium bg-white">
+        <Button class="text-base h-12 w-96 text-neutral-700  border-neutral-300 rounded-[10px] max-w-sm pr-[16px] pl-3">
+          <span>
+            <img :src="fbLogo" alt="fb-icon" />
+          </span>
+          Sign in with Facebook
+        </Button>
+        <div class="pt-2">
+          <GoogleSignIn classStyle="text-base h-12 w-[396px] text-neutral-700 bg-white border-neutral-300 rounded-[10px] max-w-sm pr-[16px] pl-3" 
           lableName="Sign in with Google"
           />
         </div>
-        <div class="flex justify-center pt-2">
-          <Button class="text-base h-12 w-[396px] text-neutral-700 bg-white border-neutral-300 rounded-[10px] font-[Montserrat-Medium] max-w-sm pr-[16px] pl-3">
+        <div class="pt-2">
+          <Button class="text-base h-12 w-[396px] text-neutral-700 bg-white border-neutral-300 rounded-[10px] max-w-sm pr-[16px] pl-3">
             <span>
               <img :src="appleLogo" alt="apple-icon" />
             </span>
@@ -50,6 +49,5 @@ const goToLogin = () => {
           </span>
         </div>
       </div>
-    </div>
   </div>
 </template>
