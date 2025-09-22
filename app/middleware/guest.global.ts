@@ -6,7 +6,6 @@ export default defineNuxtRouteMiddleware((to) => {
     '/sign-up',
     '/',
     '/welcome',
-    '/welcome1',
     '/forget-password',
     '/code-verification',
     '/set-new-password'
