@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-screen relative">
+  <div class="w-full h-screen">
     <div>
         <SplashScreen v-show="splashScreenStore.isLoading"/>
     </div>

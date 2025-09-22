@@ -9,18 +9,16 @@ const goNext = () => {
 
 <template>
   <div>
-    <div>
-      <div class="absolute top-4 right-4 justify-end">
-        <NuxtLink to="/welcome" class="text-neutral-700 font-[Montserrat-Medium] pr-2">
-          Skip
-        </NuxtLink>
-      </div>
-      <div v-if="currentStep == 1">
-        <Welcome1 @next="goNext" />  
-      </div>
-      <div v-if="currentStep == 2">
-        <Welcome2 @next="goNext" />  
-      </div>
+    <div class="absolute top-4 right-4 justify-end">
+      <NuxtLink to="/welcome" class="text-neutral-700 font-[Montserrat-Medium] pr-2">
+        Skip
+      </NuxtLink>
+    </div>
+    <div v-if="currentStep == 1">
+      <Welcome1 @next="goNext" />  
+    </div>
+    <div v-if="currentStep == 2">
+      <Welcome2 @next="goNext" />  
     </div>
   </div>
 </template>
