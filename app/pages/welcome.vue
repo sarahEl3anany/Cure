@@ -40,17 +40,17 @@ const goToLogin = () => {
           </span>
         </Button>
       </div>
-      <div class="mx-8">
-      <Divider align="center" class="w-96 text-neutral-500">
-        <span class="text-base font-montserratMedium text-neutral-500">or</span>
-      </Divider>
+      <div class="mx-8 xs:w-64 sm:w-64 md:w-64 lg:w-96">
+        <Divider align="center" class="w-full text-neutral-500">
+          <span class="text-base font-montserratMedium text-neutral-500">or</span>
+        </Divider>
       </div>
-      <Button @click="goToLogin" class="text-base h-12 w-[396px] text-white rounded-[7px] font-[Montserrat-Medium] max-w-sm">
+      <Button @click="goToLogin" class="text-base h-12 mx-8 xs:w-64 sm:w-64 md:w-64 lg:w-96 text-white rounded-lg font-montserratMedium">
         Sign in with your Phone Number
       </Button>
-      <div class=" mt-3">
-        <span class="text-neutral-500 font-[Montserrat-Medium] text-xs">Don’t have an account? </span>
-        <span class="ml-1 text-primary-500 font-[Montserrat-Medium] text-xs">
+      <div class="mx-8 xs:w-64 sm:w-64 md:w-64 lg:w-96">
+        <span class="text-neutral-500 font-montserratMedium text-xs">Don’t have an account? </span>
+        <span class="ml-1 text-primary-500 font-montserratMedium text-xs">
           <NuxtLink to="/sign-up"> Sign up</NuxtLink>
         </span>
       </div>
