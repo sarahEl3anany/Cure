@@ -64,7 +64,7 @@ async function signIn({ valid, values }: any) {
         <Toast />
         <img :src="BsHeartPulse" alt="HeartPulse"
             class="w-16 h-16 mt-20" />
-        <h3 class="mt-8 font-georgia text-secondary-500 lg:text-2xl xs:text-sm dark:text-secondary-500">Login to your Account</h3>
+        <h3 class="mt-8 font-georgia text-secondary-500 lg:text-2xl xs:text-sm dark:text-secondary-50">Login to your Account</h3>
         <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="signIn">
             <div class="space-y-7 mt-7 sm:w-80 md:w-96 lg:w-96 mx-4">
                 <div class="h-12 w-full">
@@ -94,7 +94,7 @@ async function signIn({ valid, values }: any) {
                 <div class="justify-center flex items-center gap-2 h-5 font-montserratMedium">
                     <Checkbox 
                     inputId="rememberMe" name="rememberMe" value="1" />
-                    <label for="rememberMe" class="text-secondary-500 text-base h-5"> Remember me </label>
+                    <label for="rememberMe" class="text-secondary-500 dark:text-primary-50 text-base h-5"> Remember me </label>
                 </div>
                 <div class="flex justify-center w-full mt-10">
                     <Button type="submit"

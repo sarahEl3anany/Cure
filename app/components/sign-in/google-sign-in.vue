@@ -13,26 +13,10 @@ const toast = useToast();
 const { $apiFetch, $successRegister } = useNuxtApp()
 
 const handleOnSuccess = async (response: ImplicitFlowSuccessResponse) => {
-const res: {
-  data: {
-    token: string
-    token_type?: string
-    user: {
-      avatar?: string
-      birthdate?: string
-      created_at?: string
-      email: string
-      email_verified_at?: string
-      id: number
-      name: string
-      phone?: string
-      updated_at?: string
-    }
-  }
-} = await $apiFetch('register', {
+const res: any = await $apiFetch('register', {
   method: 'POST',
   body: { code: response.code }
-})
+}) as any
 
 $successRegister(res)
 

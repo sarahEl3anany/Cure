@@ -79,14 +79,11 @@ async function signUp({ valid, values }: any) {
     <Toast />
     <img :src="BsHeartPulse" alt="HeartPulse" class="w-16 h-16 mt-10" />
 
-    <h3 class="mt-8 font-georgia text-secondary-500 text-2xl">
+    <h3 class="mt-8 font-georgia text-secondary-500 dark:text-primary-50 text-2xl">
       Create New Account
     </h3>
-
-    <!-- Form -->
     <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="signUp">
       <div class="w-full max-w-sm space-y-5 mt-7">
-        <!-- Name -->
         <div>
           <div class="flex items-center rounded-lg bg-neutral-50 px-4 gap-2">
             <i class="mdi mdi-account text-neutral-500 font-montserratMedium text-lg"></i>
@@ -97,8 +94,6 @@ async function signUp({ valid, values }: any) {
             {{ $form.name.error?.message }}
           </Message>
         </div>
-
-        <!-- Email -->
         <div>
           <div class="flex items-center rounded-xl bg-neutral-50 px-4 gap-2">
             <i class="mdi mdi-email text-neutral-500 font-montserratMedium text-lg"></i>
@@ -109,8 +104,6 @@ async function signUp({ valid, values }: any) {
             {{ $form.email.error?.message }}
           </Message>
         </div>
-
-        <!-- Phone -->
         <div>
           <div class="flex items-center rounded-lg bg-neutral-50 px-4 gap-2">
             <i class="mdi mdi-phone text-neutral-500 font-montserratMedium text-lg"></i>
@@ -121,8 +114,6 @@ async function signUp({ valid, values }: any) {
             {{ $form.phone.error?.message }}
           </Message>
         </div>
-
-        <!-- Password -->
         <div>
           <div class="flex items-center rounded-lg bg-neutral-50 px-4 gap-2">
             <img :src="KeySquare" alt="Password" class="w-5 h-5" />
@@ -133,8 +124,6 @@ async function signUp({ valid, values }: any) {
             {{ $form.password.error?.message }}
           </Message>
         </div>
-
-        <!-- Confirm Password -->
         <div>
           <div class="flex items-center rounded-lg bg-neutral-50 px-4 gap-2">
             <img :src="KeySquare" alt="Confirm Password" class="w-5 h-5" />
@@ -145,14 +134,10 @@ async function signUp({ valid, values }: any) {
             {{ $form.password_confirmation.error?.message }}
           </Message>
         </div>
-
-        <!-- Remember Me -->
         <div class="flex items-center justify-center gap-2 font-montserratMedium">
           <Checkbox inputId="rememberMe" name="rememberMe" value="1" />
-          <label for="rememberMe" class="text-secondary-500 text-base">Remember me</label>
+          <label for="rememberMe" class="text-secondary-500 dark:text-primary-50 text-base">Remember me</label>
         </div>
-
-        <!-- Submit -->
         <div class="mt-10">
           <Button type="submit"
             class="w-full text-base h-12 text-white rounded-lg font-montserratMedium">
@@ -161,15 +146,11 @@ async function signUp({ valid, values }: any) {
         </div>
       </div>
     </Form>
-
-    <!-- Divider -->
     <div class="w-full max-w-sm mt-6">
       <Divider>
         <span class="text-neutral-500 text-base font-montserratMedium">or</span>
       </Divider>
     </div>
-
-    <!-- Social buttons -->
     <div class="flex justify-between w-full max-w-sm">
       <Button class="h-14 w-14 rounded-2xl bg-white border-neutral-300 border">
         <img :src="fbLogo" class="h-5 w-5" alt="fb-icon" />
@@ -179,8 +160,6 @@ async function signUp({ valid, values }: any) {
         <img :src="appleLogo" class="h-5 w-5" alt="apple-icon" />
       </Button>
     </div>
-
-    <!-- Already have account -->
     <div class="mt-2">
       <span class="text-neutral-500 font-montserratMedium text-xs">Already have an account!</span>
       <NuxtLink to="/sign-in" class="ml-1 text-primary-500 font-montserratMedium text-xs">Sign in</NuxtLink>

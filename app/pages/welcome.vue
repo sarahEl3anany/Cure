@@ -12,7 +12,7 @@ const goToLogin = () => {
   <div class="flex flex-col items-center justify-center w-screen h-screen px-4 text-center mt-1/5">
     <img :src="loginImg" alt="Login" class="w-4/5 h-1/3 mx-1/5" />
     <div class="gap-4 mt-3 xs:w-3/4 lg:w-1/2">
-      <h3 class="font-georgia text-secondary-500 lg:text-2xl xs:text-sm">Let’s You In</h3>
+      <h3 class="font-georgia text-secondary-500 dark:text-primary-50 lg:text-2xl xs:text-sm">Let’s You In</h3>
     </div>
     <div class="space-y-5 mt-12">
       <div class="mx-8 xs:w-80 sm:w-80 md:w-80 lg:w-96">

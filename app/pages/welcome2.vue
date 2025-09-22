@@ -10,7 +10,7 @@ const goToLogin = () => {
     <div class="flex flex-col items-center justify-center w-screen h-screen px-4 text-center mt-1/5">
         <img :src="page2" alt="welcome" class="w-4/5 h-1/3 mx-1/5" />
         <div class="gap-4 xs:w-3/4 lg:w-1/2">
-            <h3 class="font-georgia text-secondary-500 lg:text-2xl xs:text-sm dark:text-secondary-500">Find Doctors Around You</h3>
+            <h3 class="font-georgia text-secondary-500 lg:text-2xl xs:text-sm dark:text-secondary-50">Find Doctors Around You</h3>
             <p class="text-neutral-700 font-montserratMedium lg:text-base xs:text-2xs leading-relaxed mt-5">
                 Quickly discover trusted doctors near your area. Whether you need
                 a general checkup or a specialist, we 

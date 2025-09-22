@@ -71,48 +71,44 @@ async function updatePassword({ valid, values }: any) {
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col items-center justify-center px-4 text-center">
     <Toast />
-    <div class="flex flex-col items-center text-center w-full">
-      <div class="flex items-center w-full mt-4">
+    <div class="w-full mt-5 justify-center">
         <NuxtLink to="/code-verification" class="flex-none">
-          <img :src="arrowBack" class="w-[60px] h-[60px]" alt="arrow" />
+          <img :src="arrowBack" class="w-16 h-16" alt="arrow" />
         </NuxtLink>
         <div class="flex-1 text-center">
-          <h3 class="font-[Georgia] text-secondary-500 text-xl ">Set new password</h3>
+          <h3 class="font-georgia text-secondary-500 text-xl dark:text-primary-50">Set new password</h3>
         </div>
-      </div class="justify-center w-full">
-      <div class="font-[Georgia] mt-10 text-base">
+      </div>
+      <div class="font-georgia mt-10 text-base">
         Create a new password, ensure it different form your previous ones for security.
       </div>
       <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="updatePassword">
-        <div class="flex mt-7 sm:w-[350px] md:w-[396px] lg:w-[396px] mx-4 gap-2">
-          <div class="space-y-12 mt-7 sm:w-[350px] md:w-[396px] lg:w-[396px] mx-4">
-            <div class="h-12 w-full">
-              <div class="font-[Georgia] text-left text-base">New password</div>
-              <div class="flex items-center mt-3 w-full rounded-[10px] bg-neutral-50 px-4 gap-2">
-                <img :src="KeySquare" alt="Password" class="w-5 h-5 text-neutral-500" />
-                <Password placeholder="Password" name="password"
-                  inputClass="!border-none !shadow-none !bg-neutral-50 focus:!ring-0 focus:!outline-none text-neutral-500 font-[Montserrat-Medium] w-full"
-                  class="w-full" />
-              </div>
-              <Message v-if="$form.password?.invalid" severity="error" size="small" variant="simple">{{
-                $form.password.error?.message }}</Message>
+        <div class="space-y-12 mt-8">
+          <div class="h-12">
+            <div class="font-georgia text-left text-base">New password</div>
+            <div class="flex items-center rounded-lg bg-neutral-50 gap-2">
+              <img :src="KeySquare" alt="Password" class="w-5 h-5 text-neutral-500" />
+              <Password placeholder="Password" name="password"
+                inputClass="!border-none !shadow-none !bg-neutral-50 focus:!ring-0 focus:!outline-none text-neutral-500 font-[Montserrat-Medium] w-full"
+                  />
             </div>
-            <div class="h-12 w-full">
-              <div class="font-[Georgia] text-left text-base">Confirm password</div>
-              <div class="flex items-center w-full mt-3 rounded-[10px] bg-neutral-50 px-4 gap-2">
-                <img :src="KeySquare" alt="Password" class="w-5 h-5 text-neutral-500" />
-                <Password placeholder="Confirm Password" name="password_confirmation"
-                  inputClass="!border-none !shadow-none !bg-neutral-50 focus:!ring-0 focus:!outline-none text-neutral-500 font-[Montserrat-Medium] w-full"
-                  class="w-full" />
-              </div>
-              <Message v-if="$form.password_confirmation?.invalid" severity="error" size="small" variant="simple">{{
-                $form.password_confirmation.error?.message }}</Message>
-            </div>
+            <Message v-if="$form.password?.invalid" severity="error" size="small" variant="simple">{{
+              $form.password.error?.message }}</Message>
           </div>
-        </div>
-        <div class="justify-center w-full">
+          <div class="h-12">
+            <div class="font-georgia text-left text-base">Confirm password</div>
+            <div class="flex items-center mt-3 rounded-lg bg-neutral-50 gap-2">
+              <img :src="KeySquare" alt="Password" class="w-5 h-5 text-neutral-500" />
+              <Password placeholder="Confirm Password" name="password_confirmation"
+                inputClass="!border-none !shadow-none !bg-neutral-50 focus:!ring-0 focus:!outline-none text-neutral-500 font-[Montserrat-Medium] w-full"
+                class="w-full" />
+            </div>
+            <Message v-if="$form.password_confirmation?.invalid" severity="error" size="small" variant="simple">{{
+              $form.password_confirmation.error?.message }}</Message>
+          </div>
+        <div>
           <Message v-if="$form.num1?.invalid" severity="error" size="small" variant="simple">{{
             $form.num1.error?.message }}</Message>
 
@@ -127,12 +123,10 @@ async function updatePassword({ valid, values }: any) {
           <Message v-if="$form.num6?.invalid" severity="error" size="small" variant="simple">{{
             $form.num6.error?.message }}</Message>
         </div>
-        <div class="justify-center w-full mt-10">
-          <Button type="submit" class="w-[396px] text-base h-12 text-white rounded-[7px] font-[Montserrat-Medium]">
-            Verify
-          </Button>
+        <Button type="submit" class="w-full text-base h-12 text-white rounded-lg font-montserratMedium">
+          Verify
+        </Button>
         </div>
       </Form>
-    </div>
   </div>
 </template>

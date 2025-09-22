@@ -54,36 +54,34 @@ async function forgetPassword({ valid, values }: any) {
 </script>
 
 <template>
-    <div>
+  <div class="flex flex-col items-center justify-center px-4 text-center">
         <Toast />
-        <div class="flex flex-col items-center text-center w-full">
-            <div class="flex items-center w-full mt-2">
-                <NuxtLink to="/sign-in" class="flex-none">
-                    <img :src="arrowBack" class="w-[60px] h-[60px]" alt="arrow" />
-                </NuxtLink>
-                <div class="flex-1 text-center">
-                    <h3 class="mt-2 font-[Georgia] text-secondary-500 text-[32px]">Forget your password</h3>
+        <div class="w-full mt-5 justify-center">
+            <NuxtLink to="/sign-in" >
+                <img :src="arrowBack" class="w-16 h-16" alt="arrow" />
+            </NuxtLink>
+            <div class="text-center">
+                <h3 class="font-georgia text-secondary-500 dark:text-primary-50 text-3xl">Forget your password</h3>
+            </div>
+        </div>
+        <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="forgetPassword">
+            <div class="space-y-8 mt-8">
+                <div class="h-12">
+                    <div class="rounded-lg bg-neutral-50 px-4 gap-2">
+                        <i class="mdi mdi-email text-neutral-500 font-montserratMedium text-lg"></i>
+                        <InputText placeholder="Email" name="email"
+                            class="font-montserratMedium border-none text-neutral-500 bg-neutral-50 focus:ring-0 focus:outline-none" />
+                    </div>
+                    <Message v-if="$form.email?.invalid" severity="error" size="small" variant="simple">{{
+                        $form.email.error?.message }}</Message>
+                </div>
+                <div>
+                    <Button type="submit"
+                        class="w-full text-base h-12 text-white rounded-lg font-montserratMedium">
+                        Reset Password
+                    </Button>
                 </div>
             </div>
-            <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="forgetPassword">
-                <div class="space-y-7 mt-7 sm:w-[350px] md:w-[396px] lg:w-[396px] mx-4">
-                    <div class="h-12 w-full">
-                        <div class="flex items-center w-full rounded-[10px] bg-neutral-50 px-4 gap-2">
-                            <i class="mdi mdi-email text-neutral-500 font-[Montserrat-Medium] text-lg"></i>
-                            <InputText placeholder="Email" name="email"
-                                class="w-full font-[Montserrat-Medium] border-none text-neutral-500 bg-neutral-50 focus:ring-0 focus:outline-none" />
-                        </div>
-                        <Message v-if="$form.email?.invalid" severity="error" size="small" variant="simple">{{
-                            $form.email.error?.message }}</Message>
-                    </div>
-                    <div class="flex justify-center w-full mt-10">
-                        <Button type="submit"
-                            class="w-full text-base h-12 text-white rounded-[7px] font-[Montserrat-Medium]">
-                            Reset Password
-                        </Button>
-                    </div>
-                </div>
-            </Form>
-        </div>
+        </Form>
     </div>
 </template>

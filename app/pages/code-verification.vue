@@ -26,34 +26,28 @@ if (otpExDate) {
     timer = setInterval(updateCountdown, 1000) 
 }
 const initialValues = reactive({
-    num1: '',
-    num2: '',
-    num3: '',
-    num4: '',
-    num5: '',
-    num6: '',
+    num1: null,
+    num2: null,
+    num3: null,
+    num4: null,
+    num5: null,
+    num6: null,
 });
 
 const resolver = zodResolver(
     z.object({
-        num1: z.coerce.number({ message: "Enter only numbers" })
-        .min(0, { message: "This field is required!" })
-        .max(9, { message: "Enter one char." }),
-        num2: z.coerce.number({ message: "Enter only numbers" })
-        .min(0, { message: "This field is required!" })
-        .max(9, { message: "Enter one char." }),
-        num3: z.coerce.number({ message: "Enter only numbers" })
-        .min(0, { message: "This field is required!" })
-        .max(9, { message: "Enter one char." }),
-        num4: z.coerce.number({ message: "Enter only numbers" })
-        .min(0, { message: "This field is required!" })
-        .max(9, { message: "Enter one char." }),
-        num5: z.coerce.number({ message: "Enter only numbers" })
-        .min(0, { message: "This field is required!" })
-        .max(9, { message: "Enter one char." }),
-        num6: z.coerce.number({ message: "Enter only numbers" })
-        .min(0, { message: "This field is required!" })
-        .max(9, { message: "Enter one char." }),
+        num1: z.string()
+      .regex(/^[0-9]$/, { message: "Enter exactly one digit (0-9)" }),
+    num2: z.string()
+      .regex(/^[0-9]$/, { message: "Enter exactly one digit (0-9)" }),
+    num3: z.string()
+      .regex(/^[0-9]$/, { message: "Enter exactly one digit (0-9)" }),
+    num4: z.string()
+      .regex(/^[0-9]$/, { message: "Enter exactly one digit (0-9)" }),
+    num5: z.string()
+      .regex(/^[0-9]$/, { message: "Enter exactly one digit (0-9)" }),
+    num6: z.string()
+      .regex(/^[0-9]$/, { message: "Enter exactly one digit (0-9)" }),
     })
 )
 
@@ -105,97 +99,91 @@ async function verifyOTP({ valid, values }: any) {
                 life: 5000
             })
         }
-    } else {
-        toast.add({
-            severity: 'error',
-            summary: 'Error',
-            detail: "Please fill all the required fields",
-            life: 5000
-        })
-    }
+    } 
 }
 </script>
 
 <template>
-    <div>
+  <div class="flex flex-col items-center justify-center px-4 text-center">
         <Toast />
-        <div class="flex flex-col items-center text-center w-full">
-            <div class="flex items-center w-full mt-2">
-                <NuxtLink to="/forget-password" class="flex-none">
-                    <img :src="arrowBack" class="w-[60px] h-[60px]" alt="arrow" />
-                </NuxtLink>
-                <div class="flex-1 text-center">
-                    <h3 class="font-[Georgia] text-secondary-500 text-[32px]">Code Verification</h3>
-                </div>
+        <div class="w-full mt-5 justify-center">
+            <NuxtLink to="/forget-password" class="flex-none">
+                <img :src="arrowBack" class="w-16 h-16" alt="arrow" />
+            </NuxtLink>
+            <div class="flex-1 text-center">
+                <h3 class="font-georgia text-secondary-500 dark:text-primary-50 text-3xl">Code Verification</h3>
             </div>
-            <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="verifyOTP">
-                <div class="flex mt-7 sm:w-[350px] md:w-[396px] lg:w-[396px] mx-[16px] gap-2">
+        </div>
+        <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="verifyOTP">
+            <div class="space-y-8 mt-8">
+                <div class="flex mt-7 space-x-3 justify-center w-full gap-2">
                     <div class="items-center w-10 h-10">
                         <InputText
                             maxlength="1"
-                            class="text-center w-full h-full rounded bg-neutral-50 border-none focus:ring-0 focus:outline-none"
+                            class="text-center w-full h-full rounded bg-neutral-50 dark:bg-neutral-400 border-none focus:ring-0 focus:outline-none"
                             name="num1" />
                     </div>
                     <div class="items-center w-10 h-10">
                         <InputText
                             maxlength="1"
-                            class="text-center w-full h-full rounded bg-neutral-50 border-none focus:ring-0 focus:outline-none"
+                            class="text-center w-full h-full rounded bg-neutral-50 dark:bg-neutral-400 border-none focus:ring-0 focus:outline-none"
                             name="num2" />
                     </div>
                     <div class="items-center w-10 h-10">
                         <InputText
                             maxlength="1"
-                            class="text-center w-full h-full rounded bg-neutral-50 border-none focus:ring-0 focus:outline-none"
+                            class="text-center w-full h-full rounded bg-neutral-50 dark:bg-neutral-400 border-none focus:ring-0 focus:outline-none"
                             name="num3" />
                     </div>
                     <div class="items-center w-10 h-10">
                         <InputText
                             maxlength="1"
-                            class="text-center w-full h-full rounded bg-neutral-50 border-none focus:ring-0 focus:outline-none"
+                            class="text-center w-full h-full rounded bg-neutral-50 dark:bg-neutral-400 border-none focus:ring-0 focus:outline-none"
                             name="num4" />
                     </div>
                     <div class="items-center w-10 h-10">
                         <InputText
                             maxlength="1"
-                            class="text-center w-full h-full rounded bg-neutral-50 border-none focus:ring-0 focus:outline-none"
+                            class="text-center w-full h-full rounded bg-neutral-50 dark:bg-neutral-400 border-none focus:ring-0 focus:outline-none"
                             name="num5" />
                     </div>
                     <div class="items-center w-10 h-10">
                         <InputText
                             maxlength="1"
-                            class="text-center w-full h-full rounded bg-neutral-50 border-none focus:ring-0 focus:outline-none"
+                            class="text-center w-full h-full rounded bg-neutral-50 dark:bg-neutral-400 border-none focus:ring-0 focus:outline-none"
                             name="num6" />
                     </div>
                 </div>
                 <div class="justify-center w-full">
-                    <Message v-if="$form.num1?.invalid" severity="error" size="small" variant="simple">{{
-                        $form.num1.error?.message }}</Message>
-
-                    <Message v-if="$form.num2?.invalid" severity="error" size="small" variant="simple">{{
-                        $form.num2.error?.message }}</Message>
-                    <Message v-if="$form.num3?.invalid" severity="error" size="small" variant="simple">{{
-                        $form.num3.error?.message }}</Message>
-                    <Message v-if="$form.num4?.invalid" severity="error" size="small" variant="simple">{{
-                        $form.num4.error?.message }}</Message>
-                    <Message v-if="$form.num5?.invalid" severity="error" size="small" variant="simple">{{
-                        $form.num5.error?.message }}</Message>
-                    <Message v-if="$form.num6?.invalid" severity="error" size="small" variant="simple">{{
-                        $form.num6.error?.message }}</Message>
+                    <Message v-if="$form.num1?.invalid
+                    || $form.num2?.invalid
+                    || $form.num3?.invalid
+                    || $form.num4?.invalid
+                    || $form.num5?.invalid
+                    || $form.num6?.invalid
+                    " severity="error" size="small" variant="simple">{{
+                        $form.num1.error?.message
+                        || $form.num2.error?.message
+                        || $form.num3.error?.message                        
+                        || $form.num4.error?.message
+                        || $form.num5.error?.message
+                        || $form.num6.error?.message    
+                         }}</Message>
                 </div>
-                <div class="justify-center w-full">
-                    <span class="font-[Montserrat] text-sm">
-                        <span class="text-secondary-500">Resend code in </span>
+                <div class="justify-center">
+                    <span class="font-montserrat text-sm">
+                        <span class="text-secondary-500 dark:text-primary-50">Resend code in </span>
                         <span class="text-primary-300">{{ countTimeDown }}</span>
-                        <span class="text-secondary-500"> s</span>
+                        <span class="text-secondary-500 dark:text-primary-50"> s</span>
                     </span>
                 </div>
-                <div class="justify-center w-full mt-10">
+                <div class="justify-center mt-10">
                     <Button type="submit"
-                        class="w-[396px] text-base h-12 text-white rounded-[7px] font-[Montserrat-Medium]">
+                        class="w-full text-base h-12 text-white rounded-lg font-montserratMedium">
                         Verify
                     </Button>
                 </div>
-            </Form>
-        </div>
+            </div>
+        </Form>
     </div>
 </template>
