@@ -14,15 +14,15 @@ const goToLogin = () => {
       <div class="gap-4 xs:w-3/4 lg:w-1/2">
         <h3 class="font-georgia text-secondary-500 lg:text-2xl xs:text-sm">Let’s You In</h3>
       </div>
-      <div class="mx-10 mt-5 font-montserratMedium bg-white">
-        <Button class="text-base h-12 w-96 text-neutral-700  border-neutral-300 rounded-[10px] max-w-sm pr-[16px] pl-3">
+      <div class="mx-8 mt-5 font-montserratMedium bg-white">
+        <Button class="text-base h-12 w-80 text-neutral-700  border-neutral-300 rounded-lg max-w-sm pr-4 pl-3">
           <span>
             <img :src="fbLogo" alt="fb-icon" />
           </span>
           Sign in with Facebook
         </Button>
         <div class="pt-2">
-          <GoogleSignIn classStyle="text-base h-12 w-[396px] text-neutral-700 bg-white border-neutral-300 rounded-[10px] max-w-sm pr-[16px] pl-3" 
+          <GoogleSignIn classStyle="text-base h-12 w-80 text-neutral-700 bg-white border-neutral-300 rounded-[10px] max-w-sm pr-[16px] pl-3" 
           lableName="Sign in with Google"
           />
         </div>
