@@ -16,11 +16,11 @@ const emit = defineEmits(['next'])
                 no waiting — just simple and fast booking.
             </p> 
         </div>
-        <img :src="page1Load" alt="load" class="w-6 h-6" />
-        <div class="mt-6 flex justify-center">
+        <img :src="page1Load" alt="load" class="w-14 h-2 mt-5" />
+        <div class="mt-36 flex justify-center">
             <Button 
             @click="emit('next')" 
-            class="text-base h-12 w-[300px] text-white rounded-[7px] font-[Montserrat-Medium] max-w-sm">
+            class="text-base h-12 w-[300px] text-white rounded-[7px] font-[Montserrat-Medium] mx-2">
                 Next
             </Button>
         </div>
