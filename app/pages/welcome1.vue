@@ -20,7 +20,7 @@ const emit = defineEmits(['next'])
         <div class="mt-36 flex justify-center">
             <Button 
             @click="emit('next')" 
-            class="text-base h-12 xs:w-64 lg:w-96 text-white rounded-lg font-montserratMedium mx-2">
+            class="text-base h-12 xs:w-64 sm:w-64 lg:w-96 text-white rounded-lg font-montserratMedium mx-2">
                 Next
             </Button>
         </div>
