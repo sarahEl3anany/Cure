@@ -60,7 +60,7 @@ async function signIn({ valid, values }: any) {
 </script>
 
 <template>
-    <div class="flex flex-col items-center justify-center w-screen h-screen px-4 text-center mt-1/5">
+    <div class="flex flex-col items-center justify-center px-4 text-center">
         <Toast />
         <img :src="BsHeartPulse" alt="HeartPulse"
             class="w-16 h-16 mt-20" />
