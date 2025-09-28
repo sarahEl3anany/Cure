@@ -44,7 +44,7 @@ async function signUp({ valid, values }: any) {
     if (valid) {
         try {
             const res: { data: { token: string, token_type?: string, user?: any } }
-                = await $apiFetch('register', {
+                = await $apiFetch('auth/register', {
                     method: 'POST',
                     body: values
                 }) as any
