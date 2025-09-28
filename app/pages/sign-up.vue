@@ -15,7 +15,7 @@ const initialValues = reactive({
     phone: '',
     password: '',
     password_confirmation: '',
-    // rememberMe: false
+    rememberMe: false
 });
 
 const resolver = zodResolver(
@@ -34,7 +34,7 @@ const resolver = zodResolver(
         password_confirmation: z.string().min(1, { message: "Password is required!" })
             .min(8, { message: "Enter more than 8 chars." })
             .max(256, { message: "Enter less than 256 chars." }),
-        // rememberMe: z.boolean().default(false).optional()
+        rememberMe: z.boolean().optional()
     }).refine((data) => data.password === data.password_confirmation, {
         message: "Passwords do not match",
         path: ["password_confirmation"],
@@ -134,10 +134,10 @@ async function signUp({ valid, values }: any) {
             {{ $form.password_confirmation.error?.message }}
           </Message>
         </div>
-        <!-- <div class="flex items-center justify-center gap-2 font-montserratMedium">
-          <Checkbox inputId="rememberMe" name="rememberMe" value="1" />
+        <div class="flex items-center justify-center gap-2 font-montserratMedium">
+          <Checkbox inputId="rememberMe" name="rememberMe" :binary="true" />
           <label for="rememberMe" class="text-secondary-500 dark:text-primary-50 text-base">Remember me</label>
-        </div> -->
+        </div>
         <div class="mt-10">
           <Button type="submit"
             class="w-full text-base h-12 text-white rounded-lg font-montserratMedium">
