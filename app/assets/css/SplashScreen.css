@@ -1,0 +1,38 @@
+.splash-container {
+  display: absolute;
+}
+
+.splash-icon {
+  transform: translate(-50%, -50%);
+}
+
+.home-indicator {
+  transform: rotate(180deg);
+}
+
+.progress-indicator {
+  transform: translateX(-50%);
+}
+
+.dot {
+  border-radius: 50%;
+  animation: shrink 1.5s infinite ease-in-out;
+  -webkit-animation: shrink 1.5s infinite ease-in-out;
+}
+
+.dot-lg { width: 30px; height: 30px; animation-delay: 0s; }
+.dot-md { width: 24px; height: 24px; animation-delay: 0.15s; }
+.dot-sm { width: 16px; height: 16px; animation-delay: 0.3s; }
+.dot-xs { width: 8px;  height: 8px;  animation-delay: 0.45s; }
+.dot-xxs { width: 4px;  height: 4px;  animation-delay: 0.6s; }
+
+@keyframes shrink {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.4);
+    opacity: 0.6;
+  }
+}
