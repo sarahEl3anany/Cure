@@ -17,7 +17,7 @@ const emit = defineEmits(['next'])
             </p> 
         </div>
         <img :src="page1Load" alt="load" class="w-14 h-2 mt-5" />
-        <div class="mt-8 w-full max-w-sm">
+        <div class="mt-14 w-full max-w-sm">
             <Button 
             @click="emit('next')" 
             class="w-full text-base h-12 text-white rounded-lg font-montserratMedium">
