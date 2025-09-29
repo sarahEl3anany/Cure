@@ -14,8 +14,7 @@ const initialValues = reactive({
     email: '',
     phone: '',
     password: '',
-    password_confirmation: '',
-    rememberMe: false
+    password_confirmation: ''
 });
 
 const resolver = zodResolver(
@@ -33,8 +32,7 @@ const resolver = zodResolver(
             .max(256, { message: "Enter less than 256 chars." }),
         password_confirmation: z.string().min(1, { message: "Password is required!" })
             .min(8, { message: "Enter more than 8 chars." })
-            .max(256, { message: "Enter less than 256 chars." }),
-        rememberMe: z.boolean().optional()
+            .max(256, { message: "Enter less than 256 chars." })
     }).refine((data) => data.password === data.password_confirmation, {
         message: "Passwords do not match",
         path: ["password_confirmation"],
@@ -48,11 +46,7 @@ async function signUp({ valid, values }: any) {
                     method: 'POST',
                     body: values
                 }) as any
-            if (values.rememberMe) {
-                $successRegister(res)
-            } else {
-                $successRegisterSession(res)
-            }
+            navigateTo('/auth/verify-account')
         } catch (err: any) {
             const apiError = err?.response?._data || {}
             const message = apiError.message || JSON.stringify(apiError)
@@ -134,10 +128,6 @@ async function signUp({ valid, values }: any) {
             {{ $form.password_confirmation.error?.message }}
           </Message>
         </div>
-        <div class="flex items-center justify-center gap-2 font-montserratMedium">
-          <Checkbox inputId="rememberMe" name="rememberMe" :binary="true" />
-          <label for="rememberMe" class="text-secondary-500 dark:text-primary-50 text-base">Remember me</label>
-        </div>
         <div class="mt-10">
           <Button type="submit"
             class="w-full text-base h-12 text-white rounded-lg font-montserratMedium">
@@ -162,7 +152,7 @@ async function signUp({ valid, values }: any) {
     </div>
     <div class="mt-2">
       <span class="text-neutral-500 font-montserratMedium text-xs">Already have an account!</span>
-      <NuxtLink to="/sign-in" class="ml-1 text-primary-500 font-montserratMedium text-xs">Sign in</NuxtLink>
+      <NuxtLink to="/auth/sign-in" class="ml-1 text-primary-500 font-montserratMedium text-xs">Sign in</NuxtLink>
     </div>
   </div>
 </template>

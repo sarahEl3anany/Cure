@@ -88,7 +88,7 @@ async function signIn({ valid, values }: any) {
         </div>
        <div class="flex justify-end">
             <span class="text-red-500 font-[Montserrat] text-xs">
-                <NuxtLink to="/forget-password"> Forget password?</NuxtLink>
+                <NuxtLink to="/auth/forget-password"> Forget password?</NuxtLink>
             </span>
         </div>
         <div class="flex items-center justify-center gap-2 font-montserratMedium">
@@ -119,7 +119,7 @@ async function signIn({ valid, values }: any) {
     </div>
     <div class="mt-2">
       <span class="text-neutral-500 font-montserratMedium text-xs">Don’t have an account?</span>
-      <NuxtLink to="/sign-up" class="ml-1 text-primary-500 font-montserratMedium text-xs">Sign up</NuxtLink>
+      <NuxtLink to="/auth/sign-up" class="ml-1 text-primary-500 font-montserratMedium text-xs">Sign up</NuxtLink>
     </div>
   </div>
 </template>

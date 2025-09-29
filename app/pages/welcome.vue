@@ -4,7 +4,7 @@ import fbLogo from '@/assets/images/sign-in/fbLogo.svg'
 import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
 import GoogleSignIn from '@/components/sign-in/google-sign-in.vue'
 const goToLogin = () => {
-    navigateTo('/sign-in')
+    navigateTo('/auth/sign-in')
 }
 </script>
 
@@ -48,7 +48,7 @@ const goToLogin = () => {
       <div class="">
         <span class="text-neutral-500 font-montserratMedium text-xs">Don’t have an account? </span>
         <span class="ml-1 text-primary-500 font-montserratMedium text-xs">
-          <NuxtLink to="/sign-up"> Sign up</NuxtLink>
+          <NuxtLink to="/auth/sign-up"> Sign up</NuxtLink>
         </span>
       </div>
     </div>

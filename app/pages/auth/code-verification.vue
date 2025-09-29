@@ -79,7 +79,7 @@ async function verifyOTP({ valid, values }: any) {
                         life: 5000
                     })
                     sessionStorage.setItem('otp', otp)
-                    navigateTo('/set-new-password')
+                    navigateTo('/auth/set-new-password')
                 } catch (err: any) {
                     const apiError = err?.response?._data || {}
                     const message = apiError.message || JSON.stringify(apiError)
@@ -107,7 +107,7 @@ async function verifyOTP({ valid, values }: any) {
   <div class="flex flex-col items-center justify-center px-4 text-center">
         <Toast />
         <div class="w-full mt-5 justify-center">
-            <NuxtLink to="/forget-password" class="flex-none">
+            <NuxtLink to="/auth/forget-password" class="flex-none">
                 <img :src="arrowBack" class="w-16 h-16" alt="arrow" />
             </NuxtLink>
             <div class="flex-1 text-center">

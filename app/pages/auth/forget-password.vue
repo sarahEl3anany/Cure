@@ -31,7 +31,7 @@ async function forgetPassword({ valid, values }: any) {
                 detail: res.message,
                 life: 5000
             })
-            navigateTo('/code-verification')
+            navigateTo('/auth/code-verification')
         } catch (err: any) {
             const apiError = err?.response?._data || {}
             const message = apiError.message || JSON.stringify(apiError)

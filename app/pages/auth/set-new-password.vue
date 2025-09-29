@@ -74,7 +74,7 @@ async function updatePassword({ valid, values }: any) {
   <div class="flex flex-col items-center justify-center px-4 text-center">
     <Toast />
     <div class="w-full mt-5 justify-center">
-        <NuxtLink to="/code-verification" class="flex-none">
+        <NuxtLink to="/auth/code-verification" class="flex-none">
           <img :src="arrowBack" class="w-16 h-16" alt="arrow" />
         </NuxtLink>
         <div class="flex-1 text-center">
