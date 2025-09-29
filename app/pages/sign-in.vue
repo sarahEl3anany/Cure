@@ -98,7 +98,7 @@ async function signIn({ valid, values }: any) {
         <div class="mt-10">
           <Button type="submit"
             class="w-full text-base h-12 text-white rounded-lg font-montserratMedium">
-            Sign up
+            Sign in
           </Button>
         </div>
       </div>
