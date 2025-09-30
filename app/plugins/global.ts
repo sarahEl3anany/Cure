@@ -18,7 +18,6 @@ export default defineNuxtPlugin(nuxtApp => {
     }
 
     const successRegisterSession = (res: any) => {
-        debugger
         const token = res.data.token
         const tokenType = res.data.token_type || 'Bearer'
         const user = res.data.user
