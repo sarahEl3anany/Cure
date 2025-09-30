@@ -19,7 +19,8 @@ async function forgetPassword({ valid, values }: any) {
     if (valid) {
         try {
             const res: { data: { email: string, expires_at: string, note: string }, message: string }
-                = await $apiFetch('otp/send-reset-otp', {
+                // = await $apiFetch('otp/send-reset-otp', {  // nest localhost
+                = await $apiFetch('send-reset-otp', {
                     method: 'POST',
                     body: values
                 }) as { message: string, data: { email: string, expires_at: string, note: string } }

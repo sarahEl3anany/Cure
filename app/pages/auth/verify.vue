@@ -4,7 +4,8 @@ let verifyMsg = ''
 try {
     const values = useRoute().query
     const res: { data: { token: string }, message: string, user: any }
-        = await $apiFetch('auth/verify', {
+        // = await $apiFetch('auth/verify', { nest localhost
+        = await $apiFetch('verify', {
             method: 'GET',
             params: values
         }) as { data: { token: string }, message: string, user: any }

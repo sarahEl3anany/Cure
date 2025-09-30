@@ -35,7 +35,8 @@ async function updatePassword({ valid, values }: any) {
     }
     try {
       const res: any
-        = await $apiFetch('auth/reset-password', {
+        // = await $apiFetch('auth/reset-password', { // nest localhost
+        = await $apiFetch('reset-password', {
           method: 'POST',
           body: dataValues
         }) as any

@@ -29,7 +29,8 @@ async function signIn({ valid, values }: any) {
     if (valid) {
         try {
             const res: { data: { token: string, token_type?: string, user?: any } }
-                = await $apiFetch('auth/login', {
+                // = await $apiFetch('auth/login', { nest localhost
+                = await $apiFetch('login', {
                     method: 'POST',
                     body: values
                 }) as any

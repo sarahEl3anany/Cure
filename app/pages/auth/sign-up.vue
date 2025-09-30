@@ -40,9 +40,11 @@ const resolver = zodResolver(
 )
 async function signUp({ valid, values }: any) {
     if (valid) {
+      debugger
         try {
             const res: { data: { token: string, token_type?: string, user?: any } }
-                = await $apiFetch('auth/register', {
+                // = await $apiFetch('auth/register', { nest localhost
+                = await $apiFetch('register', {
                     method: 'POST',
                     body: values
                 }) as any

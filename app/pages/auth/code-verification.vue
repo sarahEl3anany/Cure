@@ -68,7 +68,8 @@ async function verifyOTP({ valid, values }: any) {
             } else {
                 try {
                     const res: any
-                        = await $apiFetch('otp/verify-otp', {
+                        // = await $apiFetch('otp/verify-otp', { // nest localhost
+                        = await $apiFetch('verify-otp', {
                             method: 'POST',
                             body: dataValues
                         }) as any
