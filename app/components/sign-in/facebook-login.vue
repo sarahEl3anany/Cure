@@ -24,17 +24,6 @@ const onFailure = (errorResponse: any) => {
       life: 5000
   })
 }
-const fbReady = ref(false);
-
-onMounted(() => {
-  const checkFB = setInterval(() => {
-    if ((window as any).FB) {
-      fbReady.value = true;
-      clearInterval(checkFB);
-    }
-  }, 300);
-});
-
 
 </script>
 
@@ -47,7 +36,6 @@ onMounted(() => {
                 class="w-full flex justify-center items-center gap-2"
                 fields="id,name,email,first_name,last_name,birthday">
                 <Button :class="classStyle" @click="fbLogin.initFBLogin" 
-                :disabled="!fbReady"
                 >
                     <img :src="fbLogo" class="h-5 w-5" alt="facebook-icon" />
                     {{ lableName }} 
