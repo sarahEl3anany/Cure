@@ -25,13 +25,6 @@ const onFailure = (errorResponse: any) => {
   })
 }
 
-const sdkReady = ref(false);
-
-onMounted(() => {
-sdkReady.value = true;
-});
-
-defineExpose({ sdkReady });
 </script>
 
 <template>
@@ -42,7 +35,7 @@ defineExpose({ sdkReady });
             class="w-full flex justify-center items-center gap-2"
             fields="id,name,email,first_name,last_name,birthday">
             <Button :class="classStyle" @click="fbLogin.initFBLogin" 
-            :disabled="!sdkReady" >
+             >
                 <img :src="fbLogo" class="h-5 w-5" alt="facebook-icon" />
                 {{ lableName }}
             </Button>
