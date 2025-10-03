@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const config = useRuntimeConfig();
-import  {HFaceBookLogin} from '@healerlab/vue3-facebook-login';
+import  * as FBLogin from '@healerlab/vue3-facebook-login';
+const { HFaceBookLogin } = FBLogin;
 import fbLogo from '@/assets/images/sign-in/fbLogo.svg'
 const props = defineProps({
     classStyle: String,
