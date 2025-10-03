@@ -10,7 +10,7 @@ const goToLogin = () => {
 
 <template>
   <div class="flex flex-col items-center justify-center px-4 text-center">
-    <img :src="loginImg" alt="Login" class="w-1/3 h-1/3 mx-1/5 pt-4 max-w-sm max-h-sm" />
+    <img :src="loginImg" alt="Login" class="w-1/4 h-1/4 mx-1/5 pt-4 max-w-sm max-h-sm" />
     <div class="gap-4 mt-3 xs:w-3/4 lg:w-1/2">
       <h3 class="font-georgia text-secondary-500 dark:text-primary-50 lg:text-2xl xs:text-sm">Let’s You In</h3>
     </div>
