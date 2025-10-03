@@ -40,6 +40,7 @@ onMounted(() => {
 
 <template>
     <div>
+        <ClientOnly>
             <HFaceBookLogin v-slot="fbLogin" :app-id="config.public.facebookAppId" 
                 scope="email,public_profile" @onSuccess="onSuccess"
                 @onFailure="onFailure" 
@@ -52,6 +53,7 @@ onMounted(() => {
                     {{ lableName }} 
                 </Button>
             </HFaceBookLogin>
+        </ClientOnly>
     </div>
 </template>
 
