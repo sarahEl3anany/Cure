@@ -12,11 +12,17 @@ const { $apiFetch, $successRegister } = useNuxtApp()
 
 
 const onSuccess = (res: any) => {
-    $successRegister(res)
+    // $successRegister(res)
+    console.log('send request by token', res.authResponse.accessToken);
 }
 
-const onFailure = () => {
-    // logic if auth failed
+const onFailure = (errorResponse: any) => {
+    toast.add({
+      severity: 'error',
+      summary: 'Error',
+      detail: errorResponse,
+      life: 5000
+  })
 }
 
 
@@ -28,7 +34,7 @@ const onFailure = () => {
             scope="email,public_profile" @onSuccess="onSuccess"
             @onFailure="onFailure" 
             class="w-full flex justify-center items-center gap-2"
-            fields="email,birthday">
+            fields="id,name,email,first_name,last_name,birthday">
             <Button :class="classStyle" @click="fbLogin.initFBLogin" >
                 <img :src="fbLogo" class="h-5 w-5" alt="facebook-icon" />
                 {{ lableName }}
