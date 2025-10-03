@@ -17,14 +17,13 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
-      apiBase: process.env.NUXT_PUBLIC_API_BASE || 'https://round5-online-booking-with-doctor-api.digital-vision-solutions.com/api/' , //'https://round5-online-booking-with-doctor-api.huma-volve.com/api/',
-      // apiBase: process.env.NUXT_PUBLIC_API_BASE || 'https://round5-online-booking-with-doctor-api.huma-volve.com/api/',
-      // apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:3000/',
-      googleClientId:'812442679665-j0oi4lse4s5gugt6pi9plr44akd2pris.apps.googleusercontent.com',
+      apiBase: process.env.NUXT_PUBLIC_API_BASE,
+      googleClientId: process.env.GOOGLE_CLIENT_ID,
+      facebookAppId: process.env.FACEBOOK_APP_ID,
     },
   },
   googleSignIn: {
-    clientId: '812442679665-j0oi4lse4s5gugt6pi9plr44akd2pris.apps.googleusercontent.com',
+    clientId: process.env.GOOGLE_CLIENT_ID,
   },
   primevue: {
     options: {
