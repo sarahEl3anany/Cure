@@ -7,7 +7,7 @@ import {
 } from "vue3-google-signin";
 const props = defineProps({
   classStyle: String,
-  lableName: String
+  labelName: String
 });
 const toast = useToast();
 const { $apiFetch, $successRegister } = useNuxtApp()
@@ -43,7 +43,7 @@ const { isReady, login } = useCodeClient({
         :disabled="!isReady" @click="() => login()"
         :class="classStyle">
         <img :src="googleLogo" class="h-5 w-5" alt="google-icon" />
-        {{ lableName }}
+        {{ labelName }}
     </Button>
   </div>
 </template>

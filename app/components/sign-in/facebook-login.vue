@@ -5,7 +5,7 @@ const { HFaceBookLogin } = FBLogin;
 import fbLogo from '@/assets/images/sign-in/fbLogo.svg'
 const props = defineProps({
     classStyle: String,
-    lableName: String
+    labelName: String
 });
 const toast = useToast();
 // const { $apiFetch, $successRegister } = useNuxtApp()
@@ -38,7 +38,7 @@ const onFailure = (errorResponse: any) => {
                 <Button :class="classStyle" @click="fbLogin.initFBLogin" 
                 >
                     <img :src="fbLogo" class="h-5 w-5" alt="facebook-icon" />
-                    {{ lableName }} 
+                    {{ labelName }} 
                 </Button>
             </HFaceBookLogin>
         </ClientOnly>

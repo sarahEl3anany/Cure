@@ -17,10 +17,10 @@ const goToLogin = () => {
     <div class="space-y-5 mt-8 gap-4 xs:w-1/3 lg:w-1/3">
       <facebookLogin
         classStyle="text-base sm:text-sm xs:text-xs text-neutral-700 font-montserratMedium h-12 w-full border-neutral-300 rounded-lg bg-white"
-        lableName="Sign in with Facebook" />
+        labelName="Sign in with Facebook" />
       <GoogleSignIn
         classStyle="text-base sm:text-sm xs:text-xs text-neutral-700 font-montserratMedium h-12 w-full border-neutral-300 rounded-lg bg-white"
-        lableName="Sign in with Google" />
+        labelName="Sign in with Google" />
       <!-- <Button
         class="w-full text-base h-12 text-neutral-700 border-neutral-300 bg-white rounded-lg font-montserratMedium">
         <span>
