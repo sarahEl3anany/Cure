@@ -1,6 +1,7 @@
 # Nuxt dev/build outputs
 .output
 .data
+.vscode
 .nuxt
 .anima
 .nitro
