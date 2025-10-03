@@ -7,7 +7,7 @@ const emit = defineEmits(['next'])
 
 <template>
     <div class="flex flex-col items-center justify-center px-4 text-center">
-        <img :src="page1" alt="welcome" class="w-1/4 h-1/4 mx-1/5 pt-4" />
+        <img :src="page1" alt="welcome" class="w-1/4 h-1/4 mx-1/5 pt-4 max-w-sm max-h-sm" />
         <div class="gap-4 xs:w-3/4 lg:w-1/2">
             <h3 class="font-georgia text-secondary-500 dark:text-primary-50 lg:text-2xl xs:text-sm">Book Your Appointment Easily</h3>
             <p class="text-neutral-700 font-montserratMedium lg:text-base xs:text-2xs leading-relaxed mt-5">
