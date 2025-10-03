@@ -37,7 +37,7 @@ const onFailure = (errorResponse: any) => {
             <Button :class="classStyle" @click="fbLogin.initFBLogin" 
              >
                 <img :src="fbLogo" class="h-5 w-5" alt="facebook-icon" />
-                {{ lableName }}
+                {{ lableName }} 
             </Button>
         </HFaceBookLogin>
     </div>
