@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import BsHeartPulse from '@/assets/images/sign-up/BsHeartPulse.svg'
 import KeySquare from '@/assets/images/sign-up/KeySquare2.png'
-import fbLogo from '@/assets/images/sign-in/fbLogo.svg'
-import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
+// import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
 import { zodResolver } from '@primevue/forms/resolvers/zod';
+import facebookLogin from '~/components/sign-in/facebook-login.vue'
 import GoogleSignIn from '@/components/sign-in/google-sign-in.vue'
 import { z } from 'zod';
 
@@ -142,14 +142,14 @@ async function signUp({ valid, values }: any) {
         <span class="text-neutral-500 text-base font-montserratMedium">or</span>
       </Divider>
     </div>
-    <div class="flex justify-between w-full max-w-sm">
-      <Button class="h-14 w-14 rounded-2xl bg-white border-neutral-300 border">
-        <img :src="fbLogo" class="h-5 w-5" alt="fb-icon" />
-      </Button>
+    <div class="flex justify-center gap-36 w-full max-w-sm">
+      <facebookLogin 
+      classStyle="h-14 w-14 rounded-2xl bg-white border-neutral-300 border" 
+      />
       <GoogleSignIn classStyle="h-14 w-14 rounded-2xl bg-white border-neutral-300 border" />
-      <Button class="h-14 w-14 rounded-2xl bg-white border-neutral-300 border">
+      <!-- <Button class="h-14 w-14 rounded-2xl bg-white border-neutral-300 border">
         <img :src="appleLogo" class="h-5 w-5" alt="apple-icon" />
-      </Button>
+      </Button> -->
     </div>
     <div class="mt-2">
       <span class="text-neutral-500 font-montserratMedium text-xs">Already have an account!</span>
