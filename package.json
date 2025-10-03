@@ -11,7 +11,6 @@
     "dev:prepare": "nuxt prepare"
   },
   "dependencies": {
-    "@healerlab/vue3-facebook-login": "^0.1.7",
     "@mdi/font": "^7.4.47",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@pinia/nuxt": "^0.11.2",
@@ -28,8 +27,7 @@
     "primevue": "^4.3.9",
     "tailwindcss": "^3.4.17",
     "vue": "^3.5.21",
-    "vue-router": "^4.5.1",
-    "vue3-google-signin": "^2.1.1"
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@types/node": "^24.5.2"
