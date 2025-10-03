@@ -3,6 +3,7 @@ import loginImg from '@/assets/images/sign-in/login.svg'
 import fbLogo from '@/assets/images/sign-in/fbLogo.svg'
 import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
 import GoogleSignIn from '@/components/sign-in/google-sign-in.vue'
+import facebookLogin from '~/components/sign-in/facebook-login.vue'
 const goToLogin = () => {
     navigateTo('/auth/sign-in')
 }
@@ -15,14 +16,18 @@ const goToLogin = () => {
       <h3 class="font-georgia text-secondary-500 dark:text-primary-50 lg:text-2xl xs:text-sm">Let’s You In</h3>
     </div>
     <div class="space-y-5 mt-8 gap-4 xs:w-1/3 lg:w-1/3">
-      <Button class="w-full text-base h-12 text-neutral-700 border-neutral-300 bg-white rounded-lg font-montserratMedium" >
+      <!-- <Button class="w-full text-base h-12 text-neutral-700 border-neutral-300 bg-white rounded-lg font-montserratMedium" >
         <span>
           <img :src="fbLogo" alt="fb-icon" />
         </span>
         <span class="text-base sm:text-sm xs:text-xs text-neutral-700 font-montserratMedium ">
           Sign in with Facebook
         </span>
-      </Button>
+      </Button> -->
+      <facebookLogin 
+      classStyle="text-base sm:text-sm xs:text-xs text-neutral-700 font-montserratMedium h-12 w-full border-neutral-300 rounded-lg bg-white" 
+      lableName="Sign in with Facebook"
+      />
         <GoogleSignIn 
         classStyle="text-base sm:text-sm xs:text-xs text-neutral-700 font-montserratMedium h-12 w-full border-neutral-300 rounded-lg bg-white" 
         lableName="Sign in with Google"
