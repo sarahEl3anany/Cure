@@ -21,7 +21,7 @@ export default defineNuxtPlugin(() => {
       if (d.getElementById(id)) return;
       js = d.createElement(s) as HTMLScriptElement;
       js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk.js';
+      js.src = '/facebookSDK.js';
       fjs?.parentNode!.insertBefore(js, fjs);
     })(document, 'script', 'facebook-jssdk');
   });

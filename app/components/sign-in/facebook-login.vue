@@ -1,7 +1,4 @@
 <script setup lang="ts">
-const config = useRuntimeConfig();
-import  * as FBLogin from '@healerlab/vue3-facebook-login';
-const { HFaceBookLogin } = FBLogin;
 import fbLogo from '@/assets/images/sign-in/fbLogo.svg'
 const props = defineProps({
     classStyle: String,
@@ -10,38 +7,60 @@ const props = defineProps({
 const toast = useToast();
 // const { $apiFetch, $successRegister } = useNuxtApp()
 
-
-const onSuccess = (res: any) => {
-    // $successRegister(res)
-    console.log('send request by token', res.authResponse.accessToken);
-}
-
-const onFailure = (errorResponse: any) => {
+const loginWithFacebook = (errorResponse: any) => {
+  if (!(window as any).FB) {
     toast.add({
-      severity: 'error',
-      summary: 'Error',
-      detail: errorResponse,
-      life: 5000
-  })
+        severity: 'error',
+        summary: 'Error',
+        detail: errorResponse,
+        life: 5000
+    })
+    return
+  }
+
+  ;(window as any).FB.login(
+    (response: any) => {
+      if (response.authResponse) {
+        console.log('send request by token', response.authResponse.accessToken);
+      } else {
+         toast.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: response,
+            life: 5000
+        })
+      }
+    },
+    { 
+        scope: 'email,public_profile',
+        fields:"id,name,email,first_name,last_name,birthday"
+     }
+  )
 }
+
+// const onSuccess = (res: any) => {
+//     // $successRegister(res)
+//     console.log('send request by token', res.authResponse.accessToken);
+// }
+
+// const onFailure = (errorResponse: any) => {
+//     toast.add({
+//       severity: 'error',
+//       summary: 'Error',
+//       detail: errorResponse,
+//       life: 5000
+//   })
+// }
 
 </script>
 
 <template>
     <div>
-        <ClientOnly>
-            <HFaceBookLogin v-slot="fbLogin" :app-id="config.public.facebookAppId" 
-                scope="email,public_profile" @onSuccess="onSuccess"
-                @onFailure="onFailure" 
-                class="w-full flex justify-center items-center gap-2"
-                fields="id,name,email,first_name,last_name,birthday">
-                <Button :class="classStyle" @click="fbLogin.initFBLogin" 
-                >
-                    <img :src="fbLogo" class="h-5 w-5" alt="facebook-icon" />
-                    {{ labelName }} 
-                </Button>
-            </HFaceBookLogin>
-        </ClientOnly>
+        <Button :class="classStyle" @click="loginWithFacebook" 
+        >
+            <img :src="fbLogo" class="h-5 w-5" alt="facebook-icon" />
+            {{ labelName }} 
+        </Button>
     </div>
 </template>
 
