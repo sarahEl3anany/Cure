@@ -13,8 +13,14 @@ export default defineNuxtRouteMiddleware((to) => {
     '/auth/verify',
     '/auth/verify-account'
   ]
-  if (!token && !sessionToken && !outRoutes.includes(to.path)) {
-    return navigateTo('/welcome')
+  const isAuthenticated = !!(token || sessionToken)
+  if (!isAuthenticated && !outRoutes.includes(to.path)) {
+      return navigateTo('/welcome')
+    }
+
+    // المستخدم عامل تسجيل دخول وبيحاول يدخل صفحة من الـ outRoutes
+    if (isAuthenticated && outRoutes.includes(to.path)) {
+      return navigateTo('/home')
   }
 
 })

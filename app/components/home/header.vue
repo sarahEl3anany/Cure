@@ -22,7 +22,7 @@ if (!avatar) {
             </NuxtLink>
             <div class="flex flex-col items-start">
                 <p
-                class="text-georgia text-secondary-500 text-sm ">
+                class="font-georgia text-secondary-500 text-sm ">
                     Welcome back, 
                    <NuxtLink to="/profile"> Seif
                     </NuxtLink>
