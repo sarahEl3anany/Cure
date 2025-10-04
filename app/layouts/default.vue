@@ -31,7 +31,7 @@ if (route.path === '/profile') {
 <template>
   <div>
     <!-- <slot /> -->
-    <footer class="bg-white h-12 flex items-center justify-between fixed bottom-0 w-full px-5">
+    <footer class="bg-white h-12 flex items-center justify-between bottom bottom-0 w-full px-5">
       <div class="flex flex-col items-center justify-center">
         <NuxtLink to="/" class="flex flex-col items-center text-center text-xs font-montserrat"
         :class="homeColor">

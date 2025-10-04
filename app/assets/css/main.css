@@ -1,5 +1,6 @@
 @import '../fonts/montserrat.css';
 @import '../fonts/georgia.css';
+@import 'primeicons/primeicons.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

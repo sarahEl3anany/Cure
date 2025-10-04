@@ -10,12 +10,12 @@ import banner from '~/assets/images/home/banner.svg'
         <homeHeader />
         <search />
         <specialties /> 
-        <div class="flex flex-col items-center w-full mx-4">
-            <img :src="banner" alt="banner" class="w-11/12 max-h-48 mt-5 object-contain" />
+        <div class="w-full">
+            <div class="flex items-center gap-2 mx-2">
+                <img :src="banner" alt="banner" class="w-11/12 max-h-48 mt-5 object-contain" />
 
+            </div>
         </div>
-        <div class="w-full relative z-10">
-            <doctorsNearYou />
-        </div>
+        <doctorsNearYou />
     </div>
 </template>

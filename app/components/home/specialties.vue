@@ -11,20 +11,27 @@ const tags = ref({
 })
 </script>
 <template>
-    <div class="w-full">
-        <div class="flex items-center gap-2 mx-3">
-            <div class="flex w-full items-center justify-between">
-                <span class="font-georgia text-xl text-black justify-start flex">Specialties</span>
-                <NuxtLink to="/specialties" class="flex justify-end font-montserrat text-sm text-primary-500">View all</NuxtLink>
-            </div>
-        </div>
-        <div class="flex justify-center mt-5 px-2 gap-2 overflow-x-auto mx-3">
-            <Chip v-for="(icon, name) in tags" :key="name" class="flex items-center gap-2 px-3 py-1 rounded-[14px] bg-white border border-neutral-500">
-                <NuxtLink :to="name" class="flex items-center gap-2">
-                    <img :src="icon" alt="" class="w-4 h-4" />
-                    <span class="text-neutral-900 text-base text-montserrat">{{ name }}</span>
-                </NuxtLink>
-            </Chip>
-        </div>
+  <div class="w-full">
+    <div class="flex items-center justify-between px-2 mt-2">
+      <span class="font-georgia text-xl text-black">Specialties</span>
+      <NuxtLink
+        to="/specialties"
+        class="font-montserrat text-sm text-primary-500"
+      >
+        View all
+      </NuxtLink>
     </div>
+    <div
+      class="flex items-center gap-3 overflow-x-auto mt-2 px-2 scrollbar-hide"
+    >
+      <div
+        v-for="(icon, name) in tags"
+        :key="name"
+        class="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-300 bg-white shrink-0 cursor-pointer hover:bg-neutral-50"
+      >
+        <img :src="icon" alt="img" class="w-4 h-4" />
+        <span class="text-neutral-900 text-sm font-montserrat">{{ name }}</span>
+      </div>
+    </div>
+  </div>
 </template>
