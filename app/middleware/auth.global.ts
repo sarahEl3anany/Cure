@@ -1,5 +1,6 @@
 export default defineNuxtRouteMiddleware((to) => {
-  const token = useCookie('token').value
+  const config = useRuntimeConfig()
+  const token = useCookie('token').value || config.public.localToken
   const sessionToken = process.client ? sessionStorage.getItem('token') : null
   const outRoutes = [
     '/auth/sign-in',
@@ -16,7 +17,4 @@ export default defineNuxtRouteMiddleware((to) => {
     return navigateTo('/welcome')
   }
 
-  if ((token || sessionToken) && outRoutes.includes(to.path)) {
-    return navigateTo('/home')
-  }
 })

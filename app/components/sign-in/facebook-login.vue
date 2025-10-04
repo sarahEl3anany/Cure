@@ -38,28 +38,13 @@ const loginWithFacebook = (errorResponse: any) => {
   )
 }
 
-// const onSuccess = (res: any) => {
-//     // $successRegister(res)
-//     console.log('send request by token', res.authResponse.accessToken);
-// }
-
-// const onFailure = (errorResponse: any) => {
-//     toast.add({
-//       severity: 'error',
-//       summary: 'Error',
-//       detail: errorResponse,
-//       life: 5000
-//   })
-// }
-
 </script>
 
 <template>
     <div>
-        <Button :class="classStyle" @click="loginWithFacebook" 
-        >
-            <img :src="fbLogo" class="h-5 w-5" alt="facebook-icon" />
-            {{ labelName }} 
+        <Button :class="classStyle" @click="loginWithFacebook" >
+          <img :src="fbLogo" class="h-5 w-5" alt="facebook-icon" />
+          {{ labelName }} 
         </Button>
     </div>
 </template>

@@ -1,5 +1,4 @@
 export default defineNuxtPlugin((nuxtApp) => {
-  const config = useRuntimeConfig()
   const splashScreen = useSplashScreenStore()
 
   const apiFetch = async (url: string, options?: any) => {
