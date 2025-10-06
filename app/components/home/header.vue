@@ -43,7 +43,7 @@ if (!avatar) {
                 aria-label="Notifications">
                 <i class="pi pi-heart color-[#1C274C] "></i>
             </NuxtLink>
-            <NuxtLink type="button" to="/notifications"
+            <NuxtLink type="button" to="/home/notifications"
                 class="w-8 h-8 flex items-center justify-center gap-2 p-2 bg-white rounded-full shadow-[0px_0px_13px_#22222226]"
                 aria-label="Notifications">
                 <img class="w-3 h-3" :src=bell alt="Notification bell" />

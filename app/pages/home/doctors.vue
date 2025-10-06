@@ -71,7 +71,7 @@ const allSpecialties = ref<Tag[]>([
                 <h3 class="font-georgia text-black dark:text-primary-50 text-2xl">Doctors</h3>
             </div>
         </div>
-        <div class="w-full px-3">
+        <div class="w-full px-3 space-y-4">
             <SearchBox />
             <Tags :tag="allSpecialties" />
             <infoCard :infoCard="doctorsCard" />
