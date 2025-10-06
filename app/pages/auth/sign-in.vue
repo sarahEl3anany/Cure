@@ -1,0 +1,126 @@
+<script setup lang="ts">
+import BsHeartPulse from '@/assets/images/sign-up/BsHeartPulse.svg'
+import KeySquare from '@/assets/images/sign-up/KeySquare2.png'
+// import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
+import { zodResolver } from '@primevue/forms/resolvers/zod';
+import GoogleSignIn from '@/components/sign-in/google-sign-in.vue'
+import facebookLogin from '@/components/sign-in/facebook-login.vue'
+import { z } from 'zod';
+
+const toast = useToast();
+const { $apiFetch, $successRegister, $successRegisterSession } = useNuxtApp()
+const initialValues = reactive({
+    email: '',
+    password: '',
+    rememberMe: false
+});
+
+const resolver = zodResolver(
+    z.object({
+        email: z.string().min(1, { message: "Email is required!" })
+            .email({ message: "You must enter correct email." }),
+        password: z.string().min(1, { message: "Password is required!" })
+            .min(8, { message: "Enter more than 8 chars." })
+            .max(256, { message: "Enter less than 256 chars." }),
+        rememberMe: z.boolean().optional()
+    })
+)
+async function signIn({ valid, values }: any) {
+    if (valid) {
+        try {
+            const res: { data: { token: string, token_type?: string, user?: any } }
+                // = await $apiFetch('auth/login', { nest localhost
+                = await $apiFetch('login', {
+                    method: 'POST',
+                    body: values
+                }) as any
+            if (values.rememberMe) {
+                $successRegister(res)
+            } else {
+                $successRegisterSession(res)
+            }
+        } catch (err: any) {
+            const apiError = err?.response?._data || {}
+            const message = apiError.message || JSON.stringify(apiError)
+            toast.add({
+                severity: 'error',
+                summary: 'Error',
+                detail: message,
+                life: 5000
+            })
+        }
+    } else {
+        toast.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: "Please fill all the required fields",
+            life: 5000
+        })
+    }
+}
+</script>
+<template>
+  <div class="flex flex-col items-center justify-center px-4 text-center">
+    <Toast />
+    <img :src="BsHeartPulse" alt="HeartPulse" class="w-16 h-16 mt-10" />
+        <h3 class="mt-8 font-georgia text-secondary-500 lg:text-2xl xs:text-sm dark:text-secondary-50">Login to your
+            Account</h3>
+    <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="signIn">
+      <div class="w-full max-w-sm space-y-5 mt-7">
+        <div>
+          <div class="flex items-center rounded-xl bg-neutral-50 px-4 gap-2">
+            <i class="mdi mdi-email text-neutral-500 font-montserratMedium text-lg"></i>
+            <InputText placeholder="Email" name="email"
+              class="w-full font-montserratMedium border-none text-neutral-500 bg-neutral-50 outline-none focus:ring-0 focus:outline-none" />
+          </div>
+          <Message v-if="$form.email?.invalid" severity="error" size="small" variant="simple">
+            {{ $form.email.error?.message }}
+          </Message>
+        </div>
+        <div>
+          <div class="flex items-center rounded-lg bg-neutral-50 px-4 gap-2">
+            <img :src="KeySquare" alt="Password" class="w-5 h-5" />
+            <Password placeholder="Password" name="password"
+              inputClass="w-full !border-none !shadow-none !bg-neutral-50 focus:!ring-0 focus:!outline-none text-neutral-500 font-montserratMedium" />
+          </div>
+          <Message v-if="$form.password?.invalid" severity="error" size="small" variant="simple">
+            {{ $form.password.error?.message }}
+          </Message>
+        </div>
+       <div class="flex justify-end">
+            <span class="text-red-500 font-[Montserrat] text-xs">
+                <NuxtLink to="/auth/forget-password"> Forget password?</NuxtLink>
+            </span>
+        </div>
+        <div class="flex items-center justify-center gap-2 font-montserratMedium">
+          <Checkbox inputId="rememberMe" name="rememberMe" :binary="true" />
+          <label for="rememberMe" class="text-secondary-500 dark:text-primary-50 text-base">Remember me</label>
+        </div>
+        <div class="mt-10">
+          <Button type="submit"
+            class="w-full text-base h-12 text-white rounded-lg font-montserratMedium">
+            Sign in
+          </Button>
+        </div>
+      </div>
+    </Form>
+    <div class="w-full max-w-sm mt-6">
+      <Divider>
+        <span class="text-neutral-500 text-base font-montserratMedium">or</span>
+      </Divider>
+    </div>
+    <div class="flex justify-center gap-36 w-full max-w-sm">
+      <facebookLogin 
+      classStyle="h-14 w-14 rounded-2xl bg-white border-neutral-300 border" 
+      />
+      <GoogleSignIn classStyle="h-14 w-14 rounded-2xl bg-white border-neutral-300 border" />
+      <!-- <Button class="h-14 w-14 rounded-2xl bg-white border-neutral-300 border">
+        <img :src="appleLogo" class="h-5 w-5" alt="apple-icon" />
+      </Button> -->
+    </div>
+    <div class="mt-2">
+      <span class="text-neutral-500 font-montserratMedium text-xs">Don’t have an account?</span>
+      <NuxtLink to="/auth/sign-up" class="ml-1 text-primary-500 font-montserratMedium text-xs">Sign up</NuxtLink>
+    </div>
+  </div>
+</template>
