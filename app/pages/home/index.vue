@@ -83,12 +83,12 @@ const mostSpecialties = ref<Tag[]>([
             <div class="flex items-center gap-2 mx-2 mt-5 ">
                 <div class="flex w-full items-center justify-between">
                     <span class="font-georgia text-xl text-black justify-start flex">Doctors near you</span>
-                    <NuxtLink to="/infoCard" class="flex justify-end font-montserrat text-sm text-primary-500">
+                    <NuxtLink to="/home/doctors" class="flex justify-end font-montserrat text-sm text-primary-500">
                         View
                         all</NuxtLink>
                 </div>
             </div>
         </div>
-        <infoCard :doctorsCard="doctorsCard" />
+        <infoCard :infoCard="doctorsCard" />
     </div>
 </template>

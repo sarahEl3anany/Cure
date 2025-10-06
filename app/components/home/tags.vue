@@ -21,12 +21,16 @@ const props = defineProps({
       <div
         v-for="(value, key) in tag"
         :key="key"
-        class="items-center gap-2 px-4 py-2 rounded-full border 
+        class="items-center gap-2 px-4 py-2 rounded-xl border 
                cursor-pointer hover:bg-neutral-50 w-auto"
-        :class="showVertically ? 'flex flex-col rounded-xl bg-neutral-50 hover:bg-white border-neutral-500' : 'flex border-neutral-300 bg-white hover:bg-neutral-50' "
+        :class="[
+          showVertically ? 'flex flex-col rounded-xl border-neutral-500' : 'flex border-neutral-300 hover:bg-neutral-50' 
+          , value.selected ? 'bg-primary-500 ' : (showVertically ? 'bg-neutral-50 hover:bg-white' : 'bg-white')]"
       >
         <img :src="value.img" alt="icon" class="w-4 h-4" v-if="value.img" :class="showVertically ? 'mx-auto' : ''" />
-        <span class="text-neutral-900 text-sm font-montserrat">{{ value.name }}</span>
+        <span class=" text-sm font-montserrat"
+        :class="value.selected ? 'text-white' : 'text-neutral-900'"
+        >{{ value.name }}</span>
       </div>
     </div>
   </div> 

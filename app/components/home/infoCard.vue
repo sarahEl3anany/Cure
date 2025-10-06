@@ -12,15 +12,15 @@ const props = defineProps({
     <div
       v-for="(value, key) in infoCard"
       :key="key"
-      class="flex items-center border bg-white rounded-2xl shadow-md gap-3"
+      class="flex items-center border bg-white rounded-2xl shadow-md gap-3 h-20 "
     >
       <img
         :src="value.img"
         alt="tag"
-        class="w-16 sm:w-20 object-cover rounded-l-xl"
+        class="w-16 sm:w-20 h-full object-cover rounded-l-xl"
       />
 
-      <div class="flex flex-col flex-1 text-left">
+      <div class="flex flex-col flex-1 text-left space-y-2 sm:space-y-0 sm:pr-2">
         <span class="font-georgia text-lg sm:text-base text-black truncate">
           {{ value.name }}
         </span>
@@ -44,7 +44,6 @@ const props = defineProps({
           </div>
         </div>
       </div>
-
       <button
         class="p-2 sm:p-3 rounded-full hover:bg-secondary-100 shrink-0"
       >
