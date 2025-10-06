@@ -49,7 +49,7 @@ const hospitalsCard = ref<Information[]>([
     <div class="flex flex-row items-center w-full mt-3">
       <Toast />
       <NuxtLink to="/home">
-        <i class="pi pi-arrow-left justify-start mr-3"></i> 
+        <i class="pi pi-arrow-left justify-start ml-3"></i> 
       </NuxtLink>
       <div class="text-center mx-auto">
         <h3 class="font-georgia text-black dark:text-primary-50 text-2xl">Your Favorite</h3>

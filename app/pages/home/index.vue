@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import homeHeader from '@/components/home/header.vue';
 import SearchBox from '@/components/home/searchBox.vue';
-import Specialties from '~/components/home/tags.vue';
+import Tags from '@/components/home/tags.vue';
 import infoCard from '@/components/home/infoCard.vue';
 import banner from '@/assets/images/home/banner.svg'
 import doctor1 from '@/assets/images/home/doctors/1.jpg'
 import doctor2 from '@/assets/images/home/doctors/2.jpg'
 import type { Information } from '@/types/information'
-import type { Tag } from '~/types/tag'
+import type { Tag } from '@/types/tag'
 import teeth from '/assets/images/home/tags/teeth.svg'
 import heart from '/assets/images/home/tags/heart.svg'
 import nose from '/assets/images/home/tags/nose.svg'
@@ -66,14 +66,14 @@ const mostSpecialties = ref<Tag[]>([
             <div class="flex items-center justify-between px-2 mt-2">
                 <span class="font-georgia text-xl text-black">Specialties</span>
                 <NuxtLink
-                    to="/specialties"
+                    to="/home/specialties"
                     class="font-montserrat text-sm text-primary-500"
                 >
                     View all
                 </NuxtLink>
             </div>
         </div>
-        <Specialties :tag="mostSpecialties" />
+        <Tags :tag="mostSpecialties" />
         <div class="w-full">
             <div class="flex items-center gap-2 mx-2">
                 <img :src="banner" alt="banner" class="w-11/12 max-h-48 mt-5 object-contain" />
