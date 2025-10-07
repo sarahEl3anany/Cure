@@ -1,12 +1,21 @@
 <script setup lang="ts">
-
+import userAvatar from '@/assets/images/home/defaultUser.svg'
 import location from '@/assets/images/home/locationA.svg'
 import mage from '@/assets/images/home/mage_location.svg'
+import { useRoute } from 'vue-router'
 const center = ref({ lat: 0, lng: 0 })
 const address = ref('Detecting your location...')
 const mapRef = ref()
+const route = useRoute()
 
 onMounted(() => {
+    if (route.query.lat && route.query.lng) {
+    center.value = {
+      lat: Number(route.query.lat),
+      lng: Number(route.query.lng)
+    }
+    address.value = String(route.query.address || 'Selected location')
+  } else {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             async (pos) => {
@@ -24,6 +33,7 @@ onMounted(() => {
     } else {
         address.value = 'Geolocation not supported'
     }
+}
 })
 
 async function updateAddress(coords: { lat: number; lng: number }) {
@@ -67,31 +77,44 @@ function confirmLocation() {
                     </NuxtLink>
                 </div>
                 <div class="flex items-center gap-2 mt-1 text-neutral-600 text-sm">
-                    <img class="w-3 h-3" :src=location alt="Location icon" />
+                    <img class="w-3 h-3" :src="location" alt="Location icon" />
                     <div class="flex items-start">
-                        <div class="flex items-center gap-1">
-                            <span class="text-primary-500 text-montserrat text-sm">
-                                <NuxtLink to="/user/location">
-                                    <span class="truncate">{{ address }}</span>
-                                </NuxtLink>
-                            </span>
-                        </div>
+                        <span class="text-primary-500 text-montserrat text-sm truncate">{{ address }}</span>
                     </div>
                 </div>
             </div>
+
             <div class="flex-1 w-full">
-                <GMapMap ref="mapRef" :center="center" :zoom="15" map-type-id="roadmap"
-                    style="width: 100%; height: 100vh" @click="(e: any) => onMarkerDragEnd(e)">
-                    <GMapMarker :position="center" :draggable="true" @dragend="onMarkerDragEnd" />
+                <GMapMap
+                    ref="mapRef"
+                    :center="center"
+                    :zoom="15"
+                    map-type-id="roadmap"
+                    style="width: 100%; height: 100vh"
+                    @click="(e: any) => onMarkerDragEnd(e)"
+                >
+                    <GMapMarker
+                        :position="center"
+                        :draggable="true"
+                        @dragend="onMarkerDragEnd"
+                        :icon="{
+                            url: userAvatar,
+                            scaledSize: { width: 60, height: 60 },
+                            anchor: { x: 30, y: 30 },
+                        }"
+                    />
                 </GMapMap>
             </div>
+
             <div class="absolute bottom-20 right-5 bg-white p-1 rounded-full shadow-lg cursor-pointer">
-                <img class="h-8 w-8" :src=mage alt="Mage icon" />
+                <img class="h-8 w-8" :src="mage" alt="Mage icon" />
             </div>
+
             <div class="absolute bottom-5 left-0 w-full flex justify-center z-10">
                 <Button
                     class="bg-primary-500 hover:bg-primary-600 text-white w-[90%] h-12 rounded-lg font-montserratMedium"
-                    @click="confirmLocation">
+                    @click="confirmLocation"
+                >
                     Confirm location
                 </Button>
             </div>

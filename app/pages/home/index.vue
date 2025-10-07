@@ -61,7 +61,7 @@ const mostSpecialties = ref<Tag[]>([
 <template>
     <div class="flex flex-col items-center w-full">
         <homeHeader />
-        <SearchBox labelText="Search for specialty, doctor" />
+        <SearchBox labelText="Search for specialty, doctor" searchRoute="/home/search" />
         <div class="w-full">
             <div class="flex items-center justify-between px-2 mt-2">
                 <span class="font-georgia text-xl text-black">Specialties</span>
