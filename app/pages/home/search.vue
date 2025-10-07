@@ -55,7 +55,7 @@ const allSpecialties = ref<Tag[]>([
       </div>
     </div>
     <div class="w-full">
-      <SearchBox />
+      <SearchBox labelText="Search for specialty, doctor" />
     </div>
     <div class="w-full flex items-center flex-row gap-2">
       <div class="text-secondary-500 font-montserrat text-base ">Search by your location</div>

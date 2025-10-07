@@ -26,11 +26,15 @@ if (!avatar) {
                     </NuxtLink>
                 </p>
                 <div class="flex items-start">
-                    <img class="w-3 h-3" :src=location alt="Location icon" />
+                    <NuxtLink to="/user/location">
+                        <img class="w-3 h-3" :src=location alt="Location icon" />
+                    </NuxtLink>
                     <div class="flex items-center gap-1">
                         <span
                             class="text-neutral-700 text-montserrat text-xs">
-                            129,El-Nasr Street, Cairo
+                            <NuxtLink to="/user/location">
+                                129,El-Nasr Street, Cairo
+                            </NuxtLink>
                         </span>
                         <i class="pi pi-angle-down text-neutral-500"></i>
                     </div>

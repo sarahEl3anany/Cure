@@ -20,7 +20,8 @@ export default defineNuxtConfig({
       apiBase: process.env.NUXT_PUBLIC_API_BASE,
       googleClientId: process.env.GOOGLE_CLIENT_ID,
       facebookAppId: process.env.FACEBOOK_APP_ID,
-      localToken: process.env.NUXT_PUBLIC_LOCAL_TOKEN
+      localToken: process.env.NUXT_PUBLIC_LOCAL_TOKEN,
+      googleMapsApiKey: process.env.NUXT_PUBLIC_GOOGLE_MAP_API_KEY
     },
   },
   googleSignIn: {

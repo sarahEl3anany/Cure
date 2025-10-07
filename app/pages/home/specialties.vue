@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import SearchBox from '@/components/home/searchBox.vue';
 import Specialties from '@/components/home/tags.vue';
 import type { Tag } from '@/types/tag'
 import teeth from '/assets/images/home/tags/teeth.svg'

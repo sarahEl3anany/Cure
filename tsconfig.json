@@ -16,6 +16,6 @@
     }
   ],
   "compilerOptions": {
-    "types": ["@types/node", "vue", "#app", "./types/nuxt"]
+    "types": ["@types/node", "vue", "#app", "./types/nuxt", "@types/google.maps"]
   }
 }
