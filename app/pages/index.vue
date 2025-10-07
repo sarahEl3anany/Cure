@@ -1,25 +1,59 @@
 <script setup lang="ts">
-import Welcome1 from './welcome1.vue';
-import Welcome2 from './welcome2.vue';
-const currentStep = ref(1)
+import { ref, shallowRef, markRaw } from 'vue'
+import Welcome1 from './welcome1.vue'
+import Welcome2 from './welcome2.vue'
+
+const welcomeComponents = shallowRef([
+  { id: 1, component: markRaw(Welcome1) },
+  { id: 2, component: markRaw(Welcome2) }
+])
+
+const carousel = ref() 
+const activeIndex = ref(0) 
+
 const goNext = () => {
-  if (currentStep.value === 1) currentStep.value = 2
+  if (carousel.value && activeIndex.value < welcomeComponents.value.length - 1) {
+    activeIndex.value++
+  } else {
+    
+    navigateTo('/welcome')
+  }
 }
 </script>
 
 <template>
-  <div>
-    <div class="absolute top-4 right-4 justify-end">
-      <NuxtLink to="/welcome" class="text-neutral-700 font-montserratMedium pr-2 dark:text-neutral-50 ">
+  <div class="relative w-full h-full flex flex-col items-center justify-center main-welcome">
+    <div class="absolute top-4 right-4">
+      <NuxtLink
+        to="/welcome"
+        class="text-neutral-700 font-montserratMedium pr-2 dark:text-neutral-50"
+      >
         Skip
       </NuxtLink>
     </div>
-    <div v-if="currentStep == 1">
-      <Welcome1 @next="goNext" />  
-    </div>
-    <div v-if="currentStep == 2">
-      <Welcome2 @next="goNext" />  
+    <Carousel
+      ref="carousel"
+      v-model:page="activeIndex"
+      :value="welcomeComponents"
+      :numVisible="1"
+      :numScroll="1"
+      :showNavigators="false"
+      :showIndicators="true"
+      class="custom-carousel w-full"
+    >
+      <template #item="slotProps">
+        <div class="flex flex-col items-center justify-center px-4 text-center">
+          <component :is="slotProps.data.component" />
+        </div>
+      </template>
+    </Carousel>
+    <div class="mt-1 w-full max-w-sm px-6">
+      <Button
+        @click="goNext"
+        class="w-full text-base h-12 text-white rounded-lg font-montserratMedium bg-primary-500 hover:bg-primary-600"
+      >
+        {{ activeIndex === welcomeComponents.length - 1 ? 'Get Started' : 'Next' }}
+      </Button>
     </div>
   </div>
 </template>
-

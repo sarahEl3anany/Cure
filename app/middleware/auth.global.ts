@@ -1,7 +1,7 @@
 export default defineNuxtRouteMiddleware((to) => {
   const config = useRuntimeConfig()
-  const token = useCookie('token').value || config.public.localToken
-  const sessionToken = process.client ? sessionStorage.getItem('token') : null
+  const token = false//useCookie('token').value || config.public.localToken
+  const sessionToken = false//process.client ? sessionStorage.getItem('token') : null
   const outRoutes = [
     '/auth/sign-in',
     '/auth/sign-up',
@@ -15,10 +15,9 @@ export default defineNuxtRouteMiddleware((to) => {
   ]
   const isAuthenticated = !!(token || sessionToken)
   if (!isAuthenticated && !outRoutes.includes(to.path)) {
-      return navigateTo('/welcome')
+      return navigateTo('/')
     }
 
-    // المستخدم عامل تسجيل دخول وبيحاول يدخل صفحة من الـ outRoutes
     if (isAuthenticated && outRoutes.includes(to.path)) {
       return navigateTo('/home')
   }

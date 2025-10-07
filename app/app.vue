@@ -16,8 +16,8 @@ import SplashScreen from '@/pages/splashScreen.vue'
 import { useSplashScreenStore } from '@/stores/SplashScreen'
 const splashScreenStore = useSplashScreenStore()
 const config = useRuntimeConfig()
-const token = useCookie('token').value || config.public.localToken
-const sessionToken = process.client ? sessionStorage.getItem('token') : null
+const token = false//useCookie('token').value || config.public.localToken
+const sessionToken = false//process.client ? sessionStorage.getItem('token') : null
 let showFooter = ref(false)
 if (sessionToken || token) {
   showFooter.value = true
