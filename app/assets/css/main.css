@@ -15,7 +15,7 @@
       font-size: 12px !important;
     }
     .main-welcome .p-carousel-indicator:not(.p-carousel-indicator-active) button {
-      @apply rounded-full h-3 w-3 !important;
+      @apply rounded-full h-[13px] w-[13px] !important;
     }
     /* font family */
     --p-font-Montserrat: 'Montserrat' !important;

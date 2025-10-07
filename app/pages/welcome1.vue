@@ -7,7 +7,7 @@ import page1 from '@/assets/images/page1_g.svg'
     <img
       :src="page1"
       alt="welcome"
-      class="w-1/4 sm:w-1/4 max-w-xs h-auto pt-5"
+      class="w-1/4 sm:w-1/4 max-w-xs h-auto"
     />
 
     <div class="max-w-md">
