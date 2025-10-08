@@ -12,8 +12,8 @@ import teeth from '/assets/images/home/tags/teeth.svg'
 import heart from '/assets/images/home/tags/heart.svg'
 import nose from '/assets/images/home/tags/nose.svg'
 import lung from '/assets/images/home/tags/lung.svg'
-import { useHeader } from '~/composables/useHeader'
-import { useFooter } from '~/composables/useFooter'
+import { useHeader } from '@/composables/useHeader'
+import { useFooter } from '@/composables/useFooter'
 const { showFooter } = useFooter()
 const { showHeader } = useHeader()
 onMounted(() => {
@@ -68,7 +68,7 @@ const mostSpecialties = ref<Tag[]>([
 ])
 </script>
 <template>
-    <div class="flex flex-col items-center w-full">
+    <div class="flex flex-col items-center w-full p-3">
         <HomeHeader />
         <SearchBox labelText="Search for specialty, doctor" searchRoute="/home/search" />
         <div class="w-full">

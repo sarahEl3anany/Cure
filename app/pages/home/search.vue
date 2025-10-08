@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import SearchBox from '@/components/home/searchBox.vue';
 import Tags from '@/components/home/tags.vue';
-import { useHeader } from '~/composables/useHeader'
+import { useHeader } from '@/composables/useHeader'
 import type { Tag } from '@/types/tag'
 import teeth from '/assets/images/home/tags/teeth.svg'
 import heart from '/assets/images/home/tags/heart.svg'
