@@ -3,9 +3,14 @@ import BsHeartPulse from '@/assets/images/sign-up/BsHeartPulse.svg'
 import KeySquare from '@/assets/images/sign-up/KeySquare2.png'
 // import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
 import { zodResolver } from '@primevue/forms/resolvers/zod';
-import facebookLogin from '@/components/sign-in/facebook-login.vue'
+import FacebookLogin from '@/components/sign-in/facebook-login.vue'
 import GoogleSignIn from '@/components/sign-in/google-sign-in.vue'
 import { z } from 'zod';
+import { useHeader } from '@/composables/useHeader'
+const { showHeader } = useHeader()
+onMounted(() => {
+    showHeader.value = false
+})
 
 const toast = useToast();
 const { $apiFetch, $successRegister, $successRegisterSession } = useNuxtApp()
@@ -143,7 +148,7 @@ async function signUp({ valid, values }: any) {
       </Divider>
     </div>
     <div class="flex justify-center gap-36 w-full max-w-sm">
-      <facebookLogin 
+      <FacebookLogin 
       classStyle="h-14 w-14 rounded-2xl bg-white border-neutral-300 border" 
       />
       <GoogleSignIn classStyle="h-14 w-14 rounded-2xl bg-white border-neutral-300 border" />

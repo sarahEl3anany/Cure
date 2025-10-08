@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import homeHeader from '@/components/home/header.vue';
+import HomeHeader from '@/components/home/header.vue';
 import SearchBox from '@/components/home/searchBox.vue';
 import Tags from '@/components/home/tags.vue';
-import infoCard from '@/components/home/infoCard.vue';
+import InfoCard from '@/components/home/infoCard.vue';
 import banner from '@/assets/images/home/banner.svg'
 import doctor1 from '@/assets/images/home/doctors/1.jpg'
 import doctor2 from '@/assets/images/home/doctors/2.jpg'
@@ -12,6 +12,14 @@ import teeth from '/assets/images/home/tags/teeth.svg'
 import heart from '/assets/images/home/tags/heart.svg'
 import nose from '/assets/images/home/tags/nose.svg'
 import lung from '/assets/images/home/tags/lung.svg'
+import { useHeader } from '~/composables/useHeader'
+import { useFooter } from '~/composables/useFooter'
+const { showFooter } = useFooter()
+const { showHeader } = useHeader()
+onMounted(() => {
+  showFooter.value = true
+  showHeader.value = false
+})
 const doctorsCard = ref<Information[]>([
   {
     name: 'Dr. Ahmed Ali',
@@ -60,7 +68,7 @@ const mostSpecialties = ref<Tag[]>([
 </script>
 <template>
     <div class="flex flex-col items-center w-full">
-        <homeHeader />
+        <HomeHeader />
         <SearchBox labelText="Search for specialty, doctor" searchRoute="/home/search" />
         <div class="w-full">
             <div class="flex items-center justify-between px-2 mt-2">
@@ -89,6 +97,6 @@ const mostSpecialties = ref<Tag[]>([
                 </div>
             </div>
         </div>
-        <infoCard :infoCard="doctorsCard" />
+        <InfoCard :infoCard="doctorsCard" />
     </div>
 </template>

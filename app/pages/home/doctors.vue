@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import infoCard from '@/components/home/infoCard.vue';
+import InfoCard from '@/components/home/infoCard.vue';
 import Tags from '@/components/home/tags.vue';
 import SearchBox from '@/components/home/searchBox.vue';
 import type { Information } from '@/types/information'
@@ -10,6 +10,13 @@ import teeth from '/assets/images/home/tags/teeth.svg'
 import heart from '/assets/images/home/tags/heart.svg'
 import nose from '/assets/images/home/tags/nose.svg'
 import lung from '/assets/images/home/tags/lung.svg'
+import { useHeader } from '@/composables/useHeader'
+const { headerTitle, showHeader, backRoute } = useHeader()
+onMounted(() => {
+    headerTitle.value = 'Doctors'
+    showHeader.value = true
+    backRoute.value = '/home'
+})
 const doctorsCard = ref<Information[]>([
     {
         name: 'Dr. Ahmed Ali',
@@ -63,18 +70,10 @@ const allSpecialties = ref<Tag[]>([
 </script>
 <template>
     <div class="flex flex-col items-center w-full">
-        <div class="flex flex-row items-center w-full mt-3">
-            <NuxtLink to="/home">
-                <i class="pi pi-arrow-left justify-start ml-3"></i>
-            </NuxtLink>
-            <div class="text-center mx-auto">
-                <h3 class="font-georgia text-black dark:text-primary-50 text-2xl">Doctors</h3>
-            </div>
-        </div>
         <div class="w-full px-3 space-y-4">
             <SearchBox labelText="Search for specialty, doctor" searchRoute="/home/search" />
             <Tags :tag="allSpecialties" />
-            <infoCard :infoCard="doctorsCard" />
+            <InfoCard :infoCard="doctorsCard" />
         </div>
     </div>
 </template>

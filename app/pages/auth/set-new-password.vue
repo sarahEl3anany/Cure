@@ -2,7 +2,13 @@
 import KeySquare from '@/assets/images/sign-up/KeySquare2.png'
 import { zodResolver } from '@primevue/forms/resolvers/zod';
 import { z } from 'zod';
-
+import { useHeader } from '@/composables/useHeader'
+const { headerTitle, backRoute, showHeader } = useHeader()
+onMounted(() => {
+  headerTitle.value = 'Set New Password'
+  backRoute.value = '/auth/code-verification'
+  showHeader.value = true
+})
 const toast = useToast();
 const { $apiFetch } = useNuxtApp()
 
@@ -73,17 +79,9 @@ async function updatePassword({ valid, values }: any) {
 <template>
   <div class="flex flex-col items-center justify-center px-4 text-center">
     <Toast />
-    <div class="flex flex-row items-center w-full mt-3">
-      <NuxtLink to="/auth/code-verification" class="flex-none">
-        <i class="pi pi-arrow-left justify-start"></i>
-      </NuxtLink>
-      <div class="mx-auto text-center">
-        <h3 class="font-georgia text-secondary-500 text-xl dark:text-primary-50">Set new password</h3>
-      </div>
+    <div class="font-georgia mt-5 text-base">
+      Create a new password, ensure it different form your previous ones for security.
     </div>
-     <div class="font-georgia mt-5 text-base">
-        Create a new password, ensure it different form your previous ones for security.
-      </div>
     <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="updatePassword">
       <div class="space-y-8 mt-8">
         <div class="h-12">

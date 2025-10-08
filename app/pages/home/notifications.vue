@@ -2,6 +2,13 @@
 import notifications from '@/assets/images/home/notifications/zzz.svg'
 import NotificationItems from '@/components/home/notification.vue';
 import type { Notification } from '@/types/notification';
+import { useHeader } from '@/composables/useHeader'
+const { headerTitle, showHeader, backRoute } = useHeader()
+onMounted(() => {
+    headerTitle.value = 'Notifications'
+    showHeader.value = true
+    backRoute.value = '/home'
+})
 const allNotifications = ref<Notification[]>([
     {
         id: 1,
@@ -28,14 +35,6 @@ const allNotifications = ref<Notification[]>([
 </script>
 <template>
     <div class="flex flex-col items-center w-full">
-        <div class="flex flex-row items-center w-full mt-3">
-            <NuxtLink to="/home">
-                <i class="pi pi-arrow-left justify-start ml-3"></i>
-            </NuxtLink>
-            <div class="text-center mx-auto">
-                <h3 class="font-georgia text-black dark:text-primary-50 text-2xl">Notifications</h3>
-            </div>
-        </div>
         <div v-if="allNotifications.length > 0" class="w-full">
             <div class="font-montserratMedium text-base text-primary-500 mt-3 p-3">Today</div>
             <NotificationItems :notifications="allNotifications" /> 

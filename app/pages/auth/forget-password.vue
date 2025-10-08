@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { zodResolver } from '@primevue/forms/resolvers/zod';
 import { z } from 'zod';
-
+import { useHeader } from '@/composables/useHeader'
+const { headerTitle, backRoute, showHeader } = useHeader()
+onMounted(() => {
+    headerTitle.value = 'Forget Password'
+    backRoute.value = '/auth/sign-in'
+    showHeader.value = true
+})
 const toast = useToast();
 const { $apiFetch } = useNuxtApp()
 const initialValues = reactive({
@@ -55,15 +61,7 @@ async function forgetPassword({ valid, values }: any) {
 
 <template>
     <div class="flex flex-col items-center justify-center px-4 text-center">
-        <div class="flex flex-row items-center w-full mt-3">
-            <Toast />
-            <NuxtLink to="/auth/sign-in">
-                <i class="pi pi-arrow-left justify-start"></i>
-            </NuxtLink>
-            <div class="text-center mx-auto">
-                <h3 class="font-georgia text-secondary-500 dark:text-primary-50 text-3xl">Forget your password</h3>
-            </div>
-        </div>
+        <Toast />
         <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="forgetPassword">
             <div class="space-y-8 mt-8">
                 <div>

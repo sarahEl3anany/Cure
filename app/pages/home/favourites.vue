@@ -1,10 +1,17 @@
 <script setup lang="ts">
 import empty from '@/assets/images/home/favourites/empty.svg'
-import infoCard from '@/components/home/infoCard.vue';
+import InfoCard from '@/components/home/infoCard.vue';
 import doctor1 from '@/assets/images/home/doctors/1.jpg'
 import hospitals1 from '@/assets/images/home/hospitals/1.jpg'
 import hospitals2 from '@/assets/images/home/hospitals/2.jpg'
 import type { Information } from '@/types/information'
+import { useHeader } from '@/composables/useHeader'
+const { headerTitle, showHeader, backRoute } = useHeader()
+onMounted(() => {
+    headerTitle.value = 'Your Favorite'
+    showHeader.value = true
+    backRoute.value = '/home'
+})
 const activeIndex = ref(0)
 const doctorsCard = ref<Information[]>([
   {
@@ -44,24 +51,16 @@ const hospitalsCard = ref<Information[]>([
 
 <template>
   <div class="flex flex-col items-center justify-center  text-center"> 
-    <div class="flex flex-row items-center w-full mt-3">
-      <NuxtLink to="/home">
-        <i class="pi pi-arrow-left justify-start ml-3"></i> 
-      </NuxtLink>
-      <div class="text-center mx-auto">
-        <h3 class="font-georgia text-black dark:text-primary-50 text-2xl">Your Favorite</h3>
-      </div>
-    </div>
     <div v-if="doctorsCard.length > 0 || hospitalsCard.length > 0" class="flex flex-col w-full" >
       <TabView v-model:activeIndex="activeIndex">
         <TabPanel header="Doctors" value="doctors" :pt="{ headerAction: { class: 'font-georgia font-normal '+(activeIndex === 0 ? 'text-primary-500' : 'text-secondary-500') } }">
           <div> 
-            <infoCard :infoCard="doctorsCard" />
+            <InfoCard :infoCard="doctorsCard" />
           </div>
         </TabPanel>
         <TabPanel header="Hospitals" value="hospitals" :pt="{ headerAction: { class: 'font-georgia font-normal '+(activeIndex === 1 ? 'text-primary-500' : 'text-secondary-500') } }">
           <div>
-            <infoCard :infoCard="hospitalsCard" />
+            <InfoCard :infoCard="hospitalsCard" />
           </div>
         </TabPanel>
       </TabView>

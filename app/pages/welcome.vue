@@ -2,7 +2,7 @@
 import loginImg from '@/assets/images/sign-in/login.svg'
 // import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
 import GoogleSignIn from '@/components/sign-in/google-sign-in.vue'
-import facebookLogin from '@/components/sign-in/facebook-login.vue'
+import FacebookLogin from '@/components/sign-in/facebook-login.vue'
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import facebookLogin from '@/components/sign-in/facebook-login.vue'
       <h3 class="font-georgia text-secondary-500 dark:text-primary-50 max-lg:text-2xl max-xs:text-sm">Let’s You In</h3>
     </div>
     <div class="space-y-5 mt-8 gap-4 max-xs:w-1/3 max-lg:w-1/3 w-1/4">
-      <facebookLogin
+      <FacebookLogin
         classStyle="text-base max-sm:text-sm max-xs:text-xs text-neutral-700 font-montserratMedium h-12 w-full border-neutral-300 rounded-lg bg-white"
         labelName="Sign in with Facebook" />
       <GoogleSignIn

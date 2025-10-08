@@ -3,6 +3,11 @@ import userAvatar from '@/assets/images/home/defaultUser.svg'
 import location from '@/assets/images/home/locationA.svg'
 import mage from '@/assets/images/home/mage_location.svg'
 import { useRoute } from 'vue-router'
+import { useHeader } from '@/composables/useHeader'
+const { showHeader } = useHeader()
+onMounted(() => {
+    showHeader.value = false
+})
 const center = ref({ lat: 0, lng: 0 })
 const address = ref('Detecting your location...')
 const mapRef = ref()

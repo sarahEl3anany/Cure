@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { useHeader } from '@/composables/useHeader'
+const { showHeader } = useHeader()
+onMounted(() => {
+    showHeader.value = false
+})
 const { $apiFetch, $successRegisterSession } = useNuxtApp()
 let verifyMsg = ''
 try {
