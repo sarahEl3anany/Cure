@@ -6,5 +6,6 @@ export interface Information {
   specialty: string
   location: string
   time: string
-  rating: number
+  rating: number,
+  route?: string
 }

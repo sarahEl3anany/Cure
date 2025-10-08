@@ -30,6 +30,7 @@ const doctorsCard = ref<Information[]>([
     location: 'El-Nasr Hospital',
     time: '10:00 - 11:00',
     rating: 4.8,
+    route: '/doctor/1'
   },
   {
     name: 'Dr. Mohamed',
