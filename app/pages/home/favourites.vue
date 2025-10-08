@@ -70,8 +70,8 @@ const hospitalsCard = ref<Information[]>([
       <div class="flex flex-col items-center justify-center px-4 text-center">
         <img :src="empty" alt="Favourites" class="mx-1/5 pt-4 max-w-sm max-h-sm" />
         <div class="gap-4 mt-3">
-          <h3 class="font-georgia text-black dark:text-primary-50 lg:text-2xl xs:text-base">Your favorite!</h3>
-          <p class="font-montserrat text-neutral-700 dark:text-secondary-50 text-base xs:text-sm mt-1">
+          <h3 class="font-georgia text-black dark:text-primary-50 max-lg:text-2xl max-xs:text-base">Your favorite!</h3>
+          <p class="font-montserrat text-neutral-700 dark:text-secondary-50 text-base max-xs:text-sm mt-1">
             Add your favorite to find it easily
           </p>
         </div>

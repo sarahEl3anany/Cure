@@ -63,7 +63,7 @@ async function signIn({ valid, values }: any) {
   <div class="flex flex-col items-center justify-center px-4 text-center">
     <Toast />
     <img :src="BsHeartPulse" alt="HeartPulse" class="w-16 h-16 mt-10" />
-        <h3 class="mt-8 font-georgia text-secondary-500 lg:text-2xl xs:text-sm dark:text-secondary-50">Login to your
+        <h3 class="mt-8 font-georgia text-secondary-500 max-lg:text-2xl max-xs:text-sm dark:text-secondary-50">Login to your
             Account</h3>
     <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="signIn">
       <div class="w-full max-w-sm space-y-5 mt-7">

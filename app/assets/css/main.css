@@ -17,6 +17,12 @@
     .main-welcome .p-carousel-indicator:not(.p-carousel-indicator-active) button {
       @apply rounded-full h-[13px] w-[13px] !important;
     }
+    .text-base {
+      font-size: 16px !important;
+    }
+    .h-12 {
+      height: 48px !important;
+    }
     /* font family */
     --p-font-Montserrat: 'Montserrat' !important;
     --p-font-Montserrat-medium: 'Montserrat-Medium' !important;

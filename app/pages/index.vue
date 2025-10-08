@@ -10,7 +10,7 @@ const welcomeComponents = shallowRef([
 
 const carousel = ref() 
 const activeIndex = ref(0) 
-
+const componentsLoaded = ref(false)
 const goNext = () => {
   if (carousel.value && activeIndex.value < welcomeComponents.value.length - 1) {
     activeIndex.value++
@@ -19,32 +19,48 @@ const goNext = () => {
     navigateTo('/welcome')
   }
 }
+onMounted(async () => {
+  await Promise.all([
+    import('./welcome1.vue'),
+    import('./welcome2.vue')
+  ])
+  componentsLoaded.value = true
+})
 </script>
-
 <template>
-  <div class=" w-full h-full flex flex-col items-center justify-center main-welcome">
-    <div class="flex  w-full justify-end top-4 right-4">
+  <div class="w-full min-h-screen flex flex-col items-center justify-between main-welcome">
+    <div class="w-full flex justify-end px-6 pt-4">
       <NuxtLink
         to="/welcome"
-        class="text-neutral-700 font-montserratMedium pr-2 dark:text-neutral-50"
+        class="text-neutral-700 font-montserratMedium dark:text-neutral-50"
       >
         Skip
       </NuxtLink>
     </div>
-    <Carousel
-      ref="carousel"
-      v-model:page="activeIndex"
-      :value="welcomeComponents"
-      :numVisible="1"
-      :numScroll="1"
-      :showNavigators="false"
-      :showIndicators="true" 
-    >
-      <template #item="slotProps">
-        <component :is="slotProps.data.component" />
-      </template>
-    </Carousel>
-    <div class="mt-1 w-full max-w-sm px-6">
+
+    <div class="flex-1 flex items-center justify-center w-full">
+      <Carousel
+        ref="carousel"
+        v-if="componentsLoaded"
+        v-model:page="activeIndex"
+        :value="welcomeComponents"
+        :numVisible="1"
+        :numScroll="1"
+        :showNavigators="false"
+        :showIndicators="true"
+        class="w-full"
+      >
+        <template #item="slotProps">
+          <component :is="slotProps.data.component" />
+        </template>
+      </Carousel>
+
+      <div v-else class="flex items-center justify-center w-full">
+        <i class="pi pi-spinner pi-spin text-3xl text-primary-500"></i>
+      </div>
+    </div>
+
+    <div class="w-full max-w-sm px-6 pb-6">
       <Button
         @click="goNext"
         class="w-full text-base h-12 text-white rounded-lg font-montserratMedium bg-primary-500 hover:bg-primary-600"

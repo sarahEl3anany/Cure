@@ -1,3 +1,6 @@
+<script setup lang="ts">
+import heartPulse from '@/assets/images/BsHeartPulse.svg'
+</script>
 <template>
   <div> 
     <div class="splash fixed w-full h-full grid place-items-center bg-primary-500 z-[9999]">
@@ -5,7 +8,7 @@
         <img
           class="splash-icon absolute top-1/2 left-1/2 w-14 h-14"
           alt="Heart pulse icon"
-          src="/bs-heart-pulse.svg"
+          :src="heartPulse"
           loading="lazy"
         />
 

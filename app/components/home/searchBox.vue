@@ -6,7 +6,7 @@ const props = defineProps({
 </script>
 <template>
   <div class="flex justify-center w-full mt-5 px-2">
-      <div class="flex items-center  rounded-md bg-neutral-50 md:w-full sm:w-[396px] px-1 shadow-sm ">
+      <div class="flex items-center  rounded-md bg-neutral-50 md:w-full max-sm:w-[396px] px-1 shadow-sm ">
         <NuxtLink :to="searchRoute">
           <i class="pi pi-search w-3 text-neutral-500 mr-2 border-none"></i>
         </NuxtLink>
