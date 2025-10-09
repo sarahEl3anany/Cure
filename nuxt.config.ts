@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import Aura from '@primeuix/themes/aura';
+import svgLoader from 'vite-svg-loader'
 export default defineNuxtConfig({
   compatibilityDate: '2025-09-19',
   devtools: { enabled: true },
@@ -13,7 +14,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     ['@vee-validate/nuxt', { componentNames: { Form: 'VForm' } }],
     '@pinia/nuxt',
-    'nuxt-vue3-google-signin',
+    'nuxt-vue3-google-signin'
   ],
   runtimeConfig: {
     public: {
@@ -33,5 +34,13 @@ export default defineNuxtConfig({
         preset: Aura
       }
     }
+  },
+  vite: {
+    plugins: [
+      svgLoader({
+        svgo: false, // ابقي على الـ SVG كما هو
+        defaultImport: 'component' // استيراد SVG كمكون Vue
+      })
+    ]
   }
 })

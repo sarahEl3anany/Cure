@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import { useHeader } from '@/composables/useHeader'
-const { showHeader } = useHeader()
-onMounted(() => {
-    showHeader.value = false
-})
-
 setTimeout(() => {
     navigateTo('/')
 }, 5000);
+definePageMeta({
+  layout: 'no-header'
+})
 </script>
 <template>
     <div class="flex flex-col items-center justify-center px-4 text-center">

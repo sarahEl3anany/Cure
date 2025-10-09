@@ -2,20 +2,27 @@
 import InfoCard from '@/components/home/infoCard.vue';
 import Tags from '@/components/home/tags.vue';
 import SearchBox from '@/components/home/searchBox.vue';
+
 import type { Information } from '@/types/information'
 import type { Tag } from '@/types/tag'
+
 import doctor1 from '@/assets/images/home/doctors/1.jpg'
 import doctor2 from '@/assets/images/home/doctors/2.jpg'
-import teeth from '/assets/images/home/tags/teeth.svg'
-import heart from '/assets/images/home/tags/heart.svg'
-import nose from '/assets/images/home/tags/nose.svg'
-import lung from '/assets/images/home/tags/lung.svg'
+
+import Teeth from '/assets/icons/home/tags/teeth.svg'
+import Heart from '/assets/icons/home/tags/heart.svg'
+import Nose from '/assets/icons/home/tags/nose.svg'
+import Lung from '/assets/icons/home/tags/lung.svg'
+
 import { useHeader } from '@/composables/useHeader'
 const { headerTitle, showHeader, backRoute } = useHeader()
 onMounted(() => {
     headerTitle.value = 'Doctors'
     showHeader.value = true
     backRoute.value = '/home'
+})
+definePageMeta({
+  layout: 'no-footer'
 })
 const doctorsCard = ref<Information[]>([
     {
@@ -48,22 +55,22 @@ const allSpecialties = ref<Tag[]>([
   },
   {
     name: 'Dentist',
-    img: teeth,
+    img: Teeth,
     id: 1
   },
   {
     name: 'Cardiologist',
-    img: heart,
+    img: Heart,
     id: 2
   },
   {
     name: 'ENT',
-    img: nose,
+    img: Nose,
     id: 3
   },
   {
     name: 'Lung',
-    img: lung,
+    img: Lung,
     id: 4
   },
 ])

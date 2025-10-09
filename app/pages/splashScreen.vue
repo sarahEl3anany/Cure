@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import heartPulse from '@/assets/images/BsHeartPulse.svg'
+import HeartPulse from '@/assets/icons/BsHeartPulse.svg'
 </script>
 <template>
   <div> 
@@ -8,7 +8,7 @@ import heartPulse from '@/assets/images/BsHeartPulse.svg'
         <img
           class="splash-icon absolute top-1/2 left-1/2 w-14 h-14"
           alt="Heart pulse icon"
-          :src="heartPulse"
+          :src="HeartPulse"
           loading="lazy"
         />
 

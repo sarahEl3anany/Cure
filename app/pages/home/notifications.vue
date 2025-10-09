@@ -9,6 +9,9 @@ onMounted(() => {
     showHeader.value = true
     backRoute.value = '/home'
 })
+definePageMeta({
+  layout: 'no-footer'
+})
 const allNotifications = ref<Notification[]>([
     {
         id: 1,

@@ -1,13 +1,8 @@
 <script setup lang="ts">
-import userAvatar from '@/assets/images/home/defaultUser.svg'
-import location from '@/assets/images/home/locationA.svg'
-import mage from '@/assets/images/home/mage_location.svg'
+import userAvatar from '@/assets/images/home/defaultUser.png'
+import Location from '@/assets/icons/home/location.svg'
+import Mage from '@/assets/icons/home/mage_location.svg'
 import { useRoute } from 'vue-router'
-import { useHeader } from '@/composables/useHeader'
-const { showHeader } = useHeader()
-onMounted(() => {
-    showHeader.value = false
-})
 const center = ref({ lat: 0, lng: 0 })
 const address = ref('Detecting your location...')
 const mapRef = ref()
@@ -65,6 +60,9 @@ function confirmLocation() {
     console.log('✅ Confirmed location:', center.value, address.value)
     alert(`Location confirmed:\n${address.value}`)
 }
+definePageMeta({
+  layout: 'no-layout'
+})
 </script>
 
 <template>
@@ -82,7 +80,7 @@ function confirmLocation() {
                     </NuxtLink>
                 </div>
                 <div class="flex items-center gap-2 mt-1 text-neutral-600 text-sm">
-                    <img class="w-3 h-3" :src="location" alt="Location icon" />
+                    <Location class="w-3 h-3 text-primary-500" />
                     <div class="flex items-start">
                         <span class="text-primary-500 text-montserrat text-sm truncate">{{ address }}</span>
                     </div>
@@ -112,7 +110,7 @@ function confirmLocation() {
             </div>
 
             <div class="absolute bottom-20 right-5 bg-white p-1 rounded-full shadow-lg cursor-pointer">
-                <img class="h-8 w-8" :src="mage" alt="Mage icon" />
+                <Mage class="h-10 w-10 text-primary-500" alt="Mage icon" />
             </div>
 
             <div class="absolute bottom-5 left-0 w-full flex justify-center z-10">

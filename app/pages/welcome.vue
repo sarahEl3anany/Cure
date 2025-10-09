@@ -1,17 +1,21 @@
 <script setup lang="ts">
-import loginImg from '@/assets/images/sign-in/login.svg'
+import LoginImg from '@/assets/images/sign-in/login.svg'
 // import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
 import GoogleSignIn from '@/components/sign-in/google-sign-in.vue'
 import FacebookLogin from '@/components/sign-in/facebook-login.vue'
+
+definePageMeta({
+  layout: 'no-header'
+})
 </script>
 
 <template>
   <div class="flex flex-col items-center justify-center px-4 text-center">
-    <img :src="loginImg" alt="Login" class="min-w-1/3 min-h-1/3 pt-4 " />
-    <div class="gap-4 mt-3 max-xs:w-3/4 max-lg:w-1/2">
+    <LoginImg class="max-sm:w-3/4 max-sm:h-3/4 w-1/4 h-1/4 mt-1" />
+    <div class="gap-4 mt-3 w-1/2 max-xs:w-3/4 max-lg:w-1/2">
       <h3 class="font-georgia text-secondary-500 dark:text-primary-50 max-lg:text-2xl max-xs:text-sm">Let’s You In</h3>
     </div>
-    <div class="space-y-5 mt-8 gap-4 max-xs:w-1/3 max-lg:w-1/3 w-1/4">
+    <div class="space-y-4 mt-4 gap-4 max-sm:w-full w-1/4">
       <FacebookLogin
         classStyle="text-base max-sm:text-sm max-xs:text-xs text-neutral-700 font-montserratMedium h-12 w-full border-neutral-300 rounded-lg bg-white"
         labelName="Sign in with Facebook" />
@@ -39,7 +43,7 @@ import FacebookLogin from '@/components/sign-in/facebook-login.vue'
       </NuxtLink>
       <div class="">
         <span class="text-neutral-500 font-montserratMedium text-xs">Don’t have an account? </span>
-        <span class="ml-1 text-primary-500 font-montserratMedium text-xs">
+        <span class=" text-primary-500 font-montserratMedium text-xs">
           <NuxtLink to="/auth/sign-up"> Sign up</NuxtLink>
         </span>
       </div>

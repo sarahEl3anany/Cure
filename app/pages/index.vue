@@ -26,10 +26,14 @@ onMounted(async () => {
   ])
   componentsLoaded.value = true
 })
+
+definePageMeta({
+  layout: 'no-header'
+})
 </script>
 <template>
   <div class="w-full min-h-screen flex flex-col items-center justify-between main-welcome">
-    <div class="w-full flex justify-end px-6 pt-4">
+    <div class="w-full flex justify-end px-2 pt-3">
       <NuxtLink
         to="/welcome"
         class="text-neutral-700 font-montserratMedium dark:text-neutral-50"

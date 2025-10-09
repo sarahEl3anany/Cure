@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import userAvatar from '@/assets/images/home/defaultUser.svg'
-import location from '@/assets/images/home/location.svg'
-import bell from '@/assets/images/home/bell.svg'
+import UserAvatar from '@/assets/images/home/defaultUser.png'
+import Location from '@/assets/icons/home/location.svg'
+import Bell from '@/assets/icons/home/bell.svg'
 
 let avatar = process.client ? sessionStorage.getItem('avatar') : undefined;
 if (!avatar) {
     avatar = useCookie('avatar').value ? useCookie('avatar').value : undefined
     if (!avatar) {
-        avatar = userAvatar
+        avatar = UserAvatar
     }
 }
 </script>
@@ -27,7 +27,7 @@ if (!avatar) {
                 </p>
                 <div class="flex items-start">
                     <NuxtLink to="/user/location">
-                        <img class="w-3 h-3" :src=location alt="Location icon" />
+                        <Location class="w-3 h-3 text-neutral-500" />
                     </NuxtLink>
                     <div class="flex items-center gap-1">
                         <span
@@ -50,7 +50,7 @@ if (!avatar) {
             <NuxtLink type="button" to="/home/notifications"
                 class="w-8 h-8 flex items-center justify-center gap-2 p-2 bg-white rounded-full shadow-[0px_0px_13px_#22222226]"
                 aria-label="Notifications">
-                <img class="w-3 h-3" :src=bell alt="Notification bell" />
+                <Bell class="w-5 h-5 text-black" />
             </NuxtLink>
         </nav>
     </header>

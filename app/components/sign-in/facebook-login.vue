@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import fbLogo from '@/assets/images/sign-in/fbLogo.svg'
+import FbLogo from '@/assets/images/sign-in/fbLogo.svg'
 const props = defineProps({
     classStyle: String,
     labelName: String
@@ -43,7 +43,7 @@ const loginWithFacebook = (errorResponse: any) => {
 <template>
     <div>
         <Button :class="classStyle" @click="loginWithFacebook" >
-          <img :src="fbLogo" class="h-5 w-5" alt="facebook-icon" />
+          <FbLogo class="h-5 w-5" alt="facebook-icon" />
           {{ labelName }} 
         </Button>
     </div>

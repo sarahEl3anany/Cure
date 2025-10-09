@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import KeySquare from '@/assets/images/sign-up/KeySquare2.png'
+import KeySquare from '@/assets/icons/sign-up/KeySquare2.svg'
 import { zodResolver } from '@primevue/forms/resolvers/zod';
 import { z } from 'zod';
 import { useHeader } from '@/composables/useHeader'
@@ -86,21 +86,20 @@ async function updatePassword({ valid, values }: any) {
       <div class="space-y-8 mt-8">
         <div class="h-12">
           <div class="font-georgia text-left text-base">New password</div>
-          <div class="flex items-center rounded-lg bg-neutral-50 gap-2">
-            <img :src="KeySquare" alt="Password" class="w-5 h-5 text-neutral-500" />
+          <div class="flex items-center rounded-lg bg-neutral-50 px-4 gap-2">
+            <KeySquare class="w-5 h-5 text-neutral-500" />
             <Password placeholder="Password" name="password"
-              inputClass="!border-none !shadow-none !bg-neutral-50 focus:!ring-0 focus:!outline-none text-neutral-500 font-[Montserrat-Medium] w-full" />
+              inputClass="!border-0 !shadow-none !outline-none w-full bg-neutral-50 text-neutral-500 font-montserratMedium focus:!outline-none focus:!ring-0 focus:!shadow-none" />
           </div>
           <Message v-if="$form.password?.invalid" severity="error" size="small" variant="simple">{{
             $form.password.error?.message }}</Message>
         </div>
         <div class="h-12">
           <div class="font-georgia text-left text-base">Confirm password</div>
-          <div class="flex items-center mt-3 rounded-lg bg-neutral-50 gap-2">
-            <img :src="KeySquare" alt="Password" class="w-5 h-5 text-neutral-500" />
+          <div class="flex items-center rounded-lg bg-neutral-50 px-4 gap-2">
+            <KeySquare class="w-5 h-5 text-neutral-500" />
             <Password placeholder="Confirm Password" name="password_confirmation"
-              inputClass="!border-none !shadow-none !bg-neutral-50 focus:!ring-0 focus:!outline-none text-neutral-500 font-[Montserrat-Medium] w-full"
-              class="w-full" />
+              inputClass="!border-0 !shadow-none !outline-none w-full bg-neutral-50 text-neutral-500 font-montserratMedium focus:!outline-none focus:!ring-0 focus:!shadow-none" />
           </div>
           <Message v-if="$form.password_confirmation?.invalid" severity="error" size="small" variant="simple">{{
             $form.password_confirmation.error?.message }}</Message>

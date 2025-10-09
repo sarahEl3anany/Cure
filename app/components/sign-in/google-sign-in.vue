@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import googleLogo from '@/assets/images/sign-in/googleLogo.svg'
+import GoogleLogo from '@/assets/images/sign-in/googleLogo.svg'
 import {
   useCodeClient,
   type ImplicitFlowSuccessResponse,
@@ -42,7 +42,7 @@ const { isReady, login } = useCodeClient({
     <Button
         :disabled="!isReady" @click="() => login()"
         :class="classStyle">
-        <img :src="googleLogo" class="h-5 w-5" alt="google-icon" />
+        <GoogleLogo class="h-5 w-5" alt="google-icon" />
         {{ labelName }}
     </Button>
   </div>

@@ -1,14 +1,10 @@
 <script setup lang="ts">
-import page1 from '@/assets/images/page1_g.svg'
+import Page1 from '@/assets/images/page1_g.svg'
 </script>
 
 <template>
   <div class="flex flex-col items-center justify-center text-center w-full h-full px-6">
-    <img
-      :src="page1"
-      alt="welcome"
-      class="max-sm:w-1/2 max:xs:w-1/2 w-1/4"
-    />
+    <Page1 class="w-1/3 max-sm:w-3/4 max-xs:w-3/4" />
 
     <div class="max-w-md">
       <span

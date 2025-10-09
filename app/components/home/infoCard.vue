@@ -14,7 +14,7 @@ const props = defineProps({
         <div class="flex items-center border bg-white rounded-2xl shadow-md gap-3 h-20">
           <img :src="value.img" alt="tag" class="w-16 max-sm:w-20 h-full object-cover rounded-l-xl" />
 
-          <div class="flex flex-col flex-1 text-left space-y-2 max-sm:space-y-0 max-sm:pr-2">
+          <div class="flex flex-col flex-1 text-left space-y-1 max-sm:space-y-0 max-sm:pr-2">
             <span class="font-georgia text-lg max-sm:text-base text-black truncate">
               {{ value.name }}
             </span>

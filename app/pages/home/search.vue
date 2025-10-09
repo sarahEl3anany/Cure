@@ -3,11 +3,14 @@ import SearchBox from '@/components/home/searchBox.vue';
 import Tags from '@/components/home/tags.vue';
 import { useHeader } from '@/composables/useHeader'
 import type { Tag } from '@/types/tag'
-import teeth from '/assets/images/home/tags/teeth.svg'
-import heart from '/assets/images/home/tags/heart.svg'
-import nose from '/assets/images/home/tags/nose.svg'
-import lung from '/assets/images/home/tags/lung.svg'
+import teeth from '/assets/icons/home/tags/teeth.svg'
+import heart from '/assets/icons/home/tags/heart.svg'
+import nose from '/assets/icons/home/tags/nose.svg'
+import lung from '/assets/icons/home/tags/lung.svg'
 const { headerTitle, showHeader, backRoute } = useHeader()
+definePageMeta({
+  layout: 'no-footer'
+})
 const allHistory = ref<Tag[]>([
   {
     name: 'Psychiatrist'

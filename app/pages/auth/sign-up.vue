@@ -1,16 +1,11 @@
 <script setup lang="ts">
-import BsHeartPulse from '@/assets/images/sign-up/BsHeartPulse.svg'
-import KeySquare from '@/assets/images/sign-up/KeySquare2.png'
+import BsHeartPulse from '@/assets/icons/BsHeartPulse.svg'
+import KeySquare from '@/assets/icons/sign-up/KeySquare2.svg'
 // import appleLogo from '@/assets/images/sign-in/appleLogo.svg'
 import { zodResolver } from '@primevue/forms/resolvers/zod';
 import FacebookLogin from '@/components/sign-in/facebook-login.vue'
 import GoogleSignIn from '@/components/sign-in/google-sign-in.vue'
 import { z } from 'zod';
-import { useHeader } from '@/composables/useHeader'
-const { showHeader } = useHeader()
-onMounted(() => {
-    showHeader.value = false
-})
 
 const toast = useToast();
 const { $apiFetch, $successRegister, $successRegisterSession } = useNuxtApp()
@@ -72,18 +67,21 @@ async function signUp({ valid, values }: any) {
         })
     }
 }
+
+definePageMeta({
+  layout: 'no-header'
+})
 </script>
 
 <template>
   <div class="flex flex-col items-center justify-center px-4 text-center">
     <Toast />
-    <img :src="BsHeartPulse" alt="HeartPulse" class="w-16 h-16 mt-10" />
-
-    <h3 class="mt-8 font-georgia text-secondary-500 dark:text-primary-50 text-2xl">
+    <BsHeartPulse class="w-20 h-20 mt-4 text-primary-500" />
+    <h3 class="mt-5 font-georgia text-secondary-500 dark:text-primary-50 text-2xl">
       Create New Account
     </h3>
     <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="signUp">
-      <div class="w-full max-w-sm space-y-5 mt-7">
+      <div class="w-full max-w-sm space-y-4 mt-5">
         <div>
           <div class="flex items-center rounded-lg bg-neutral-50 px-4 gap-2">
             <i class="mdi mdi-account text-neutral-500 font-montserratMedium text-lg"></i>
@@ -116,7 +114,7 @@ async function signUp({ valid, values }: any) {
         </div>
         <div>
           <div class="flex items-center rounded-lg bg-neutral-50 px-4 gap-2">
-            <img :src="KeySquare" alt="Password" class="w-5 h-5" />
+            <KeySquare class="w-5 h-5 text-neutral-500" />
             <Password placeholder="Password" name="password"
               inputClass="w-full !border-none !shadow-none !bg-neutral-50 focus:!ring-0 focus:!outline-none text-neutral-500 font-montserratMedium" />
           </div>
@@ -126,7 +124,7 @@ async function signUp({ valid, values }: any) {
         </div>
         <div>
           <div class="flex items-center rounded-lg bg-neutral-50 px-4 gap-2">
-            <img :src="KeySquare" alt="Confirm Password" class="w-5 h-5" />
+            <KeySquare class="w-5 h-5 text-neutral-500" />
             <Password placeholder="Confirm Password" name="password_confirmation"
               inputClass="w-full !border-none !shadow-none !bg-neutral-50 focus:!ring-0 focus:!outline-none text-neutral-500 font-montserratMedium" />
           </div>
@@ -134,15 +132,13 @@ async function signUp({ valid, values }: any) {
             {{ $form.password_confirmation.error?.message }}
           </Message>
         </div>
-        <div class="mt-10">
-          <Button type="submit"
-            class="w-full text-base h-12 text-white rounded-lg font-montserratMedium">
-            Sign up
-          </Button>
-        </div>
+        <Button type="submit"
+          class="w-full text-base h-12 text-white rounded-lg font-montserratMedium">
+          Sign up
+        </Button>
       </div>
     </Form>
-    <div class="w-full max-w-sm mt-6">
+    <div class="w-1/3 max-w-sm">
       <Divider>
         <span class="text-neutral-500 text-base font-montserratMedium">or</span>
       </Divider>
@@ -156,7 +152,7 @@ async function signUp({ valid, values }: any) {
         <img :src="appleLogo" class="h-5 w-5" alt="apple-icon" />
       </Button> -->
     </div>
-    <div class="mt-2">
+    <div>
       <span class="text-neutral-500 font-montserratMedium text-xs">Already have an account!</span>
       <NuxtLink to="/auth/sign-in" class="ml-1 text-primary-500 font-montserratMedium text-xs">Sign in</NuxtLink>
     </div>

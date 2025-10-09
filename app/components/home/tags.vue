@@ -27,7 +27,15 @@ const props = defineProps({
           showVertically ? 'flex flex-col rounded-xl border-neutral-500' : 'flex border-neutral-300 hover:bg-neutral-50' 
           , value.selected ? 'bg-primary-500 ' : (showVertically ? 'bg-neutral-50 hover:bg-white' : 'bg-white')]"
       >
-        <img :src="value.img" alt="icon" class="w-4 h-4" v-if="value.img" :class="showVertically ? 'mx-auto' : ''" />
+        <component
+          v-if="value.img"
+          :is="value.img"
+          class="w-4 h-4 text-secondary-500"
+          :class="[
+            showVertically ? 'mx-auto' : '',
+            value.selected ? 'text-white' : 'text-neutral-900'
+          ]"
+        />
         <span class=" text-sm font-montserrat"
         :class="value.selected ? 'text-white' : 'text-neutral-900'"
         >{{ value.name }}</span>

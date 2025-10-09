@@ -3,22 +3,22 @@ import HomeHeader from '@/components/home/header.vue';
 import SearchBox from '@/components/home/searchBox.vue';
 import Tags from '@/components/home/tags.vue';
 import InfoCard from '@/components/home/infoCard.vue';
-import banner from '@/assets/images/home/banner.svg'
+
+import banner from '@/assets/images/home/banner.png'
 import doctor1 from '@/assets/images/home/doctors/1.jpg'
 import doctor2 from '@/assets/images/home/doctors/2.jpg'
+
 import type { Information } from '@/types/information'
 import type { Tag } from '@/types/tag'
-import teeth from '/assets/images/home/tags/teeth.svg'
-import heart from '/assets/images/home/tags/heart.svg'
-import nose from '/assets/images/home/tags/nose.svg'
-import lung from '/assets/images/home/tags/lung.svg'
-import { useHeader } from '@/composables/useHeader'
+
+import Teeth from '/assets/icons/home/tags/teeth.svg'
+import Heart from '/assets/icons/home/tags/heart.svg'
+import Nose from '/assets/icons/home/tags/nose.svg'
+import Lung from '/assets/icons/home/tags/lung.svg'
 import { useFooter } from '@/composables/useFooter'
 const { showFooter } = useFooter()
-const { showHeader } = useHeader()
 onMounted(() => {
   showFooter.value = true
-  showHeader.value = false
 })
 const doctorsCard = ref<Information[]>([
   {
@@ -47,25 +47,28 @@ const doctorsCard = ref<Information[]>([
 const mostSpecialties = ref<Tag[]>([
   {
     name: 'Dentist',
-    img: teeth,
+    img: Teeth,
     id: 1
   },
   {
     name: 'Cardiologist',
-    img: heart,
+    img: Heart,
     id: 2
   },
   {
     name: 'ENT',
-    img: nose,
+    img: Nose,
     id: 3
   },
   {
     name: 'Lung',
-    img: lung,
+    img: Lung,
     id: 4
   },
 ])
+definePageMeta({
+  layout: 'no-header'
+})
 </script>
 <template>
     <div class="flex flex-col items-center w-full p-3">
@@ -84,9 +87,7 @@ const mostSpecialties = ref<Tag[]>([
         </div>
         <Tags :tag="mostSpecialties" />
         <div class="w-full">
-            <div class="flex items-center gap-2 mx-2">
-                <img :src="banner" alt="banner" class="w-11/12 max-h-48 mt-5 object-contain" />
-            </div>
+            <img :src="banner" alt="banner" class="w-full max-h-48 mt-5 object-contain" />
         </div>
         <div class="w-full mb-2">
             <div class="flex items-center gap-2 mx-2 mt-5 ">

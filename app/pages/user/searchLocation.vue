@@ -1,7 +1,15 @@
 <script setup lang="ts">
 import SearchBox from '@/components/home/searchBox.vue';
-import mage from '@/assets/images/home/mage_location.svg'
+import Mage from '@/assets/icons/home/mage_location.svg'
 import { useRouter } from 'vue-router'
+import { useHeader } from '@/composables/useHeader'
+const { headerTitle, showHeader, backRoute } = useHeader()
+onMounted(() => {
+    headerTitle.value = ''
+    showHeader.value = true
+    backRoute.value = '/user/location'
+})
+
 const results = ref<{ name: string; lat: number; lng: number }[]>([])
 const router = useRouter()
 
@@ -27,7 +35,7 @@ function selectLocation(result: any) {
     <div class="relative w-full h-screen flex flex-col">
         <SearchBox labelText="Search for your location" searchRoute="/user/location" @search="onSearch" />
         <div class="absolute bottom-20 right-5 bg-white p-1 rounded-full shadow-lg cursor-pointer">
-            <img class="h-8 w-8" :src=mage alt="Mage icon" />
+            <Mage class="h-10 w-10 text-primary-500" alt="Mage icon" />
         </div>
         <div v-if="results.length" class="w-full space-y-3">
             <div v-for="(result, idx) in results" :key="idx"
