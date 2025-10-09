@@ -23,6 +23,9 @@
     .h-12 {
       height: 48px !important;
     }
+    .booking .p-datepicker-today > .p-datepicker-day {
+        border-radius: 12px !important;
+    }
     /* font family */
     --p-font-Montserrat: 'Montserrat' !important;
     --p-font-Montserrat-medium: 'Montserrat-Medium' !important;

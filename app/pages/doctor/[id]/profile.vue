@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import doctor1 from '@/assets/images/home/doctors/1.jpg'
+import ProfileHeader from '@/components/doctor/header.vue';
+import ProfileFooter from '@/components/doctor/footer.vue';
+
 import user from '@/assets/images/home/user/1.png'
 
-import Location from '@/assets/icons/home/location.svg'
 import Medal from '@/assets/icons/home/doctors/medal-1.svg'
 import Patients from '@/assets/icons/home/doctors/user-round-users-1.svg'
 import Star from '@/assets/icons/home/doctors/star.svg'
@@ -14,10 +15,10 @@ import { useHeader } from '@/composables/useHeader'
 const { showHeader, backRoute, headerTitle, headerIcon, routeHeaderIcon } = useHeader()
 onMounted(() => {
   showHeader.value = true
-backRoute.value = '/home'
-headerIcon.value = 'mdi mdi-message-text-outline text-secondary-500 text-xl :hover:bg-neutral-100'
-routeHeaderIcon.value = '/doctor/chat'
-headerTitle.value = 'Doctor details'
+  backRoute.value = '/home'
+  headerIcon.value = 'mdi mdi-message-text-outline text-secondary-500 text-xl :hover:bg-neutral-100'
+  routeHeaderIcon.value = '/doctor/chat'
+  headerTitle.value = 'Doctor details'
 })
 
 definePageMeta({
@@ -29,40 +30,7 @@ const doctorID = useRoute().params.id
 </script>
 <template>
   <div class="w-full px-4">
-    <div class="flex items-center gap-2">
-      <div class="relative inline-block">
-        <img v-if="doctor1"
-          class="w-28 h-28 max-sm:w-20 max-sm:h-20 rounded-full border-primary-500 border object-cover" :src="doctor1"
-          alt="Doctor avatar" />
-
-        <i
-          class="mdi mdi-check-decagram absolute bottom-0 right-1 translate-y-1 max-sm:translate-y-1/4 rounded-full text-primary-500 text-xl p-[2px]"></i>
-      </div>
-
-      <div class="flex flex-col flex-1 text-left space-y-2 max-sm:space-y-0 max-sm:pr-2">
-        <p class="font-georgia text-secondary-500 dark:text-secondary-50 text-xl max-sm:text-base">
-          Dr. Jessica Turner
-        </p>
-        <div class="flex items-start">
-          <div class="flex items-center gap-1">
-            <span class="text-neutral-700 text-montserrat text-sm max-sm:text-xs">
-              Pulmonologist
-            </span>
-          </div>
-        </div>
-        <div class="flex items-center gap-1 mt-1 text-neutral-600 text-sm">
-          <Location class="w-3 h-3 text-primary-500" />
-          <div class="flex items-start">
-            <span class="text-neutral-700 text-montserrat text-sm truncate max-sm:text-xs">129,El-Nasr Street,
-              Cairo</span>
-          </div>
-        </div>
-      </div>
-      <div
-        class="w-10 h-10 flex items-center justify-center rounded-full border border-neutral-50 hover:bg-neutral-100">
-        <i class="pi pi-heart text-secondary-500"></i>
-      </div>
-    </div>
+    <ProfileHeader />
     <div class="flex items-center justify-center gap-12 max-sm:gap-6 mt-2">
       <div class="flex flex-col items-center gap-1">
         <Patients class="h-12 w-12" />
@@ -137,20 +105,6 @@ const doctorID = useRoute().params.id
         friendly. Highly recommend for in-person care!
       </p>
     </div>
-    <div class="flex items-center justify-between p-2">
-      <div>
-        <span class="text-secondary-400 font-montserratMedium text-2xl">Price</span>
-        <span class="text-[#555B6C] font-montserratMedium text-xs">\ hour</span>
-      </div>
-      <div class="text-red-400 font-montserratMedium text-base">
-        350$
-      </div>
-    </div>
-    <div class="flex items-center justify-center pb-2">
-      <Button type="submit"
-        class="flex w-1/2 flex-col items-center text-base max-sm:text-sm h-12 text-white rounded-lg font-montserratMedium">
-        Book Appointment
-      </Button>
-    </div>
+    <ProfileFooter labelText="Book an appointment" :navigateTo="`/doctor/${doctorID}/book`" />
   </div>
 </template>
