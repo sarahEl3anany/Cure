@@ -54,7 +54,7 @@ const hospitalsCard = ref<Information[]>([
   },
 ])
 definePageMeta({
-  layout: 'no-footer'
+  layout: 'header-no-footer'
 })
 </script>
 

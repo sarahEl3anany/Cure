@@ -120,6 +120,9 @@ async function verifyOTP({ valid, values }: any) {
         }
     }
 }
+definePageMeta({
+  layout: 'header-no-footer'
+})
 </script>
 
 <template>

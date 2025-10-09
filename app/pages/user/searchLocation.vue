@@ -9,7 +9,9 @@ onMounted(() => {
     showHeader.value = true
     backRoute.value = '/user/location'
 })
-
+definePageMeta({
+  layout: 'header-no-footer'
+})
 const results = ref<{ name: string; lat: number; lng: number }[]>([])
 const router = useRouter()
 

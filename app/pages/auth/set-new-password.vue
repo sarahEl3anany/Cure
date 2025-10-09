@@ -9,6 +9,9 @@ onMounted(() => {
   backRoute.value = '/auth/code-verification'
   showHeader.value = true
 })
+definePageMeta({
+  layout: 'header-no-footer'
+})
 const toast = useToast();
 const { $apiFetch } = useNuxtApp()
 

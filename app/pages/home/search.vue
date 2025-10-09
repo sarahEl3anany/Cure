@@ -9,7 +9,7 @@ import nose from '/assets/icons/home/tags/nose.svg'
 import lung from '/assets/icons/home/tags/lung.svg'
 const { headerTitle, showHeader, backRoute } = useHeader()
 definePageMeta({
-  layout: 'no-footer'
+  layout: 'header-no-footer'
 })
 const allHistory = ref<Tag[]>([
   {

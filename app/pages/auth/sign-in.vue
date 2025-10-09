@@ -6,7 +6,9 @@ import { zodResolver } from '@primevue/forms/resolvers/zod';
 import GoogleSignIn from '@/components/sign-in/google-sign-in.vue'
 import FacebookLogin from '@/components/sign-in/facebook-login.vue'
 import { z } from 'zod';
-
+definePageMeta({
+  layout: 'no-layout'
+})
 const toast = useToast();
 const { $apiFetch, $successRegister, $successRegisterSession } = useNuxtApp()
 const initialValues = reactive({
@@ -58,10 +60,6 @@ async function signIn({ valid, values }: any) {
     })
   }
 }
-
-definePageMeta({
-  layout: 'no-header'
-})
 </script>
 <template>
   <div class="flex flex-col items-center justify-center px-4 text-center">

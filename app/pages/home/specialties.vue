@@ -35,7 +35,7 @@ const allSpecialties = ref<Tag[]>([
   },
 ])
 definePageMeta({
-  layout: 'no-footer'
+  layout: 'header-no-footer'
 })
 </script>
 <template>

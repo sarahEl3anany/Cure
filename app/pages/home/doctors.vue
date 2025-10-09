@@ -21,9 +21,7 @@ onMounted(() => {
     showHeader.value = true
     backRoute.value = '/home'
 })
-definePageMeta({
-  layout: 'no-footer'
-})
+
 const doctorsCard = ref<Information[]>([
     {
         name: 'Dr. Ahmed Ali',
@@ -74,6 +72,9 @@ const allSpecialties = ref<Tag[]>([
     id: 4
   },
 ])
+definePageMeta({
+  layout: 'header-no-footer'
+})
 </script>
 <template>
     <div class="flex flex-col items-center w-full">

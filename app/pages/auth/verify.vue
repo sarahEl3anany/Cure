@@ -22,7 +22,7 @@ try {
     }, 5000);
 }
 definePageMeta({
-  layout: 'no-header'
+  layout: 'no-layout'
 })
 </script>
 

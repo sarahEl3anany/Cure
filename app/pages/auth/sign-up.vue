@@ -69,7 +69,7 @@ async function signUp({ valid, values }: any) {
 }
 
 definePageMeta({
-  layout: 'no-header'
+  layout: 'no-layout'
 })
 </script>
 

@@ -8,6 +8,9 @@ onMounted(() => {
     backRoute.value = '/auth/sign-in'
     showHeader.value = true
 })
+definePageMeta({
+  layout: 'header-no-footer'
+})
 const toast = useToast();
 const { $apiFetch } = useNuxtApp()
 const initialValues = reactive({
