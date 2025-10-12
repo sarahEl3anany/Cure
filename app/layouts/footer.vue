@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import home from '@/assets/icons/home/footer/home.svg'
+import Home from '@/assets/icons/home/footer/home.svg'
 
-import calendar from '@/assets/icons/home/footer/calendar.svg'
+import Calendar from '@/assets/icons/home/footer/calendar.svg'
 
-import profile from '@/assets/icons/home/footer/profile.svg'
+import Profile from '@/assets/icons/home/footer/profile.svg'
 const route = useRoute()
 
 const isHome = computed(() => route.path === '/home')
@@ -15,21 +15,21 @@ const isProfile = computed(() => route.path === '/profile')
       <div class="flex flex-col items-center justify-center">
         <NuxtLink to="/" class="flex flex-col items-center text-center text-xs font-montserrat"
         :class="isHome ? 'text-primary-500' : 'text-neutral-500'">
-          <!-- <img :src="isHome ? homeA : home" alt="Home" class="w-5 h-5" /> -->
+           <Home class="w-5 h-5" />
           <span>Home</span>
         </NuxtLink>
       </div>
       <div class="flex flex-col items-center justify-center">
         <NuxtLink to="/calendar" class="flex flex-col items-center text-center text-xs font-montserrat"
         :class="isCalendar ? 'text-primary-500' : 'text-neutral-500'">
-          <!-- <img :src="isCalendar ? calendarA : calendar" alt="Calendar" class="w-5 h-5" /> -->
+           <Calendar class="w-5 h-5" />
           <span>Calendar</span>
         </NuxtLink>
       </div>
       <div class="flex flex-col items-center justify-center">
         <NuxtLink to="/profile" class="flex flex-col items-center text-center text-xs font-montserrat"
         :class="isProfile ? 'text-primary-500' : 'text-neutral-500'">
-          <!-- <img :src="isProfile ? profileA : profile" alt="Profile" class="w-5 h-5" /> -->
+           <Profile class="w-5 h-5" />
           <span>Profile</span>
         </NuxtLink>
       </div>

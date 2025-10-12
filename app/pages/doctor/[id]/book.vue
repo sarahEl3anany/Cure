@@ -13,6 +13,7 @@ onMounted(() => {
   showHeader.value = true
   backRoute.value = `/doctor/${doctorID}/profile`
   headerIcon.value = 'mdi mdi-message-text-outline text-secondary-500 text-xl :hover:bg-neutral-100'
+  headerTitle.value = 'Book Appointment'
 })
 
 definePageMeta({
@@ -21,11 +22,10 @@ definePageMeta({
 
 const date = ref<Date | null>(null)
 const calendarVisible = ref(false)
-
-// عند اختيار التاريخ
 const onDateSelect = () => {
   calendarVisible.value = false
 }
+
 </script>
 
 <template>
@@ -70,8 +70,8 @@ const onDateSelect = () => {
     <div class="text-xl mt-3 font-georgia w-full">Select time</div>
     <div class="flex items-center gap-10 mt-3">
         <div class="bg-neutral-50 p-3 rounded-lg text-neutral-700 font-montserratMedium text-sm">9:00 AM</div>
-        <div class="bg-neutral-50 p-3 rounded-lg text-neutral-700 font-montserratMedium text-sm">9:00 AM</div>
-        <div class="bg-neutral-50 p-3 rounded-lg text-neutral-700 font-montserratMedium text-sm">9:00 AM</div>
+        <div class="bg-neutral-50 p-3 rounded-lg text-neutral-700 font-montserratMedium text-sm">10:00 AM</div>
+        <div class="bg-primary-500 p-3 rounded-lg text-neutral-50 font-montserratMedium text-sm">11:00 AM</div>
     </div>
     <ProfileFooter labelText="Pay" :navigateTo="`/doctor/${doctorID}/pay`" />
   </div>
