@@ -4,11 +4,13 @@ import Home from '@/assets/icons/home/footer/home.svg'
 import Calendar from '@/assets/icons/home/footer/calendar.svg'
 
 import Profile from '@/assets/icons/home/footer/profile.svg'
+import Chat from '@/assets/icons/home/footer/chat.svg'
 const route = useRoute()
 
 const isHome = computed(() => route.path === '/home')
-const isCalendar = computed(() => route.path === '/calendar')
+const isBooking = computed(() => route.path === '/booking')
 const isProfile = computed(() => route.path === '/profile')
+const isChat = computed(() => route.path === '/chat')
 </script>
 <template>
     <footer class="bg-white h-12 flex items-center justify-between bottom bottom-0 w-full px-5 mt-4">
@@ -20,10 +22,17 @@ const isProfile = computed(() => route.path === '/profile')
         </NuxtLink>
       </div>
       <div class="flex flex-col items-center justify-center">
-        <NuxtLink to="/calendar" class="flex flex-col items-center text-center text-xs font-montserrat"
-        :class="isCalendar ? 'text-primary-500' : 'text-neutral-500'">
+        <NuxtLink to="/booking" class="flex flex-col items-center text-center text-xs font-montserrat"
+        :class="isBooking ? 'text-primary-500' : 'text-neutral-500'">
            <Calendar class="w-5 h-5" />
-          <span>Calendar</span>
+          <span>Booking</span>
+        </NuxtLink>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <NuxtLink to="/chat" class="flex flex-col items-center text-center text-xs font-montserrat"
+        :class="isChat ? 'text-primary-500' : 'text-neutral-500'">
+           <Chat class="w-5 h-5" />
+          <span>Chat</span>
         </NuxtLink>
       </div>
       <div class="flex flex-col items-center justify-center">

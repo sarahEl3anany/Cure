@@ -1,12 +1,15 @@
 <script setup lang="ts">
-
-definePageMeta({
-  layout: 'header-no-footer'
-})
 const doctorID = useRoute().params.id
 const props = defineProps({
-  labelText: String,
-  navigateTo: String
+    labelText: String,
+    navigateTo: {
+        type: String,
+        default: ''
+    },
+    handleClick: {
+        type: Function,
+        default: (event: PointerEvent) => {}
+    }
 })
 </script>
 <template>
@@ -20,7 +23,7 @@ const props = defineProps({
                 350$
             </div>
         </div>
-        <NuxtLink :to="navigateTo" class="w-full">
+        <NuxtLink :to="navigateTo" class="w-full" v-if="navigateTo">
             <div class="flex items-center justify-center pb-2">
                 <Button type="submit"
                     class="flex w-1/2 flex-col items-center text-base max-sm:text-sm h-12 text-white rounded-lg font-montserratMedium">
@@ -28,5 +31,11 @@ const props = defineProps({
                 </Button>
             </div>
         </NuxtLink>
+        <div class="flex items-center justify-center pb-2" v-else>
+            <Button type="submit" @click="handleClick?.()"
+                class="flex w-1/2 flex-col items-center text-base max-sm:text-sm h-12 text-white rounded-lg font-montserratMedium">
+                {{ labelText }}
+            </Button>
+        </div>
     </div>
 </template>
