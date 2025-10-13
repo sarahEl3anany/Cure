@@ -7,6 +7,7 @@ import FinishPay from '@/assets/icons/home/doctors/finishPay.svg'
 import Visa from '@/assets/icons/home/doctors/visa.svg'
 import PayPal from '@/assets/icons/home/doctors/paypal.svg'
 import ApplePay from '@/assets/icons/home/doctors/applePay.svg'
+import Pen from '@/assets/icons/home/doctors/pen.svg'
 
 const { showHeader, backRoute, headerTitle } = useHeader()
 const doctorID = useRoute().params.id
