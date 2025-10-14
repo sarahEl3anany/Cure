@@ -26,11 +26,16 @@
     .booking .p-datepicker-today > .p-datepicker-day {
         border-radius: 12px !important;
     }
+    .p-toggleswitch {
+    }  --p-toggleswitch-checked-hover-background: var(--p-green-400);
+      --p-toggleswitch-checked-background: var(--p-green-500);
+
     /* font family */
     --p-font-Montserrat: 'Montserrat' !important;
     --p-font-Montserrat-medium: 'Montserrat-Medium' !important;
     --p-font-Montserrat-bold: 'Montserrat-Bold' !important;
     --p-font-georgia: 'Georgia' !important;
+
       /* theme colors */
     --p-primary-50: #E8EFF8 !important;
     --p-primary-100: #B6CDE9 !important;

@@ -15,11 +15,6 @@ import Teeth from '/assets/icons/home/tags/teeth.svg'
 import Heart from '/assets/icons/home/tags/heart.svg'
 import Nose from '/assets/icons/home/tags/nose.svg'
 import Lung from '/assets/icons/home/tags/lung.svg'
-import { useFooter } from '@/composables/useFooter'
-const { showFooter } = useFooter()
-onMounted(() => {
-  showFooter.value = true
-})
 const doctorsCard = ref<Information[]>([
   {
     name: 'Dr. Ahmed Ali',

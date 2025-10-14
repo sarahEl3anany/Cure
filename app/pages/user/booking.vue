@@ -94,8 +94,8 @@ function selectDate(iso: string) {
                     </div>
                     <div>
                         <div class="flex w-full items-start gap-2">
-                            <NuxtLink to="/profile">
-                                <img class="w-12 h-12 rounded-full" :src=user alt="User avatar" />
+                            <NuxtLink to="/user/profile">
+                                <img class="w-18 h-14 rounded-full" :src=user alt="User avatar" />
                             </NuxtLink>
                             <div class="flex flex-col items-start">
                                 <p class="font-georgia text-secondary-500 dark:text-secondary-50 text-base ">

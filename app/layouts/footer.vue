@@ -9,7 +9,7 @@ const route = useRoute()
 
 const isHome = computed(() => route.path === '/home')
 const isBooking = computed(() => route.path === '/user/booking')
-const isProfile = computed(() => route.path === '/profile')
+const isProfile = computed(() => route.path === '/user/profile')
 const isChat = computed(() => route.path === '/chat')
 </script>
 <template>
@@ -36,7 +36,7 @@ const isChat = computed(() => route.path === '/chat')
         </NuxtLink>
       </div>
       <div class="flex flex-col items-center justify-center">
-        <NuxtLink to="/profile" class="flex flex-col items-center text-center text-xs font-montserrat"
+        <NuxtLink to="/user/profile" class="flex flex-col items-center text-center text-xs font-montserrat"
         :class="isProfile ? 'text-primary-500' : 'text-neutral-500'">
            <Profile class="w-5 h-5" />
           <span>Profile</span>

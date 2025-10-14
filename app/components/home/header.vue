@@ -14,7 +14,7 @@ if (!avatar) {
 <template>
     <header class="flex w-full items-center justify-between relative top-2 px-2">
         <div class="flex w-full items-start gap-2">
-            <NuxtLink to="/profile">
+            <NuxtLink to="/user/profile">
                 <img class="w-10 h-10 rounded-full" 
                 :src=avatar alt="User avatar" />
             </NuxtLink>
@@ -22,7 +22,7 @@ if (!avatar) {
                 <p
                 class="font-georgia text-secondary-500 dark:text-secondary-50 text-sm ">
                     Welcome back, 
-                   <NuxtLink to="/profile"> Seif
+                   <NuxtLink to="/user/profile"> Seif
                     </NuxtLink>
                 </p>
                 <div class="flex items-start">
@@ -45,7 +45,7 @@ if (!avatar) {
             <NuxtLink type="button" to="/home/favourites"
                 class="w-8 h-8 flex items-center justify-center gap-2 p-2 bg-white rounded-full shadow-[0px_0px_13px_#22222226]"
                 aria-label="Notifications">
-                <i class="pi pi-heart color-[#1C274C] "></i>
+                <i class="pi pi-heart text-[#1C274C] "></i>
             </NuxtLink>
             <NuxtLink type="button" to="/home/notifications"
                 class="w-8 h-8 flex items-center justify-center gap-2 p-2 bg-white rounded-full shadow-[0px_0px_13px_#22222226]"

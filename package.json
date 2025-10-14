@@ -20,6 +20,7 @@
     "@primevue/nuxt-module": "^4.4.0",
     "@vee-validate/nuxt": "^4.15.1",
     "@vee-validate/zod": "^4.15.1",
+    "country-list-with-dial-code-and-flag": "^5.1.1",
     "google-maps": "^4.3.3",
     "nuxt": "^4.1.2",
     "nuxt-mdi": "^2.1.1",
