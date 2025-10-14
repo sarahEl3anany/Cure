@@ -67,21 +67,24 @@ const checked = ref(true)
             <i class="mdi mdi-chevron-right text-3xl text-neutral-500"></i>
         </div>
         <NuxtLink to="/user/settings">
-        <div class="flex items-center justify-between mt-2 p-3 rounded-md bg-neutral-50">
-            <div class="flex items-center gap-2">
-                <i class="mdi mdi-cog-outline text-secondary-500 text-2xl"></i>
-                <span class="font-montserrat text-base text-secondary-500">Settings</span>
+            <div class="flex items-center justify-between mt-2 p-3 rounded-md bg-neutral-50">
+                <div class="flex items-center gap-2">
+                    <i class="mdi mdi-cog-outline text-secondary-500 text-2xl"></i>
+                    <span class="font-montserrat text-base text-secondary-500">Settings</span>
+                </div>
+                <i class="mdi mdi-chevron-right text-3xl text-neutral-500"></i>
             </div>
-            <i class="mdi mdi-chevron-right text-3xl text-neutral-500"></i>
-        </div>
         </NuxtLink>
-        <div class="flex items-center justify-between mt-2 p-3 rounded-md bg-neutral-50">
-            <div class="flex items-center gap-2">
-                <Messages class="w-5 h-5 text-secondary-500" />
-                <span class="font-montserrat text-base text-secondary-500">FAQs</span>
+        <NuxtLink to="/user/faqs">
+            <div class="flex items-center justify-between mt-2 p-3 rounded-md bg-neutral-50">
+                <div class="flex items-center gap-2">
+                    <Messages class="w-5 h-5 text-secondary-500" />
+                    <span class="font-montserrat text-base text-secondary-500">FAQs</span>
+                </div>
+                <i class="mdi mdi-chevron-right text-3xl text-neutral-500"></i>
             </div>
-            <i class="mdi mdi-chevron-right text-3xl text-neutral-500"></i>
-        </div>
+        </NuxtLink>
+        <NuxtLink to="/user/privacy">
         <div class="flex items-center justify-between mt-2 p-3 rounded-md bg-neutral-50">
             <div class="flex items-center gap-2">
                 <Lock class="w-5 h-5 text-secondary-500" />
@@ -89,7 +92,7 @@ const checked = ref(true)
             </div>
             <i class="mdi mdi-chevron-right text-3xl text-neutral-500"></i>
         </div>
-
+        </NuxtLink>
         <div class="flex items-center justify-between mt-2 p-3 rounded-md bg-neutral-50">
             <div class="flex items-center gap-2">
                 <Logout class="w-5 h-5 text-red-500" />
