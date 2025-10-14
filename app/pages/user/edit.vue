@@ -60,7 +60,7 @@ const selectedYear = ref<number | null>(null)
         </div>
         <div>
             <!-- <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="saveUser"> -->
-                <div class="w-full  space-y-4 mt-5">
+                <div class="w-full space-y-4 mt-5">
                     <div>
                         <div class="flex items-center rounded-xl bg-neutral-50 px-4 gap-2">
                             <i class="mdi mdi-email text-neutral-500 font-montserratMedium text-lg"></i>
