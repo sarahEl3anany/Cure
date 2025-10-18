@@ -124,10 +124,12 @@ const goHome = () => {
         </div>
 
         <div class="w-full flex items-center justify-center mt-4">
-            <Button class="bg-white text-primary-500 border border-dashed w-1/3 rounded-md">
-                <i class="mdi mdi-plus text-primary-500"></i>
-                <span class="font-montserratMedium text-base">Add new card</span>
-            </Button>
+            <NuxtLink to="/user/addCard" class="w-full flex items-center justify-center">
+                <Button class="bg-white text-primary-500 border border-dashed w-1/3 rounded-md">
+                    <i class="mdi mdi-plus text-primary-500"></i>
+                    <span class="font-montserratMedium text-base">Add new card</span>
+                </Button>
+            </NuxtLink>
         </div>
 
         <ProfileFooter labelText="Pay" :handleClick="confirmPay" />

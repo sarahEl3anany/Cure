@@ -25,7 +25,13 @@
     .booking .p-datepicker-today > .p-datepicker-day {
         border-radius: 12px !important;
     }
+    --p-accordion-panel-border-width: 0px !important;
+    --p-accordion-content-border-color: var(--p-neutral-500) !important;
+    --p-accordion-content-border-width: 1px 0 0 0 !important;
+
     /* custom colors */
+    --p-accordion-header-color: var(--p-secondary-500);
+    --p-accordion-header-toggle-icon-color: var(--p-secondary-500);
     --p-accordion-content-background: var(--p-neutral-50);
     --p-accordion-header-background: var(--p-neutral-50);
     --p-accordion-header-active-background: var(--p-neutral-50);

@@ -52,20 +52,24 @@ const checked = ref(true)
             </div>
             <ToggleSwitch v-model="checked" class="text-green-500" />
         </div>
-        <div class="flex items-center justify-between mt-2 p-3 rounded-md bg-neutral-50">
-            <div class="flex items-center gap-2">
-                <Banknote class="w-5 h-5 text-secondary-500" />
-                <span class="font-montserrat text-base text-secondary-500">Payment Method</span>
+        <NuxtLink to="/user/paymentMethod">
+            <div class="flex items-center justify-between mt-2 p-3 rounded-md bg-neutral-50">
+                <div class="flex items-center gap-2">
+                    <Banknote class="w-5 h-5 text-secondary-500" />
+                    <span class="font-montserrat text-base text-secondary-500">Payment Method</span>
+                </div>
+                <i class="mdi mdi-chevron-right text-3xl text-neutral-500"></i>
             </div>
-            <i class="mdi mdi-chevron-right text-3xl text-neutral-500"></i>
-        </div>
-        <div class="flex items-center justify-between mt-2 p-3 rounded-md bg-neutral-50">
-            <div class="flex items-center gap-2">
-                <Heart class="w-5 h-5 text-secondary-500" />
-                <span class="font-montserrat text-base text-secondary-500">Favourite</span>
+        </NuxtLink>
+        <NuxtLink to="/home/favourites">
+            <div class="flex items-center justify-between mt-2 p-3 rounded-md bg-neutral-50">
+                <div class="flex items-center gap-2">
+                    <Heart class="w-5 h-5 text-secondary-500" />
+                    <span class="font-montserrat text-base text-secondary-500">Favourite</span>
+                </div>
+                <i class="mdi mdi-chevron-right text-3xl text-neutral-500"></i>
             </div>
-            <i class="mdi mdi-chevron-right text-3xl text-neutral-500"></i>
-        </div>
+        </NuxtLink>
         <NuxtLink to="/user/settings">
             <div class="flex items-center justify-between mt-2 p-3 rounded-md bg-neutral-50">
                 <div class="flex items-center gap-2">
