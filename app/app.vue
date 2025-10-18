@@ -1,3 +1,15 @@
+<script setup lang="ts">
+import SplashScreen from '@/pages/splashScreen.vue'
+import { useSplashScreenStore } from '@/stores/SplashScreen'
+const splashScreenStore = useSplashScreenStore()
+const config = useRuntimeConfig()
+const token = useCookie('token').value || config.public.localToken
+const sessionToken = process.client ? sessionStorage.getItem('token') : null
+let showFooter = ref(false)
+if (sessionToken || token) {
+  showFooter.value = true
+}
+</script>
 <template>
   <div class="w-full h-screen">
     <div>
@@ -15,16 +27,4 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
-import SplashScreen from '@/pages/splashScreen.vue'
-import { useSplashScreenStore } from '@/stores/SplashScreen'
-const splashScreenStore = useSplashScreenStore()
-const config = useRuntimeConfig()
-const token = useCookie('token').value || config.public.localToken
-const sessionToken = process.client ? sessionStorage.getItem('token') : null
-let showFooter = ref(false)
-if (sessionToken || token) {
-  showFooter.value = true
-}
-</script>
 <style scoped></style>

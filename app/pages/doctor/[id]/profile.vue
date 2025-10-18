@@ -17,7 +17,7 @@ onMounted(() => {
   showHeader.value = true
   backRoute.value = '/home'
   headerIcon.value = 'mdi mdi-message-text-outline text-secondary-500 text-xl :hover:bg-neutral-100'
-  routeHeaderIcon.value = '/doctor/chat'
+  routeHeaderIcon.value = '/chat'
   headerTitle.value = 'Doctor details'
 })
 

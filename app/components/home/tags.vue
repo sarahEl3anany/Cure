@@ -30,7 +30,7 @@ const props = defineProps({
         <component
           v-if="value.img"
           :is="value.img"
-          class="w-4 h-4 text-secondary-500"
+          class="w-4 h-4"
           :class="[
             showVertically ? 'mx-auto' : '',
             value.selected ? 'text-white' : 'text-neutral-900'

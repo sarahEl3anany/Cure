@@ -17,7 +17,7 @@ const userCards = ref<Array<any>>([1, 2])
 <template>
     <div class="w-full" v-if="userCards.length === 0">
         <div class="flex items-center w-full justify-center">
-            <img :src="Cards" alt="Cards Image" class="w-[200px] h-[200px] rounded-lg" />
+            <img :src="Cards" alt="Cards Image" class="object-cover w-[200px] h-[200px] rounded-lg" />
         </div>
         <div class="flex items-center w-full justify-center">
             <div class="font-georgia text-black text-2xl">Nothing to display here!</div>

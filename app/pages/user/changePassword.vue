@@ -16,7 +16,7 @@ const toast = useToast();
 const { $apiFetch } = useNuxtApp()
 
 const initialValues = reactive({
-    currentPassword: '',
+  currentPassword: '',
   password: '',
   password_confirmation: ''
 });
@@ -43,7 +43,7 @@ async function updatePassword({ valid, values }: any) {
     const otp: string | null = sessionStorage.getItem('otp')
     const dataValues = {
       'otp': otp, 'email': sessionStorage.getItem('email')
-      ,'currentPassword': values.currentPassword, 'password': values.password
+      , 'currentPassword': values.currentPassword, 'password': values.password
       , 'password_confirmation': values.password_confirmation
     }
     try {
@@ -85,8 +85,8 @@ async function updatePassword({ valid, values }: any) {
 </script>
 
 <template>
-    <div class="px-6 w-full space-y-4 mt-6">
-        <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="updatePassword">
+  <div class="px-6 w-full space-y-4 mt-6">
+    <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="updatePassword">
       <div class="space-y-8 mt-8">
         <div class="h-12">
           <div class="font-georgia text-left text-base text-secondary-500">Current password</div>
@@ -119,11 +119,11 @@ async function updatePassword({ valid, values }: any) {
             $form.password_confirmation.error?.message }}</Message>
         </div>
         <div class="pt-6 flex items-center flex-col">
-            <Button type="submit" class="w-full text-base text-white rounded-lg font-montserratMedium max-w-md">
-            Change Password 
-            </Button>
+          <Button type="submit" class="w-full text-base text-white rounded-lg font-montserratMedium max-w-md">
+            Change Password
+          </Button>
         </div>
       </div>
     </Form>
-    </div>
+  </div>
 </template>

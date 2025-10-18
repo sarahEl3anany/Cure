@@ -10,7 +10,7 @@ const route = useRoute()
 const isHome = computed(() => route.path === '/home')
 const isBooking = computed(() => route.path === '/user/booking')
 const isProfile = computed(() => route.path === '/user/profile')
-const isChat = computed(() => route.path === '/chat')
+const isChat = computed(() => ['/chat', '/chat/[:id]', '/chat/searchChat'].includes(route.path))
 </script>
 <template>
     <footer class="bg-white flex items-center justify-between bottom bottom-0 w-full px-5 mt-4">
