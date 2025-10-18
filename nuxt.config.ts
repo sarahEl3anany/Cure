@@ -31,15 +31,19 @@ export default defineNuxtConfig({
   primevue: {
     options: {
       theme: {
-        preset: Aura
+        preset: Aura,
+        options: {
+          darkModeSelector: false,
+          cssLayer: false
+        }
       }
     }
   },
   vite: {
     plugins: [
       svgLoader({
-        svgo: false, // ابقي على الـ SVG كما هو
-        defaultImport: 'component' // استيراد SVG كمكون Vue
+        svgo: false, 
+        defaultImport: 'component' 
       })
     ]
   }

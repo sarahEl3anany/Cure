@@ -8,7 +8,7 @@ import Page2 from '@/assets/images/page2_g.svg'
 
     <div class="max-w-md mt-10">
       <h3
-        class="font-georgia text-secondary-500 dark:text-primary-50 text-2xl max-sm:text-xl max-xs:text-base"
+        class="font-georgia text-secondary-500 text-2xl max-sm:text-xl max-xs:text-base"
       >
         Find Doctors Around You
       </h3>

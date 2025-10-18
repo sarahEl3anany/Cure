@@ -133,32 +133,32 @@ definePageMeta({
                 <div class="flex mt-7 space-x-3 justify-center w-full gap-2">
                     <div class="items-center w-10 h-10">
                         <InputText maxlength="1"
-                            class="text-center w-full h-full rounded bg-neutral-50 dark:bg-neutral-400 border-none focus:ring-0 focus:outline-none outline-none"
+                            class="text-center w-full h-full rounded bg-neutral-50 border-none focus:ring-0 focus:outline-none outline-none"
                             name="num1" />
                     </div>
                     <div class="items-center w-10 h-10">
                         <InputText maxlength="1"
-                            class="text-center w-full h-full rounded bg-neutral-50 dark:bg-neutral-400 border-none focus:ring-0 focus:outline-none outline-none"
+                            class="text-center w-full h-full rounded bg-neutral-50 border-none focus:ring-0 focus:outline-none outline-none"
                             name="num2" />
                     </div>
                     <div class="items-center w-10 h-10">
                         <InputText maxlength="1"
-                            class="text-center w-full h-full rounded bg-neutral-50 dark:bg-neutral-400 border-none focus:ring-0 focus:outline-none outline-none"
+                            class="text-center w-full h-full rounded bg-neutral-50 border-none focus:ring-0 focus:outline-none outline-none"
                             name="num3" />
                     </div>
                     <div class="items-center w-10 h-10">
                         <InputText maxlength="1"
-                            class="text-center w-full h-full rounded bg-neutral-50 dark:bg-neutral-400 border-none focus:ring-0 focus:outline-none outline-none"
+                            class="text-center w-full h-full rounded bg-neutral-50 border-none focus:ring-0 focus:outline-none outline-none"
                             name="num4" />
                     </div>
                     <div class="items-center w-10 h-10">
                         <InputText maxlength="1"
-                            class="text-center w-full h-full rounded bg-neutral-50 dark:bg-neutral-400 border-none focus:ring-0 focus:outline-none outline-none"
+                            class="text-center w-full h-full rounded bg-neutral-50 border-none focus:ring-0 focus:outline-none outline-none"
                             name="num5" />
                     </div>
                     <div class="items-center w-10 h-10">
                         <InputText maxlength="1"
-                            class="text-center w-full h-full rounded bg-neutral-50 dark:bg-neutral-400 border-none focus:ring-0 focus:outline-none outline-none"
+                            class="text-center w-full h-full rounded bg-neutral-50 border-none focus:ring-0 focus:outline-none outline-none"
                             name="num6" />
                     </div>
                 </div>
@@ -180,9 +180,9 @@ definePageMeta({
                 </div>
                 <div class="justify-center">
                     <span class="font-montserrat text-sm">
-                        <span class="text-secondary-500 dark:text-primary-50">Resend code in </span>
+                        <span class="text-secondary-500">Resend code in </span>
                         <span class="text-primary-300">{{ countTimeDown }}</span>
-                        <span class="text-secondary-500 dark:text-primary-50"> s</span>
+                        <span class="text-secondary-500"> s</span>
                     </span>
                 </div>
                 <div class="justify-center mt-10">

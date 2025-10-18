@@ -19,7 +19,7 @@ const props = defineProps({
         <i class="pi pi-arrow-left justify-start"></i>
       </NuxtLink>
       <div class="text-center mx-auto">
-        <h3 class="font-georgia text-black dark:text-primary-50 text-2xl">{{ title }}</h3>
+        <h3 class="font-georgia text-black text-2xl">{{ title }}</h3>
       </div>
       <NuxtLink v-if="routeHeaderIcon" :to="routeHeaderIcon">
         <i v-if="headerIcon" :class="`${headerIcon}`"></i>

@@ -84,7 +84,7 @@ const doctorID = useRoute().params.id
         <img v-if="user" class="w-14 h-14 max-sm:w-14 max-sm:h-14 rounded-full object-cover" :src="user"
           alt="User avatar" />
         <div class="flex flex-col flex-1 text-left space-y-2 max-sm:space-y-0 max-sm:pr-2">
-          <p class="font-georgia text-secondary-500 dark:text-secondary-50 text-xl max-sm:text-base">
+          <p class="font-georgia text-secondary-500 text-xl max-sm:text-base">
             Nabila Reyna
           </p>
           <div class="flex items-start">

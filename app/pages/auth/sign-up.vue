@@ -77,7 +77,7 @@ definePageMeta({
   <div class="flex flex-col items-center justify-center px-4 text-center">
     <Toast />
     <BsHeartPulse class="w-20 h-20 mt-4 text-primary-500" />
-    <h3 class="mt-5 font-georgia text-secondary-500 dark:text-primary-50 text-2xl">
+    <h3 class="mt-5 font-georgia text-secondary-500 text-2xl">
       Create New Account
     </h3>
     <Form v-slot="$form" :initialValues="initialValues" :resolver="resolver" @submit="signUp">

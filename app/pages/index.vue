@@ -36,7 +36,7 @@ definePageMeta({
     <div class="w-full flex justify-end px-2 pt-3">
       <NuxtLink
         to="/welcome"
-        class="text-neutral-700 font-montserratMedium dark:text-neutral-50"
+        class="text-neutral-700 font-montserratMedium"
       >
         Skip
       </NuxtLink>

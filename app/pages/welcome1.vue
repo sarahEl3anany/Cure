@@ -8,7 +8,7 @@ import Page1 from '@/assets/images/page1_g.svg'
 
     <div class="max-w-md">
       <span
-        class="font-georgia text-secondary-500 dark:text-primary-50 text-2xl max-sm:text-xl max-xs:text-base"
+        class="font-georgia text-secondary-500 text-2xl max-sm:text-xl max-xs:text-base"
       >
         Book Your Appointment Easily
       </span>

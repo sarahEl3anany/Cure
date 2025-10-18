@@ -28,22 +28,22 @@ const allHistory = ref<Tag[]>([
 const allSpecialties = ref<Tag[]>([
   {
     name: 'Dentist',
-    img: teeth,
+  img: markRaw(teeth as unknown as object),
     id: 1
   },
   {
     name: 'Cardiologist',
-    img: heart,
+  img: markRaw(heart as unknown as object),
     id: 2
   },
   {
     name: 'ENT',
-    img: nose,
+  img: markRaw(nose as unknown as object),
     id: 3
   },
   {
     name: 'Lung',
-    img: lung,
+  img: markRaw(lung as unknown as object),
     id: 4
   },
 ])

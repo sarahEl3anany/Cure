@@ -45,8 +45,8 @@ const allNotifications = ref<Notification[]>([
         <div class="flex flex-col items-center justify-center px-4 text-center" v-else>
             <img :src="notifications" alt="Notifications" class="mx-1/5 pt-4 max-w-sm max-h-sm" />
             <div class="gap-4 mt-3">
-            <h3 class="font-georgia text-black dark:text-primary-50 max-lg:text-2xl max-xs:text-base">Nothing to display here!</h3>
-            <p class="font-montserrat text-neutral-700 dark:text-secondary-50 text-base max-xs:text-sm mt-1">
+            <h3 class="font-georgia text-black max-lg:text-2xl max-xs:text-base">Nothing to display here!</h3>
+            <p class="font-montserrat text-neutral-700 text-base max-xs:text-sm mt-1">
                 We’ll notify you once we have new notifications.
             </p>
             </div>

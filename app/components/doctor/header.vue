@@ -14,7 +14,7 @@ import Location from '@/assets/icons/home/location.svg'
       </div>
 
       <div class="flex flex-col flex-1 text-left space-y-2 max-sm:space-y-0 max-sm:pr-2">
-        <p class="font-georgia text-secondary-500 dark:text-secondary-50 text-xl max-sm:text-base">
+        <p class="font-georgia text-secondary-500 text-xl max-sm:text-base">
           Dr. Jessica Turner
         </p>
         <div class="flex items-start">

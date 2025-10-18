@@ -53,22 +53,22 @@ const allSpecialties = ref<Tag[]>([
   },
   {
     name: 'Dentist',
-    img: Teeth,
+    img: markRaw(Teeth as unknown as object),
     id: 1
   },
   {
     name: 'Cardiologist',
-    img: Heart,
+    img: markRaw(Heart as unknown as object),
     id: 2
   },
   {
     name: 'ENT',
-    img: Nose,
+    img: markRaw(Nose as unknown as object),
     id: 3
   },
   {
     name: 'Lung',
-    img: Lung,
+    img: markRaw(Lung as unknown as object),
     id: 4
   },
 ])

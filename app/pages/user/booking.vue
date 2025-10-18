@@ -98,7 +98,7 @@ function selectDate(iso: string) {
                                 <img class="w-18 h-14 rounded-full" :src=user alt="User avatar" />
                             </NuxtLink>
                             <div class="flex flex-col items-start">
-                                <p class="font-georgia text-secondary-500 dark:text-secondary-50 text-base ">
+                                <p class="font-georgia text-secondary-500 text-base ">
                                     Jennifer Miller
                                 </p>
                                 <div class="text-neutral-500 font-montserrat text-sm">Psychiatrist</div>

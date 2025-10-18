@@ -31,7 +31,7 @@ definePageMeta({
         <Toast />
         <div class="w-full mt-5 justify-center">
             <div class="flex-1 text-center">
-                <h3 class="font-georgia text-secondary-500 dark:text-primary-50 text-3xl">{{ verifyMsg }} , and you will be redirected to the home page</h3>
+                <h3 class="font-georgia text-secondary-500 text-3xl">{{ verifyMsg }} , and you will be redirected to the home page</h3>
             </div>
         </div>
     </div>

@@ -20,7 +20,7 @@ const checked = ref(true)
                     <img class="w-14 h-14 rounded-full m-1" :src=UserAvatar alt="User avatar" />
                 </NuxtLink>
                 <div class="flex flex-col items-start gap-1 mt-1">
-                    <p class="font-georgia text-secondary-500 dark:text-secondary-50 text-xl ">
+                    <p class="font-georgia text-secondary-500 text-xl ">
                         <NuxtLink to="/user/edit">
                             Seif Mohamed
                         </NuxtLink>

@@ -13,7 +13,7 @@ definePageMeta({
   <div class="flex flex-col items-center justify-center px-4 text-center">
     <LoginImg class="max-sm:w-3/4 max-sm:h-3/4 w-1/4 h-1/4 mt-1" />
     <div class="gap-4 mt-3 w-1/2 max-xs:w-3/4 max-lg:w-1/2">
-      <h3 class="font-georgia text-secondary-500 dark:text-primary-50 max-lg:text-2xl max-xs:text-sm">Let’s You In</h3>
+      <h3 class="font-georgia text-secondary-500 max-lg:text-2xl max-xs:text-sm">Let’s You In</h3>
     </div>
     <div class="space-y-4 mt-4 gap-4 max-sm:w-full w-1/4">
       <FacebookLogin

@@ -77,8 +77,8 @@ definePageMeta({
     <div v-else>
         <Empty class="mx-1/5 pt-4 w-1/4 h-1/4 max-sm:w-3/4 max-sm:h-3/4 text-red-500" />
         <div class="gap-4 mt-3">
-          <h3 class="font-georgia text-black dark:text-primary-50 max-lg:text-2xl max-xs:text-base">Your favorite!</h3>
-          <p class="font-montserrat text-neutral-700 dark:text-secondary-50 text-base max-xs:text-sm mt-1">
+          <h3 class="font-georgia text-black max-lg:text-2xl max-xs:text-base">Your favorite!</h3>
+          <p class="font-montserrat text-neutral-700 text-base max-xs:text-sm mt-1">
             Add your favorite to find it easily
           </p>
         </div>
